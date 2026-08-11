@@ -1,6 +1,6 @@
 import os
 import shutil
-from fastapi import APIRouter, HTTPException, UploadFile, File, Request
+from fastapi import APIRouter, HTTPException, UploadFile, File, Form, Request
 from app.models.requests import QueryRequest
 from app.models.responses import QueryResponse, DocumentUploadResponse
 from app.models.state import RAGState
@@ -19,7 +19,11 @@ def health():
 
 
 @router.post("/documents/upload", response_model=DocumentUploadResponse)
-def upload_document(request: Request, file: UploadFile = File(...)):
+def upload_document(
+    request: Request,
+    file: UploadFile = File(...),
+    doc_type: str = Form("BOOK"),
+):
     if not file.filename:
         raise HTTPException(status_code=400, detail="No file provided.")
 
@@ -30,13 +34,15 @@ def upload_document(request: Request, file: UploadFile = File(...)):
         shutil.copyfileobj(file.file, buffer)
 
     try:
-        docs = loader.load(file_path)
-        chunks = splitter.split(docs)
-        count = request.app.state.vector_store.add_documents(chunks)
+        canonical_doc = loader.load(file_path, source_filename=file.filename, doc_type=doc_type)
+        chunks = splitter.split(canonical_doc)
+        count = request.app.state.vector_store.add_chunks(chunks)
+
         return DocumentUploadResponse(
             filename=file.filename,
+            doc_type=canonical_doc.document_type,
             chunks_created=count,
-            message=f"Successfully uploaded '{file.filename}' and indexed {count} chunks.",
+            message=f"Uploaded '{file.filename}' as [{canonical_doc.document_type}] ({count} chunks).",
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

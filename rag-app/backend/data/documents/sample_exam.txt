@@ -1,0 +1,8 @@
+Q1. What is process synchronization? [5 Marks]
+A. Method to prevent race conditions
+B. File transfer protocol
+C. Memory allocation strategy
+D. Network layer routing
+
+Question 2. Explain virtual memory paging. [10 Marks]
+Virtual memory paging allows secondary memory to be addressed as main memory.
