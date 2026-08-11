@@ -1,0 +1,9 @@
+The Tutor RAG system is a lightweight application built using FastAPI, LangGraph, and Streamlit.
+It uses Ollama nomic-embed-text for creating vector embeddings and qwen2.5:1.5b for generating responses.
+FAISS is used as the local vector store for fast similarity search.
+LangGraph is a framework for building stateful, multi-step applications with LLMs.
+It allows you to define a graph of nodes, where each node is a function that performs a specific operation.
+LangGraph then executes the graph, passing the state between nodes as needed.
+The state is a dictionary that contains the data that is passed between nodes.
+Example nodes include retriever nodes, which retrieve documents from a vector store, and generation nodes, which generate responses using an LLM.
+In this application, we use a retriever node to retrieve documents from a FAISS vector store and a generation node to generate responses using Qwen2.5.

@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment & Secrets
+.env
+.env.local
+*.env
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+
+# Vector store index files & document caches
+rag-app/data/vector_store/*
+!rag-app/data/vector_store/.gitkeep
+rag-app/data/documents/*
+!rag-app/data/documents/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,30 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Environment & Secrets
+.env
+.env.local
+backend/.env
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.swp
+
+# Vector store index files & temporary documents (keep folder structure)
+data/vector_store/*
+!data/vector_store/.gitkeep
+data/documents/*
+!data/documents/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
