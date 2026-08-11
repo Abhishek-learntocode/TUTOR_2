@@ -1,0 +1,5 @@
+# Operating Systems Notes
+
+System calls provide an interface between a process and the operating system kernel.
+
+Virtual memory creates an illusion of a large main memory.

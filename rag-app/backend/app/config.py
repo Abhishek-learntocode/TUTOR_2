@@ -12,7 +12,10 @@ class Settings(BaseSettings):
 
     # Embedding Configuration
     embedding_provider: str = "ollama"
-    embedding_model: str = "nomic-embed-text:latest"
+    embedding_model: str = "bge-m3"
+
+    # Reranker Configuration
+    reranker_model: str = "BAAI/bge-reranker-v2-m3"
 
     # Vector Store Configuration
     vector_store_path: str = "data/vector_store"
@@ -21,8 +24,9 @@ class Settings(BaseSettings):
     chunk_size: int = 500
     chunk_overlap: int = 50
 
-    # Retrieval Configuration
-    top_k: int = 4
+    # Two-Stage Retrieval Configuration
+    top_k_candidates: int = 15
+    top_k_final: int = 4
 
     # Backend API Configuration
     backend_host: str = "127.0.0.1"

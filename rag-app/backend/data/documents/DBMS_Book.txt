@@ -1,0 +1,5 @@
+# Database Systems Book
+
+ACID properties stand for Atomicity, Consistency, Isolation, and Durability.
+
+SQL is structured query language used for database queries.

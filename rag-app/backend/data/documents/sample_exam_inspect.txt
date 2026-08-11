@@ -1,0 +1,8 @@
+Q1. What is Virtual Memory in OS? [5 Marks]
+A. A memory management technique that creates an illusion of a large main memory.
+B. Hardware storage drive.
+C. Graphics processing unit.
+D. Network cache.
+
+Q2. What is Page Fault? [5 Marks]
+A page fault occurs when a program attempts to access a block of memory that is not stored in RAM.

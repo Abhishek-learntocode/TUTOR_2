@@ -1,0 +1,8 @@
+Q1. What is a Deadlock in operating systems? [5 Marks]
+A. A situation where a set of processes are blocked because each process holds a resource and waits for another.
+B. A fast process execution mode.
+C. A network connection timeout.
+D. A disk storage format.
+
+Q2. What is Semaphore? [5 Marks]
+A semaphore is a synchronization tool used to manage concurrent processes.

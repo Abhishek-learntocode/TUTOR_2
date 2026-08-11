@@ -1,0 +1,41 @@
+Item #1: Generic textbook paragraph about OS concepts number 1.
+
+Item #2: Generic textbook paragraph about OS concepts number 2.
+
+Item #3: Generic textbook paragraph about OS concepts number 3.
+
+Item #4: Generic textbook paragraph about OS concepts number 4.
+
+Item #5: Generic textbook paragraph about OS concepts number 5.
+
+Item #6: Generic textbook paragraph about OS concepts number 6.
+
+Item #7: Generic textbook paragraph about OS concepts number 7.
+
+Item #8: Generic textbook paragraph about OS concepts number 8.
+
+Item #9: Generic textbook paragraph about OS concepts number 9.
+
+Item #10: Generic textbook paragraph about OS concepts number 10.
+
+Item #11: Generic textbook paragraph about OS concepts number 11.
+
+Item #12: Generic textbook paragraph about OS concepts number 12.
+
+Item #13: Generic textbook paragraph about OS concepts number 13.
+
+Item #14: Generic textbook paragraph about OS concepts number 14.
+
+Item #15: Generic textbook paragraph about OS concepts number 15.
+
+Item #16: Generic textbook paragraph about OS concepts number 16.
+
+Item #17: Generic textbook paragraph about OS concepts number 17.
+
+Item #18: Generic textbook paragraph about OS concepts number 18.
+
+Item #19: Generic textbook paragraph about OS concepts number 19.
+
+Item #20: Generic textbook paragraph about OS concepts number 20.
+
+Item #21: Special keyword Semaphore_Mutex_Lock_XYZ is used for process synchronization in operating systems.

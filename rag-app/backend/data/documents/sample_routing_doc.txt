@@ -1,0 +1,7 @@
+# Chapter 4: CPU Scheduling
+
+The Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.
+
+# Chapter 7: Memory Management
+
+Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.

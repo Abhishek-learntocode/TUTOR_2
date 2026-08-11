@@ -1,5 +1,6 @@
 import os
 import shutil
+import traceback
 from fastapi import APIRouter, HTTPException, UploadFile, File, Form, Request
 from app.models.requests import QueryRequest
 from app.models.responses import QueryResponse, DocumentUploadResponse
@@ -45,6 +46,8 @@ def upload_document(
             message=f"Uploaded '{file.filename}' as [{canonical_doc.document_type}] ({count} chunks).",
         )
     except Exception as e:
+        print("[Upload Error Traceback]:")
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
 
 
@@ -55,4 +58,6 @@ def query(request: Request, body: QueryRequest):
         final_state = request.app.state.rag_graph.invoke(state)
         return QueryResponse(answer=final_state.answer, context=final_state.context)
     except Exception as e:
+        print("[Query Error Traceback]:")
+        traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))

@@ -7,7 +7,7 @@ MARKS_RE = re.compile(r"(?i)\[\s*(\d+)\s*Marks?\s*\]|\(\s*(\d+)\s*Marks?\s*\)")
 
 
 class DocumentSplitter:
-    """Splits CanonicalDocument into type-aware DocumentChunks."""
+    """Splits CanonicalDocument into type-aware DocumentChunks with document header metadata."""
 
     def __init__(self, chunk_size: int = 800, chunk_overlap: int = 50):
         self.chunk_size = chunk_size
@@ -17,6 +17,10 @@ class DocumentSplitter:
         if doc.document_type == "exam_paper":
             return self._split_exam(doc)
         return self._split_book(doc)
+
+    def _format_chunk_content(self, doc: CanonicalDocument, body: str) -> str:
+        header = f"[Document: {doc.source_filename} | Type: {doc.document_type}]"
+        return f"{header}\n\n{body}"
 
     def _split_book(self, doc: CanonicalDocument) -> list[DocumentChunk]:
         chunks = []
@@ -35,11 +39,13 @@ class DocumentSplitter:
                 curr_sec = b.lstrip("#").strip().split("\n")[0]
 
             if curr_buf and (curr_size + len(b) > self.chunk_size):
+                body_text = "\n\n".join(curr_buf)
+                full_text = self._format_chunk_content(doc, body_text)
                 chunks.append(
                     DocumentChunk(
                         chunk_id=str(uuid.uuid4()),
                         document_id=doc.document_id,
-                        content="\n\n".join(curr_buf),
+                        content=full_text,
                         metadata={
                             "document_id": doc.document_id,
                             "document_type": doc.document_type,
@@ -55,11 +61,13 @@ class DocumentSplitter:
             curr_size += len(b)
 
         if curr_buf:
+            body_text = "\n\n".join(curr_buf)
+            full_text = self._format_chunk_content(doc, body_text)
             chunks.append(
                 DocumentChunk(
                     chunk_id=str(uuid.uuid4()),
                     document_id=doc.document_id,
-                    content="\n\n".join(curr_buf),
+                    content=full_text,
                     metadata={
                         "document_id": doc.document_id,
                         "document_type": doc.document_type,
@@ -78,11 +86,12 @@ class DocumentSplitter:
         if not matches:
             blocks = [b.strip() for b in doc.content.split("\n\n") if b.strip()]
             for b in blocks:
+                full_text = self._format_chunk_content(doc, b)
                 chunks.append(
                     DocumentChunk(
                         chunk_id=str(uuid.uuid4()),
                         document_id=doc.document_id,
-                        content=b,
+                        content=full_text,
                         metadata={
                             "document_id": doc.document_id,
                             "document_type": doc.document_type,
@@ -104,12 +113,13 @@ class DocumentSplitter:
             q_num = next((g for g in matches[i].groups() if g is not None), str(i + 1))
             marks_match = MARKS_RE.search(q_text)
             marks_val = int(marks_match.group(1) or marks_match.group(2)) if marks_match else None
+            full_text = self._format_chunk_content(doc, q_text)
 
             chunks.append(
                 DocumentChunk(
                     chunk_id=str(uuid.uuid4()),
                     document_id=doc.document_id,
-                    content=q_text,
+                    content=full_text,
                     metadata={
                         "document_id": doc.document_id,
                         "document_type": doc.document_type,
