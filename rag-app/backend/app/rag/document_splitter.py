@@ -26,6 +26,7 @@ class DocumentSplitter:
         chunks = []
         blocks = [b.strip() for b in doc.content.split("\n\n") if b.strip()]
         curr_buf, curr_size, curr_page, curr_sec = [], 0, 1, "General"
+        buf_page, buf_sec = 1, "General"
 
         for b in blocks:
             page_match = re.search(r"<!-- Page (\d+) -->", b)
@@ -37,6 +38,10 @@ class DocumentSplitter:
 
             if b.startswith("#"):
                 curr_sec = b.lstrip("#").strip().split("\n")[0]
+
+            if not curr_buf:
+                buf_page = curr_page
+                buf_sec = curr_sec
 
             if curr_buf and (curr_size + len(b) > self.chunk_size):
                 body_text = "\n\n".join(curr_buf)
@@ -50,12 +55,14 @@ class DocumentSplitter:
                             "document_id": doc.document_id,
                             "document_type": doc.document_type,
                             "source_filename": doc.source_filename,
-                            "page_number": curr_page,
-                            "section": curr_sec,
+                            "page_number": buf_page,
+                            "section": buf_sec,
                         },
                     )
                 )
                 curr_buf, curr_size = [], 0
+                buf_page = curr_page
+                buf_sec = curr_sec
 
             curr_buf.append(b)
             curr_size += len(b)
@@ -72,12 +79,13 @@ class DocumentSplitter:
                         "document_id": doc.document_id,
                         "document_type": doc.document_type,
                         "source_filename": doc.source_filename,
-                        "page_number": curr_page,
-                        "section": curr_sec,
+                        "page_number": buf_page,
+                        "section": buf_sec,
                     },
                 )
             )
         return chunks
+
 
     def _split_exam(self, doc: CanonicalDocument) -> list[DocumentChunk]:
         chunks = []

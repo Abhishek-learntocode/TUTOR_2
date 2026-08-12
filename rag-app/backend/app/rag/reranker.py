@@ -1,41 +1,156 @@
+import time
+
+import torch
 from sentence_transformers import CrossEncoder
 
 
 class Reranker:
-    """Lightweight CrossEncoder Reranker with lazy model loading."""
+    """Cross-encoder reranker for retrieved RAG candidates."""
 
-    def __init__(self, model_name: str = "BAAI/bge-reranker-v2-m3"):
+    def __init__(
+        self,
+        model_name: str,
+        device: str | None = None,
+        batch_size: int = 8,
+        max_length: int = 512,
+    ):
         self.model_name = model_name
-        self._model = None
+        self.batch_size = batch_size
+        self.max_length = max_length
 
-    @property
-    def model(self) -> CrossEncoder:
-        if self._model is None:
-            print(f"[Reranker Log] Loading CrossEncoder model '{self.model_name}'...")
-            self._model = CrossEncoder(self.model_name)
-        return self._model
+        # Prefer NVIDIA GPU when available.
+        if device:
+            self.device = device
+        else:
+            self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    def rerank(self, query: str, documents: list, top_k: int = 4) -> list:
+        print(
+            f"[Reranker Log] Loading CrossEncoder model "
+            f"'{self.model_name}' on {self.device}..."
+        )
+
+        start = time.perf_counter()
+
+        self.model = CrossEncoder(
+            self.model_name,
+            device=self.device,
+            max_length=self.max_length,
+        )
+
+        load_time = time.perf_counter() - start
+
+        print(
+            f"[Reranker Log] Model loaded in "
+            f"{load_time:.2f}s"
+        )
+
+        # Warm up the model once so CUDA/model initialization
+        # is not included in the first real query latency.
+        self._warmup()
+
+        print(
+            f"[Reranker Log] Ready. "
+            f"device={self.device}, "
+            f"batch_size={self.batch_size}, "
+            f"max_length={self.max_length}"
+        )
+
+    def _warmup(self):
+        """Run one small inference to initialize the model/device."""
+
+        try:
+            start = time.perf_counter()
+
+            self.model.predict(
+                [("warmup query", "warmup document")],
+                batch_size=1,
+                show_progress_bar=False,
+            )
+
+            elapsed = time.perf_counter() - start
+
+            print(
+                f"[Reranker Log] Warmup completed in "
+                f"{elapsed:.2f}s"
+            )
+
+        except Exception as exc:
+            # Warmup failure should not prevent the application
+            # from starting. The real query will surface the error.
+            print(
+                f"[Reranker Warning] Warmup failed: {exc}"
+            )
+
+    def rerank(
+        self,
+        query: str,
+        documents: list,
+        top_k: int = 4,
+    ) -> list:
+        """Rerank documents against the query and return top-k."""
+
         if not documents:
             return []
 
+        if not query or not query.strip():
+            return documents[:top_k]
+
+        # CrossEncoder expects:
+        # [(query, document_text), ...]
         pairs = [
-            (query, doc.page_content if hasattr(doc, "page_content") else str(doc))
-            for doc in documents
+            (query, document.page_content)
+            for document in documents
         ]
 
-        scores = self.model.predict(pairs)
+        start = time.perf_counter()
 
-        scored_docs = []
-        for score, doc in zip(scores, documents):
-            score_val = float(score)
-            if hasattr(doc, "metadata"):
-                doc.metadata["reranker_score"] = round(score_val, 4)
-            scored_docs.append((score_val, doc))
+        try:
+            scores = self.model.predict(
+                pairs,
+                batch_size=self.batch_size,
+                show_progress_bar=False,
+            )
+        except Exception as exc:
+            print(
+                f"[Reranker Error] Failed to rerank "
+                f"{len(documents)} candidates: {exc}"
+            )
 
-        scored_docs.sort(key=lambda x: x[0], reverse=True)
+            # Safe fallback: preserve retrieval results.
+            return documents[:top_k]
 
-        final_docs = [doc for _, doc in scored_docs[:top_k]]
-        print(f"[Reranker Log] retrieved candidates = {len(documents)}, reranked candidates = {len(final_docs)}")
+        elapsed = time.perf_counter() - start
 
-        return final_docs
+        # Convert numpy/tensor values to normal Python floats.
+        scored_documents = []
+
+        for document, score in zip(documents, scores):
+            score = float(score)
+
+            # Store the score in metadata so the rest of the
+            # pipeline can use it for observability/citations.
+            document.metadata["reranker_score"] = score
+
+            scored_documents.append(
+                (document, score)
+            )
+
+        # Highest relevance score first.
+        scored_documents.sort(
+            key=lambda item: item[1],
+            reverse=True,
+        )
+
+        results = [
+            document
+            for document, _ in scored_documents[:top_k]
+        ]
+
+        print(
+            f"[Reranker Log] "
+            f"retrieved candidates = {len(documents)}, "
+            f"reranked candidates = {len(results)}, "
+            f"inference = {elapsed:.4f}s"
+        )
+
+        return results

@@ -63,38 +63,74 @@ with st.sidebar:
 for msg in st.session_state.messages:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
-        if msg.get("sources"):
+        if msg.get("citations"):
+            with st.expander("📚 Source Citations"):
+                for idx, src in enumerate(msg["citations"], 1):
+                    doc_id = src.get("source_filename") or src.get("document_id", "Doc")
+                    page_info = f", Page {src['page_number']}" if src.get("page_number") is not None else ""
+                    sec_info = f" ({src['section']})" if src.get("section") else ""
+                    st.markdown(f"**[{idx}] `{doc_id}`**{page_info}{sec_info} `chunk:{src.get('chunk_id')}`")
+        elif msg.get("sources"):
             with st.expander("Sources"):
                 for idx, chunk in enumerate(msg["sources"], 1):
                     st.markdown(f"**Chunk #{idx}:**\n{chunk}")
+        if msg.get("metrics"):
+            with st.expander("⚡ Latency Metrics"):
+                for k, v in msg["metrics"].items():
+                    st.caption(f"**{k}**: {v:.4f}s")
 
 # Chat input prompt
 if prompt := st.chat_input("Ask anything..."):
-    st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
         with st.spinner("Searching & generating answer..."):
             try:
-                res = requests.post(f"{BACKEND_URL}/query", json={"question": prompt})
+                history_payload = [
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.messages
+                ]
+                res = requests.post(
+                    f"{BACKEND_URL}/query",
+                    json={"question": prompt, "chat_history": history_payload},
+                )
                 if res.ok:
                     data = res.json()
                     answer = data.get("answer", "")
-                    sources = data.get("context", [])
+                    raw_context = data.get("context", [])
+                    citations = data.get("sources", [])
+                    metrics = data.get("metrics", {})
 
                     st.markdown(answer)
-                    if sources:
+
+                    if citations:
+                        with st.expander("📚 Source Citations"):
+                            for idx, src in enumerate(citations, 1):
+                                doc_id = src.get("source_filename") or src.get("document_id", "Doc")
+                                page_info = f", Page {src['page_number']}" if src.get("page_number") is not None else ""
+                                sec_info = f" ({src['section']})" if src.get("section") else ""
+                                st.markdown(f"**[{idx}] `{doc_id}`**{page_info}{sec_info} `chunk:{src.get('chunk_id')}`")
+                    elif raw_context:
                         with st.expander("Sources"):
-                            for idx, chunk in enumerate(sources, 1):
+                            for idx, chunk in enumerate(raw_context, 1):
                                 st.markdown(f"**Chunk #{idx}:**\n{chunk}")
 
+                    if metrics:
+                        with st.expander("⚡ Latency Metrics"):
+                            for k, v in metrics.items():
+                                st.caption(f"**{k}**: {v:.4f}s")
+
+                    st.session_state.messages.append({"role": "user", "content": prompt})
                     st.session_state.messages.append({
                         "role": "assistant",
                         "content": answer,
-                        "sources": sources,
+                        "citations": citations,
+                        "sources": raw_context,
+                        "metrics": metrics,
                     })
                 else:
                     st.error(res.json().get("detail", "Query failed."))
             except Exception as e:
                 st.error(f"Connection error: {e}")
+
