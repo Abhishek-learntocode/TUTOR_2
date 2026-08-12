@@ -27,6 +27,8 @@ class Settings(BaseSettings):
     # Two-Stage Retrieval Configuration
     top_k_candidates: int = 15
     top_k_final: int = 4
+    min_rerank_score: float = -2.0
+
 
     # Backend API Configuration
     backend_host: str = "127.0.0.1"

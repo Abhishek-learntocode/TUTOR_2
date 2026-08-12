@@ -49,6 +49,46 @@ def resolve_reference_fallback(query: str, chat_history: list) -> str:
     return query
 
 
+def detect_intent(query: str) -> str:
+    q_lower = query.lower()
+    if any(k in q_lower for k in ["summarise", "summarize", "summary"]):
+        return "summarization"
+    elif any(k in q_lower for k in ["compare", "difference between", " versus ", " vs "]):
+        return "comparison"
+    elif any(k in q_lower for k in ["find the document", "find the exam paper", "find the book", "show me the notes"]):
+        return "document_lookup"
+    return "question"
+
+
+def detect_document_references(query: str) -> tuple[bool, list[str]]:
+    q_lower = query.lower()
+    doc_kw_patterns = [
+        r"\b[\w\-]+\.(?:txt|pdf|md|docx?)\b",
+        r"\b(?:the|this|that|my|previous)?\s*(?:os|dbms|cn|operating system|database)?\s*(?:notes|book|textbook|exam paper|paper|document)\b",
+        r"\b(?:book|notes|textbook|exam paper|paper|document)\b",
+    ]
+    refs = []
+    for pat in doc_kw_patterns:
+        matches = re.findall(pat, q_lower)
+        if matches:
+            for m in matches:
+                if isinstance(m, str) and len(m.strip()) > 1:
+                    refs.append(m.strip())
+
+    requires_res = bool(refs or any(ext in q_lower for ext in [".txt", ".pdf", ".md"]) or any(kw in q_lower for kw in ["book", "notes", "paper", "document", "this document", "that document", "previous document"]))
+    return requires_res, list(set(refs))
+
+
+def map_to_operation(intent: str, requires_res: bool) -> str:
+    if intent == "summarization":
+        return "summarize"
+    elif intent == "comparison":
+        return "compare"
+    elif requires_res:
+        return "document_qa"
+    return "normal_qa"
+
+
 class QueryAnalyzer:
     """Analyzes queries using LLM + rule heuristics to classify as single_hop, multi_hop, or conversational."""
 
@@ -57,11 +97,23 @@ class QueryAnalyzer:
 
     def analyze(self, query: str, chat_history: list[Message] = None) -> QueryAnalysis:
         if is_conversational_query(query):
-            return QueryAnalysis(query_type="conversational", sub_queries=[query])
+            return QueryAnalysis(
+                operation="conversational",
+                intent="question",
+                query_type="conversational",
+                sub_queries=[query],
+                document_references=[],
+                requires_document_resolution=False,
+            )
+
+        intent = detect_intent(query)
+        requires_res, doc_refs = detect_document_references(query)
+        operation = map_to_operation(intent, requires_res)
 
         query_lower = query.lower()
         has_multi_hop_cue = (
-            "compare" in query_lower
+            intent == "comparison"
+            or "compare" in query_lower
             or "difference between" in query_lower
             or " versus " in query_lower
             or " vs " in query_lower
@@ -81,33 +133,32 @@ class QueryAnalyzer:
                 history_text = "Chat History:\n" + "\n".join(formatted) + "\n\n"
 
         prompt = (
-            "You are a Query Analyzer for a RAG system.\n"
-            "Analyze the current user question in light of the chat history (if provided).\n"
-            "Your tasks are:\n"
+            "You are an expert Query Analyzer for a technical RAG system.\n"
+            "Analyze the current user question in light of the chat history (if provided).\n\n"
+            "TASKS:\n"
             "1. Reference Resolution: Rewrite follow-up questions containing pronouns or implicit references "
-            "(e.g., 'its', 'it', 'this', 'that', 'the former', 'how does it work', 'what are its advantages') "
+            "(e.g., 'its', 'it', 'this', 'that', 'the former', 'that document', 'previous document', 'how does it work', 'what are its advantages') "
             "into self-contained, standalone search queries using the chat history.\n"
-            "2. Classification: Classify the query as 'single_hop' or 'multi_hop' and generate 'sub_queries'.\n\n"
-            "RULES:\n"
-            "1. Default to 'single_hop' for questions asking about a single concept, definition, or direct topic.\n"
-            "2. Classify as 'multi_hop' ONLY when answering requires combining or comparing separate topics/chapters.\n"
-            "3. For single_hop, sub_queries must contain ONLY the single standalone question (with references resolved if chat history is present).\n"
-            "4. For multi_hop, generate 2-3 focused standalone sub-queries for each separate topic.\n\n"
+            "2. Classification:\n"
+            "   - 'single_hop': Question asks about a single concept, definition, or direct topic.\n"
+            "   - 'multi_hop': Answer requires connecting independently retrieved pieces of evidence from separate topics/chapters. "
+            "(CRITICAL RULE: Multi-hop means connecting independently retrieved pieces of evidence, NOT simply that the question is long or contains multiple clauses).\n\n"
+            "RULES FOR SUB-QUERIES:\n"
+            "- For single_hop: Output exactly 1 standalone search query (with references resolved).\n"
+            "- For multi_hop: Output the minimum necessary (2-3) distinct, independently retrievable sub-queries.\n"
+            "- Avoid duplicate sub-queries or unnecessary decomposition.\n\n"
             "EXAMPLES:\n"
-            "Chat History:\n"
-            "User: What is virtual memory?\n"
-            "Assistant: Virtual memory is a memory management technique...\n"
-            "User Question: \"What are its advantages?\"\n"
+            "Chat History:\nUser: What is virtual memory?\nAssistant: Virtual memory is...\n"
+            'User Question: "What are its advantages?"\n'
             '{"query_type": "single_hop", "sub_queries": ["What are the advantages of virtual memory?"]}\n\n'
-            "Chat History:\n"
-            "User: What is page fault?\n"
-            "Assistant: A page fault occurs when a program accesses a page not in RAM...\n"
-            "User Question: \"Compare it with thrashing.\"\n"
-            '{"query_type": "multi_hop", "sub_queries": ["What is a page fault?", "What is thrashing in operating systems?"]}\n\n'
+            "Chat History:\nUser: What is page fault?\nAssistant: A page fault occurs...\n"
+            'User Question: "Compare it with thrashing."\n'
+            '{"query_type": "multi_hop", "sub_queries": ["What is a page fault in operating systems?", "What is thrashing in operating systems?"]}\n\n'
             f"{history_text}"
             f'User Question: "{query}"\n\n'
             "Respond ONLY with a valid JSON object:"
         )
+
 
         try:
             raw_response = self.llm.generate(prompt, context=[])
@@ -134,21 +185,33 @@ class QueryAnalyzer:
                         single_res = resolve_reference_fallback(sub_q[0], chat_history)
                         sub_q = [single_res]
 
-                return QueryAnalysis(query_type=q_type, sub_queries=sub_q)
+                return QueryAnalysis(
+                    operation=operation,
+                    intent=intent,
+                    query_type=q_type,
+                    sub_queries=sub_q,
+                    document_references=doc_refs,
+                    requires_document_resolution=requires_res,
+                )
         except Exception as e:
             print(f"[QueryAnalyzer Warning] Analysis failed, defaulting to single_hop: {e}")
 
         fallback_q = resolve_reference_fallback(query, chat_history)
+        q_type = "multi_hop" if has_multi_hop_cue else "single_hop"
+        sub_q = [
+            f"Information regarding first topic in: {fallback_q}",
+            f"Information regarding second topic in: {fallback_q}",
+        ] if has_multi_hop_cue else [fallback_q]
 
-        if has_multi_hop_cue:
-            return QueryAnalysis(
-                query_type="multi_hop",
-                sub_queries=[
-                    f"Information regarding first topic in: {fallback_q}",
-                    f"Information regarding second topic in: {fallback_q}",
-                ],
-            )
+        return QueryAnalysis(
+            operation=operation,
+            intent=intent,
+            query_type=q_type,
+            sub_queries=sub_q,
+            document_references=doc_refs,
+            requires_document_resolution=requires_res,
+        )
 
-        return QueryAnalysis(query_type="single_hop", sub_queries=[fallback_q])
+
 
 

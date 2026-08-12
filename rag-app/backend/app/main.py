@@ -37,8 +37,9 @@ vector_store = VectorStore(
 )
 
 # 3. Lexical BM25 & Reranker
-bm25_retriever = BM25Retriever()
+bm25_retriever = BM25Retriever(documents=vector_store.get_all_documents())
 reranker = Reranker(model_name=settings.reranker_model)
+
 
 # 4. Hybrid Retriever
 retriever = Retriever(
@@ -67,7 +68,9 @@ rag_graph.compile()
 
 # Attach instances to app.state
 app.state.vector_store = vector_store
+app.state.bm25_retriever = bm25_retriever
 app.state.rag_graph = rag_graph
+
 
 app.include_router(router)
 

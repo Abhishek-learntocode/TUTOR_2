@@ -35,6 +35,17 @@ class BM25Retriever:
             reverse=True,
         )
 
-        # Keep matching documents with non-zero BM25 relevance score
         matched_docs = [doc for score, doc in scored_docs if score > 0]
         return matched_docs[:top_k]
+
+    def retrieve_scoped(self, query: str, document_ids: list[str], top_k: int = 15) -> list[Document]:
+
+        """Retrieves top-k matching documents filtered by document_ids."""
+        matched = self.retrieve(query, top_k=top_k * 3)
+        doc_id_set = set(document_ids)
+        filtered = [
+            doc for doc in matched
+            if doc.metadata.get("document_id") in doc_id_set or doc.metadata.get("source_filename") in doc_id_set
+        ]
+        return filtered[:top_k]
+
