@@ -11,7 +11,7 @@ class RAGNodes:
 
     def analyze_query(self, state: RAGState) -> dict:
         if self.query_analyzer:
-            analysis = self.query_analyzer.analyze(state.question)
+            analysis = self.query_analyzer.analyze(state.question, chat_history=state.chat_history)
             return {
                 "query_type": analysis.query_type,
                 "sub_queries": analysis.sub_queries,
@@ -19,11 +19,20 @@ class RAGNodes:
         return {"query_type": "single_hop", "sub_queries": [state.question]}
 
     def route_query(self, state: RAGState) -> str:
+        if state.query_type == "conversational":
+            return "direct_answer"
         return "retrieve_multi" if state.query_type == "multi_hop" else "retrieve_single"
 
+    def direct_answer(self, state: RAGState) -> dict:
+        print(f"[Query Routing Log] query_type: conversational")
+        ans = self.llm.generate_conversational(state.question, chat_history=state.chat_history)
+        return {"context": [], "answer": ans}
+
     def retrieve_single(self, state: RAGState) -> dict:
-        context_chunks = self.retriever.retrieve(state.question)
+        search_query = state.sub_queries[0] if state.sub_queries else state.question
+        context_chunks = self.retriever.retrieve(search_query)
         print(f"[Query Routing Log] query_type: single_hop")
+        print(f"[Query Routing Log] search_query: {search_query}")
         print(f"[Query Routing Log] sub_queries: 1")
         print(f"[Query Routing Log] retrieval_operations: 1")
         print(f"[Query Routing Log] final_context_chunks: {len(context_chunks)}")
@@ -50,4 +59,8 @@ class RAGNodes:
         return {"context": final_context}
 
     def generate(self, state: RAGState) -> dict:
-        return {"answer": self.llm.generate(state.question, state.context)}
+        if state.answer:
+            return {"answer": state.answer}
+        return {"answer": self.llm.generate(state.question, state.context, chat_history=state.chat_history)}
+
+

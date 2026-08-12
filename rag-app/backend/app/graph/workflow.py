@@ -13,6 +13,7 @@ class RAGGraph:
     def build(self) -> StateGraph:
         graph = StateGraph(RAGState)
         graph.add_node("analyze_query", self.nodes.analyze_query)
+        graph.add_node("direct_answer", self.nodes.direct_answer)
         graph.add_node("retrieve_single", self.nodes.retrieve_single)
         graph.add_node("retrieve_multi", self.nodes.retrieve_multi)
         graph.add_node("generate", self.nodes.generate)
@@ -22,14 +23,17 @@ class RAGGraph:
             "analyze_query",
             self.nodes.route_query,
             {
+                "direct_answer": "direct_answer",
                 "retrieve_single": "retrieve_single",
                 "retrieve_multi": "retrieve_multi",
             },
         )
+        graph.add_edge("direct_answer", END)
         graph.add_edge("retrieve_single", "generate")
         graph.add_edge("retrieve_multi", "generate")
         graph.add_edge("generate", END)
         return graph
+
 
     def compile(self):
         self.compiled_graph = self.build().compile()

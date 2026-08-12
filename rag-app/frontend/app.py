@@ -70,14 +70,20 @@ for msg in st.session_state.messages:
 
 # Chat input prompt
 if prompt := st.chat_input("Ask anything..."):
-    st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
 
     with st.chat_message("assistant"):
         with st.spinner("Searching & generating answer..."):
             try:
-                res = requests.post(f"{BACKEND_URL}/query", json={"question": prompt})
+                history_payload = [
+                    {"role": m["role"], "content": m["content"]}
+                    for m in st.session_state.messages
+                ]
+                res = requests.post(
+                    f"{BACKEND_URL}/query",
+                    json={"question": prompt, "chat_history": history_payload},
+                )
                 if res.ok:
                     data = res.json()
                     answer = data.get("answer", "")
@@ -89,6 +95,7 @@ if prompt := st.chat_input("Ask anything..."):
                             for idx, chunk in enumerate(sources, 1):
                                 st.markdown(f"**Chunk #{idx}:**\n{chunk}")
 
+                    st.session_state.messages.append({"role": "user", "content": prompt})
                     st.session_state.messages.append({
                         "role": "assistant",
                         "content": answer,
@@ -98,3 +105,4 @@ if prompt := st.chat_input("Ask anything..."):
                     st.error(res.json().get("detail", "Query failed."))
             except Exception as e:
                 st.error(f"Connection error: {e}")
+

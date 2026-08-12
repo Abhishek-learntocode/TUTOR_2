@@ -54,10 +54,11 @@ def upload_document(
 @router.post("/query", response_model=QueryResponse)
 def query(request: Request, body: QueryRequest):
     try:
-        state = RAGState(question=body.question)
+        state = RAGState(question=body.question, chat_history=body.chat_history)
         final_state = request.app.state.rag_graph.invoke(state)
         return QueryResponse(answer=final_state.answer, context=final_state.context)
     except Exception as e:
         print("[Query Error Traceback]:")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+
