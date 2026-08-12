@@ -1,9 +1,11 @@
 import time
 import re
+import concurrent.futures
 from app.models.state import RAGState
 from app.models.responses import SourceCitation
 from app.rag.document_resolver import DocumentResolver
 from app.utils.tracer import RAGTracer
+from app.config import settings
 
 
 # ==========================================================
@@ -23,9 +25,16 @@ def clean_sub_query(query: str) -> str:
 
     query = query.strip()
 
-    # Remove punctuation immediately before ? or .
-    query = re.sub(r"\s+([?.!])", r"\1", query)
+    # Replace period immediately preceding ? or ! (e.g. "matters.?" -> "matters?")
+    query = re.sub(r"\.\s*([?!])", r"\1", query)
+
+    # Remove comma/semicolon/colon immediately preceding punctuation
     query = re.sub(r"[,;:]+\s*([?.!])", r"\1", query)
+
+    # Collapse multiple punctuation (e.g. "??" -> "?", "!!" -> "!", "..." -> ".")
+    query = re.sub(r"\?+", "?", query)
+    query = re.sub(r"\!+", "!", query)
+    query = re.sub(r"\.{2,}", ".", query)
 
     # Remove trailing comma/semicolon/colon.
     query = re.sub(r"[,;:]+$", "", query).strip()
@@ -39,11 +48,27 @@ def calculate_total_latency(
     metrics: dict[str, float],
 ) -> float:
     """
-    Calculate total latency using only actual timing metrics.
+    Calculate total latency using non-overlapping actual timing metrics.
 
-    Counts, scores, and other observability values are
-    intentionally excluded.
+    In concurrent mode, semantic_retrieval holds total_multi_retrieval_wall_time,
+    which already incorporates sub-query embedding, FAISS, BM25, and merge durations.
     """
+
+    if metrics.get("dispatch_mode") == "concurrent":
+        keys = {
+            "query_analysis",
+            "document_resolution",
+            "semantic_retrieval",
+            "reranking",
+            "llm_generation",
+        }
+        return round(
+            sum(
+                metrics.get(key, 0.0)
+                for key in keys
+            ),
+            4,
+        )
 
     return round(
         sum(
@@ -52,6 +77,7 @@ def calculate_total_latency(
         ),
         4,
     )
+
 
 
 def make_sources_from_docs(
@@ -168,9 +194,18 @@ class RAGNodes:
         if not sub_queries:
             sub_queries = [clean_sub_query(state.question)]
 
+        # Deduplicate exact subqueries while preserving original order
+        seen_sq = set()
+        unique_sub_queries = []
+        for sq in sub_queries:
+            if sq not in seen_sq:
+                seen_sq.add(sq)
+                unique_sub_queries.append(sq)
+        sub_queries = unique_sub_queries
+
         document_ids = (
             state.resolved_document_ids
-            if state.resolved_document_ids
+            if (state.resolved_document_ids or state.requires_document_resolution)
             else None
         )
 
@@ -179,8 +214,14 @@ class RAGNodes:
 
         accumulated_metrics = {
             "semantic_retrieval": 0.0,
+            "embedding": 0.0,
+            "vector_search": 0.0,
+            "semantic_postprocessing": 0.0,
             "bm25_retrieval": 0.0,
+            "merge": 0.0,
             "reranking": 0.0,
+            "reranker_inference": 0.0,
+            "embedding_cache_hits": 0,
         }
 
         accumulated_counts = {
@@ -195,42 +236,102 @@ class RAGNodes:
         missing_queries = []
         hops_trace = []
 
-        for hop_number, sub_query in enumerate(
-            sub_queries,
-            start=1,
-        ):
-            (
-                sub_docs,
-                hop_metrics,
-                hop_counts,
-                semantic_candidates,
-                bm25_candidates,
-                merged_candidates,
-            ) = self.retriever.retrieve_documents(
-                sub_query,
-                document_ids=document_ids,
-            )
+        defer_rerank = getattr(settings, "multi_hop_defer_rerank", True)
+        parallel_enabled = getattr(settings, "multi_hop_parallel_retrieval", True)
+        max_workers_limit = getattr(settings, "max_parallel_workers", 4)
 
-            accumulated_metrics["semantic_retrieval"] += (
-                hop_metrics.get(
-                    "semantic_retrieval",
-                    0.0,
+        def _fetch_hop(hop_number: int, sub_query: str):
+            if defer_rerank:
+                res = self.retriever.retrieve_candidates(
+                    sub_query,
+                    document_ids=document_ids,
                 )
-            )
+            else:
+                res = self.retriever.retrieve_documents(
+                    sub_query,
+                    document_ids=document_ids,
+                )
+            return (hop_number, sub_query, res)
 
-            accumulated_metrics["bm25_retrieval"] += (
-                hop_metrics.get(
-                    "bm25_retrieval",
-                    0.0,
-                )
-            )
+        t0_multi_retrieval = time.perf_counter()
 
-            accumulated_metrics["reranking"] += (
-                hop_metrics.get(
-                    "reranking",
-                    0.0,
-                )
-            )
+        if parallel_enabled and len(sub_queries) > 1:
+            workers = min(len(sub_queries), max_workers_limit)
+            hop_results_unordered = []
+            with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
+                future_map = {
+                    executor.submit(_fetch_hop, h_idx, sq): (h_idx, sq)
+                    for h_idx, sq in enumerate(sub_queries, start=1)
+                }
+                for future in concurrent.futures.as_completed(future_map):
+                    h_idx, sq = future_map[future]
+                    try:
+                        res_item = future.result()
+                        hop_results_unordered.append(res_item)
+                    except Exception as exc:
+                        RAGTracer.log_error(state.trace_id, f"Sub-query hop {h_idx} ('{sq}') execution failed: {exc}")
+                        empty_metrics = {"semantic_retrieval": 0.0, "embedding": 0.0, "vector_search": 0.0, "bm25_retrieval": 0.0, "merge": 0.0}
+                        empty_counts = {"semantic_count": 0, "bm25_count": 0, "merged_count": 0, "duplicates_removed": 0}
+                        if defer_rerank:
+                            failed_res = ([], empty_metrics, empty_counts, [], [])
+                        else:
+                            failed_res = ([], empty_metrics, empty_counts, [], [], [])
+                        hop_results_unordered.append((h_idx, sq, failed_res))
+
+            hop_results = sorted(hop_results_unordered, key=lambda x: x[0])
+            dispatch_mode = "concurrent"
+            concurrent_ops = len(sub_queries)
+        else:
+            hop_results = []
+            for h_idx, sq in enumerate(sub_queries, start=1):
+                try:
+                    res_tuple = _fetch_hop(h_idx, sq)
+                    hop_results.append(res_tuple)
+                except Exception as exc:
+                    RAGTracer.log_error(state.trace_id, f"Sequential sub-query hop {h_idx} ('{sq}') failed: {exc}")
+                    empty_metrics = {"semantic_retrieval": 0.0, "embedding": 0.0, "vector_search": 0.0, "bm25_retrieval": 0.0, "merge": 0.0}
+                    empty_counts = {"semantic_count": 0, "bm25_count": 0, "merged_count": 0, "duplicates_removed": 0}
+                    if defer_rerank:
+                        failed_res = ([], empty_metrics, empty_counts, [], [])
+                    else:
+                        failed_res = ([], empty_metrics, empty_counts, [], [], [])
+                    hop_results.append((h_idx, sq, failed_res))
+
+            dispatch_mode = "sequential"
+            concurrent_ops = 1
+
+        total_multi_retrieval_wall_time = round(time.perf_counter() - t0_multi_retrieval, 4)
+
+        for hop_number, sub_query, res_tuple in hop_results:
+            if defer_rerank:
+                (
+                    sub_docs,
+                    hop_metrics,
+                    hop_counts,
+                    semantic_candidates,
+                    bm25_candidates,
+                ) = res_tuple
+            else:
+                (
+                    sub_docs,
+                    hop_metrics,
+                    hop_counts,
+                    semantic_candidates,
+                    bm25_candidates,
+                    _,
+                ) = res_tuple
+
+            accumulated_metrics["semantic_retrieval"] += hop_metrics.get("semantic_retrieval", 0.0) or 0.0
+            accumulated_metrics["embedding"] += hop_metrics.get("embedding", 0.0) or 0.0
+            accumulated_metrics["vector_search"] += hop_metrics.get("vector_search", 0.0) or 0.0
+            accumulated_metrics["semantic_postprocessing"] += hop_metrics.get("semantic_postprocessing", 0.0) or 0.0
+            accumulated_metrics["bm25_retrieval"] += hop_metrics.get("bm25_retrieval", 0.0) or 0.0
+            accumulated_metrics["merge"] += hop_metrics.get("merge", 0.0) or 0.0
+            if not defer_rerank:
+                accumulated_metrics["reranking"] += hop_metrics.get("reranking", 0.0) or 0.0
+                accumulated_metrics["reranker_inference"] += hop_metrics.get("reranker_inference", 0.0) or 0.0
+            if hop_metrics.get("embedding_cache_hit"):
+                accumulated_metrics["embedding_cache_hits"] += 1
 
             accumulated_counts["semantic_count"] += (
                 hop_counts.get(
@@ -267,6 +368,7 @@ class RAGNodes:
                         document.page_content
                         for document in sub_docs
                     ],
+                    hop_metrics,
                 )
             )
 
@@ -274,6 +376,16 @@ class RAGNodes:
                 state.trace_id,
                 sub_query,
                 semantic_candidates,
+            )
+
+            RAGTracer.log_semantic_performance(
+                state.trace_id,
+                sub_query,
+                hop_metrics.get("semantic_retrieval", 0.0),
+                embedding=hop_metrics.get("embedding"),
+                vector_search=hop_metrics.get("vector_search"),
+                postprocessing=hop_metrics.get("semantic_postprocessing"),
+                cache_hit=hop_metrics.get("embedding_cache_hit"),
             )
 
             RAGTracer.log_bm25_retrieval(
@@ -358,9 +470,12 @@ class RAGNodes:
             top_k=self.retriever.top_k_final,
         )
 
-        accumulated_metrics["reranking"] += (
-            final_rerank_time
-        )
+        if defer_rerank:
+            accumulated_metrics["reranking"] = final_rerank_time
+            accumulated_metrics["reranker_inference"] = final_rerank_time
+        else:
+            accumulated_metrics["reranking"] += final_rerank_time
+            accumulated_metrics["reranker_inference"] += final_rerank_time
 
         accumulated_counts["reranked_count"] = len(
             final_docs
@@ -375,8 +490,39 @@ class RAGNodes:
 
         metrics = dict(state.metrics)
 
-        metrics["semantic_retrieval"] = round(
-            accumulated_metrics["semantic_retrieval"],
+        metrics["dispatch_mode"] = dispatch_mode
+        metrics["concurrent_operations"] = concurrent_ops
+        metrics["total_multi_retrieval_wall_time"] = total_multi_retrieval_wall_time
+        metrics["embedding_sum"] = round(
+            accumulated_metrics["embedding"],
+            4,
+        )
+        metrics["embedding_wall_time"] = (
+            total_multi_retrieval_wall_time
+            if dispatch_mode == "concurrent"
+            else round(accumulated_metrics["embedding"], 4)
+        )
+
+        if dispatch_mode == "concurrent":
+            metrics["semantic_retrieval"] = total_multi_retrieval_wall_time
+            metrics["embedding"] = total_multi_retrieval_wall_time
+        else:
+            metrics["semantic_retrieval"] = round(
+                accumulated_metrics["semantic_retrieval"],
+                4,
+            )
+            metrics["embedding"] = round(
+                accumulated_metrics["embedding"],
+                4,
+            )
+
+        metrics["vector_search"] = round(
+            accumulated_metrics["vector_search"],
+            4,
+        )
+
+        metrics["semantic_postprocessing"] = round(
+            accumulated_metrics["semantic_postprocessing"],
             4,
         )
 
@@ -385,10 +531,29 @@ class RAGNodes:
             4,
         )
 
+        metrics["merge"] = round(
+            accumulated_metrics["merge"],
+            4,
+        )
+
         metrics["reranking"] = round(
             accumulated_metrics["reranking"],
             4,
         )
+
+        metrics["reranker_inference"] = round(
+            accumulated_metrics["reranker_inference"],
+            4,
+        )
+
+        metrics["embedding_cache_hit"] = (
+            accumulated_metrics["embedding_cache_hits"] > 0
+        )
+
+        within_hop_duplicates = accumulated_counts["duplicates_removed"]
+        total_hop_merged = accumulated_counts["merged_count"]
+        cross_hop_duplicates = max(0, total_hop_merged - len(merged_documents))
+        total_duplicates_removed = within_hop_duplicates + cross_hop_duplicates
 
         metrics["semantic_count"] = (
             accumulated_counts["semantic_count"]
@@ -406,11 +571,13 @@ class RAGNodes:
             accumulated_counts["reranked_count"]
         )
 
-        metrics["duplicates_removed"] = (
-            accumulated_counts["duplicates_removed"]
-        )
+        metrics["within_hop_duplicates"] = within_hop_duplicates
+        metrics["cross_hop_duplicates"] = cross_hop_duplicates
+        metrics["duplicates_removed"] = total_duplicates_removed
 
         metrics["max_rerank_score"] = final_max_score
+
+
 
         RAGTracer.log_multi_hop(
             state.trace_id,
@@ -1128,9 +1295,10 @@ class RAGNodes:
 
         document_ids = (
             state.resolved_document_ids
-            if state.resolved_document_ids
+            if (state.resolved_document_ids or state.requires_document_resolution)
             else None
         )
+
 
         (
             retrieved_docs,
@@ -1183,6 +1351,16 @@ class RAGNodes:
             state.trace_id,
             search_query,
             semantic_candidates,
+        )
+
+        RAGTracer.log_semantic_performance(
+            state.trace_id,
+            search_query,
+            retrieval_metrics.get("semantic_retrieval", 0.0),
+            embedding=retrieval_metrics.get("embedding"),
+            vector_search=retrieval_metrics.get("vector_search"),
+            postprocessing=retrieval_metrics.get("semantic_postprocessing"),
+            cache_hit=retrieval_metrics.get("embedding_cache_hit"),
         )
 
         RAGTracer.log_bm25_retrieval(

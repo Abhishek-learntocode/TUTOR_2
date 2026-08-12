@@ -111,6 +111,31 @@ class RAGTracer:
         emit(msg)
 
     @staticmethod
+    def log_semantic_performance(
+        trace_id: str,
+        query: str,
+        total: float,
+        embedding=None,
+        vector_search=None,
+        postprocessing=None,
+        cache_hit=None,
+    ):
+        def fmt(value):
+            return "not instrumented" if value is None else f"{float(value):.4f}s"
+
+        cache_value = "unknown" if cache_hit is None else str(bool(cache_hit)).lower()
+        msg = (
+            f"[SEMANTIC PERFORMANCE] trace_id={trace_id}\n\n"
+            f"Query:\n\"{query}\"\n\n"
+            f"Total:\n{fmt(total)}\n\n"
+            f"Embedding:\n{fmt(embedding)}\n\n"
+            f"Vector search:\n{fmt(vector_search)}\n\n"
+            f"Post-processing:\n{fmt(postprocessing)}\n\n"
+            f"Embedding cache hit:\n{cache_value}\n"
+        )
+        emit(msg)
+
+    @staticmethod
     def log_bm25_retrieval(trace_id: str, query: str, candidates: list):
         top_str = "\n".join([f"{i+1}. {c.metadata.get('chunk_id', 'chunk_'+str(i))} ({c.metadata.get('source_filename', 'doc')})" for i, c in enumerate(candidates[:5])])
         msg = (
@@ -146,6 +171,9 @@ class RAGTracer:
 
     @staticmethod
     def log_multi_hop(trace_id: str, sub_queries: list[str], hops: list):
+        def fmt(value):
+            return "n/a" if value is None else f"{float(value):.4f}s"
+
         sub_str = "\n".join([f"{i+1}. \"{sq}\"" for i, sq in enumerate(sub_queries)])
         msg = (
             f"[QUERY ROUTING] trace_id={trace_id}\n\n"
@@ -155,12 +183,31 @@ class RAGTracer:
         )
         emit(msg)
 
-        for idx, (sq, chunks) in enumerate(hops, 1):
-            hop_msg = (
-                f"[HOP {idx}] trace_id={trace_id}\n"
-                f"Query:\n\"{sq}\"\n\n"
-                f"Retrieved:\n{len(chunks)} chunks\n"
-            )
+        for idx, item in enumerate(hops, 1):
+            if len(item) == 3:
+                sq, chunks, h_metrics = item
+                c_hit = "unknown" if h_metrics.get("embedding_cache_hit") is None else str(bool(h_metrics.get("embedding_cache_hit"))).lower()
+                hop_msg = (
+                    f"[HOP {idx}] trace_id={trace_id}\n"
+                    f"Query:\n\"{sq}\"\n\n"
+                    f"Retrieved:\n{len(chunks)} chunks\n\n"
+                    f"Hop Latency Breakdown:\n"
+                    f"  Semantic: {fmt(h_metrics.get('semantic_retrieval'))}\n"
+                    f"    Embedding: {fmt(h_metrics.get('embedding'))}\n"
+                    f"    Vector search: {fmt(h_metrics.get('vector_search'))}\n"
+                    f"    Post-processing: {fmt(h_metrics.get('semantic_postprocessing'))}\n"
+                    f"    Cache hit: {c_hit}\n"
+                    f"  BM25: {fmt(h_metrics.get('bm25_retrieval'))}\n"
+                    f"  Merge: {fmt(h_metrics.get('merge'))}\n"
+                    f"  Reranking: {fmt(h_metrics.get('reranking'))}\n"
+                )
+            else:
+                sq, chunks = item[0], item[1]
+                hop_msg = (
+                    f"[HOP {idx}] trace_id={trace_id}\n"
+                    f"Query:\n\"{sq}\"\n\n"
+                    f"Retrieved:\n{len(chunks)} chunks\n"
+                )
             emit(hop_msg)
 
     @staticmethod
@@ -218,6 +265,15 @@ class RAGTracer:
         gen = m.get("llm_generation", 0.0)
         total = m.get("total_latency", sum([q_analysis, doc_res, sem_ret, bm25_ret, rerank, gen]))
 
+        embedding = m.get("embedding")
+        vector_search = m.get("vector_search")
+        semantic_postprocessing = m.get("semantic_postprocessing")
+        merge = m.get("merge")
+        reranker_inference = m.get("reranker_inference")
+
+        def fmt(value):
+            return "n/a" if value is None else f"{float(value):.4f}s"
+
         ans_display = full_answer if full_answer else answer_status
 
         msg = (
@@ -239,8 +295,13 @@ class RAGTracer:
             f"  Query analysis: {q_analysis:.4f}s\n"
             f"  Document resolution: {doc_res:.4f}s\n"
             f"  Semantic retrieval: {sem_ret:.4f}s\n"
+            f"    Embedding: {fmt(embedding)}\n"
+            f"    Vector search: {fmt(vector_search)}\n"
+            f"    Post-processing: {fmt(semantic_postprocessing)}\n"
             f"  BM25 retrieval: {bm25_ret:.4f}s\n"
+            f"  Merge: {fmt(merge)}\n"
             f"  Reranking: {rerank:.4f}s\n"
+            f"    Reranker inference: {fmt(reranker_inference)}\n"
             f"  Generation: {gen:.4f}s\n"
             f"  Total: {total:.4f}s\n\n"
             f"Status:\n{status}\n"

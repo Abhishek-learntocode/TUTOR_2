@@ -27,6 +27,9 @@ class Settings(BaseSettings):
     # Two-Stage Retrieval Configuration
     top_k_candidates: int = 15
     top_k_final: int = 4
+    multi_hop_defer_rerank: bool = True
+    multi_hop_parallel_retrieval: bool = True
+    max_parallel_workers: int = 4
 
     # Backend API Configuration
     backend_host: str = "127.0.0.1"

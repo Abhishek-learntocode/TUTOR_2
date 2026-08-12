@@ -42,12 +42,12 @@ class Retriever:
         self.top_k_final = top_k_final
         self.min_rerank_score = min_rerank_score
 
-    def retrieve_documents(
+    def retrieve_candidates(
         self,
         query: str,
         document_ids: list[str] | None = None,
     ) -> tuple:
-        """Run semantic retrieval, BM25, merge, and reranking."""
+        """Run semantic retrieval, BM25, and merge WITHOUT reranking."""
 
         metrics = {}
 
@@ -57,20 +57,53 @@ class Retriever:
 
         start = time.perf_counter()
 
-        if document_ids:
-            semantic_candidates = (
-                self.vector_store.similarity_search_scoped(
-                    query,
-                    document_ids=document_ids,
-                    k=self.top_k_candidates,
+        if document_ids is not None:
+            if not document_ids:
+                semantic_candidates = []
+                metrics["embedding"] = 0.0
+                metrics["vector_search"] = 0.0
+                metrics["semantic_postprocessing"] = 0.0
+                metrics["embedding_cache_hit"] = False
+            else:
+                semantic_candidates = (
+                    self.vector_store.similarity_search_scoped(
+                        query,
+                        document_ids=document_ids,
+                        k=self.top_k_candidates,
+                    )
                 )
-            )
+                vector_metrics = getattr(
+                    self.vector_store,
+                    "last_retrieval_metrics",
+                    {},
+                ) or {}
+                metrics["embedding"] = vector_metrics.get("embedding")
+                metrics["vector_search"] = vector_metrics.get("vector_search")
+                metrics["semantic_postprocessing"] = vector_metrics.get(
+                    "semantic_postprocessing"
+                )
+                metrics["embedding_cache_hit"] = vector_metrics.get(
+                    "embedding_cache_hit"
+                )
         else:
             semantic_candidates = (
                 self.vector_store.similarity_search(
                     query,
                     k=self.top_k_candidates,
                 )
+            )
+            vector_metrics = getattr(
+                self.vector_store,
+                "last_retrieval_metrics",
+                {},
+            ) or {}
+            metrics["embedding"] = vector_metrics.get("embedding")
+            metrics["vector_search"] = vector_metrics.get("vector_search")
+            metrics["semantic_postprocessing"] = vector_metrics.get(
+                "semantic_postprocessing"
+            )
+            metrics["embedding_cache_hit"] = vector_metrics.get(
+                "embedding_cache_hit"
             )
 
         metrics["semantic_retrieval"] = round(
@@ -84,14 +117,17 @@ class Retriever:
 
         start = time.perf_counter()
 
-        if document_ids:
-            bm25_candidates = (
-                self.bm25_retriever.retrieve_scoped(
-                    query,
-                    document_ids=document_ids,
-                    top_k=self.top_k_candidates,
+        if document_ids is not None:
+            if not document_ids:
+                bm25_candidates = []
+            else:
+                bm25_candidates = (
+                    self.bm25_retriever.retrieve_scoped(
+                        query,
+                        document_ids=document_ids,
+                        top_k=self.top_k_candidates,
+                    )
                 )
-            )
         else:
             bm25_candidates = (
                 self.bm25_retriever.retrieve(
@@ -99,6 +135,7 @@ class Retriever:
                     top_k=self.top_k_candidates,
                 )
             )
+
 
         metrics["bm25_retrieval"] = round(
             time.perf_counter() - start,
@@ -109,10 +146,20 @@ class Retriever:
         # Merge
         # --------------------------------------------------
 
+        merge_start = time.perf_counter()
+
         merged_candidates = self.merge_documents(
             semantic_candidates,
             bm25_candidates,
         )
+
+        metrics["merge"] = round(
+            time.perf_counter() - merge_start,
+            4,
+        )
+
+        metrics["reranking"] = 0.0
+        metrics["reranker_inference"] = 0.0
 
         total_candidates = (
             len(semantic_candidates)
@@ -120,29 +167,41 @@ class Retriever:
         )
 
         counts = {
-            "semantic_count": len(
-                semantic_candidates
-            ),
-            "bm25_count": len(
-                bm25_candidates
-            ),
-            "merged_count": len(
-                merged_candidates
-            ),
+            "semantic_count": len(semantic_candidates),
+            "bm25_count": len(bm25_candidates),
+            "merged_count": len(merged_candidates),
             "duplicates_removed": (
-                total_candidates
-                - len(merged_candidates)
+                total_candidates - len(merged_candidates)
             ),
+            "reranked_count": 0,
         }
 
-        # --------------------------------------------------
-        # No candidates
-        # --------------------------------------------------
+        return (
+            merged_candidates,
+            metrics,
+            counts,
+            semantic_candidates,
+            bm25_candidates,
+        )
+
+    def retrieve_documents(
+        self,
+        query: str,
+        document_ids: list[str] | None = None,
+    ) -> tuple:
+        """Run semantic retrieval, BM25, merge, and reranking (single-hop convenience method)."""
+        (
+            merged_candidates,
+            metrics,
+            counts,
+            semantic_candidates,
+            bm25_candidates,
+        ) = self.retrieve_candidates(query, document_ids=document_ids)
 
         if not merged_candidates:
             metrics["reranking"] = 0.0
+            metrics["reranker_inference"] = 0.0
             metrics["max_rerank_score"] = -10.0
-
             counts["reranked_count"] = 0
 
             return (
@@ -154,24 +213,17 @@ class Retriever:
                 merged_candidates,
             )
 
-        # --------------------------------------------------
-        # Reranking
-        # --------------------------------------------------
-
-        final_docs, rerank_time, max_score = (
-            self.rerank_documents(
-                query,
-                merged_candidates,
-                top_k=self.top_k_final,
-            )
+        final_docs, rerank_time, max_score = self.rerank_documents(
+            query,
+            merged_candidates,
+            top_k=self.top_k_final,
         )
 
         metrics["reranking"] = rerank_time
+        metrics["reranker_inference"] = rerank_time
         metrics["max_rerank_score"] = max_score
 
-        counts["reranked_count"] = len(
-            final_docs
-        )
+        counts["reranked_count"] = len(final_docs)
 
         return (
             final_docs,

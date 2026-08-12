@@ -14,7 +14,10 @@ class QueryResponse(BaseModel):
     answer: str
     context: list[str] = Field(default_factory=list)
     sources: list[SourceCitation] = Field(default_factory=list)
-    metrics: dict[str, float] = Field(default_factory=dict)
+    metrics: dict[str, float | str | int | bool] = Field(
+        default_factory=dict
+    )
+
 
 
 class DocumentUploadResponse(BaseModel):
