@@ -1,0 +1,92 @@
+{
+  "all_passed": true,
+  "tests": [
+    {
+      "test_id": "test_1_general_retrieval",
+      "query": "What is virtual memory?",
+      "allowed_documents": null,
+      "retrieved_documents": [
+        "sample_exam_inspect.txt",
+        "OS_Notes.txt",
+        "sample_exam.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "answer_snippet": "Virtual Memory is created as an illusion of a large main memory, which allows pr",
+      "passed": true
+    },
+    {
+      "test_id": "test_2_explicit_doc_missing_info",
+      "query": "According to OS_Notes.txt, explain paging.",
+      "allowed_documents": [
+        "OS_Notes.txt"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "answer_snippet": "I cannot find the answer in the provided context.",
+      "passed": true
+    },
+    {
+      "test_id": "test_3_explicit_doc_available_info",
+      "query": "According to OS_Notes.txt, what is virtual memory?",
+      "allowed_documents": [
+        "OS_Notes.txt"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "answer_snippet": "According to OS_Notes.txt, virtual memory creates an illusion of a large main me",
+      "passed": true
+    },
+    {
+      "test_id": "test_4_explicit_paging_doc",
+      "query": "According to sample_routing_doc.txt, explain paging.",
+      "allowed_documents": [
+        "sample_routing_doc.txt"
+      ],
+      "retrieved_documents": [
+        "sample_routing_doc.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "answer_snippet": "According to the provided context, paging is a memory management scheme that eli",
+      "passed": true
+    },
+    {
+      "test_id": "test_5_multi_doc_comparison",
+      "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+      "allowed_documents": [
+        "OS_Notes.txt",
+        "sample_exam.txt"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt",
+        "sample_exam.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "answer_snippet": "Error from LLM Provider (openrouter): OpenRouter HTTP 429: {\"error\":{\"message\":\"",
+      "passed": true
+    },
+    {
+      "test_id": "test_6_no_doc_ref_paging",
+      "query": "Explain paging.",
+      "allowed_documents": null,
+      "retrieved_documents": [
+        "sample_routing_doc.txt",
+        "sample_exam_inspect.txt",
+        "sample_exam.txt",
+        "sample_exam_rag.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "answer_snippet": "Virtual memory paging allows secondary memory to be addressed as main memory, wh",
+      "passed": true
+    }
+  ]
+}

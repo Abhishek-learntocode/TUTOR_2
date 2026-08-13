@@ -1,0 +1,124 @@
+{
+  "source_documents": [
+    {
+      "filename": "DBMS_Book.txt",
+      "size_bytes": 166,
+      "lines_count": 5,
+      "chars_count": 162,
+      "snippet": "'# Database Systems Book\\n\\nACID properties stand for Atomicity, Consistency, Isolation, and Durability.\\n\\nSQL is structured query language used for datab'"
+    },
+    {
+      "filename": "OS_Notes.txt",
+      "size_bytes": 175,
+      "lines_count": 5,
+      "chars_count": 171,
+      "snippet": "'# Operating Systems Notes\\n\\nSystem calls provide an interface between a process and the operating system kernel.\\n\\nVirtual memory creates an illusion of'"
+    },
+    {
+      "filename": "sample_book.txt",
+      "size_bytes": 249,
+      "lines_count": 7,
+      "chars_count": 243,
+      "snippet": "'# Chapter 1: Introduction to Operating Systems\\n\\nAn operating system acts as an intermediary between a user and computer hardware.\\n\\n## Section 1.1: Sys'"
+    },
+    {
+      "filename": "sample_exam.txt",
+      "size_bytes": 304,
+      "lines_count": 8,
+      "chars_count": 297,
+      "snippet": "'Q1. What is process synchronization? [5 Marks]\\nA. Method to prevent race conditions\\nB. File transfer protocol\\nC. Memory allocation strategy\\nD. Network'"
+    },
+    {
+      "filename": "sample_exam_inspect.txt",
+      "size_bytes": 340,
+      "lines_count": 8,
+      "chars_count": 333,
+      "snippet": "'Q1. What is Virtual Memory in OS? [5 Marks]\\nA. A memory management technique that creates an illusion of a large main memory.\\nB. Hardware storage driv'"
+    },
+    {
+      "filename": "sample_exam_rag.txt",
+      "size_bytes": 376,
+      "lines_count": 8,
+      "chars_count": 369,
+      "snippet": "'Q1. What is a Deadlock in operating systems? [5 Marks]\\nA. A situation where a set of processes are blocked because each process holds a resource and w'"
+    },
+    {
+      "filename": "sample_hybrid_test.txt",
+      "size_bytes": 1470,
+      "lines_count": 41,
+      "chars_count": 1430,
+      "snippet": "'Item #1: Generic textbook paragraph about OS concepts number 1.\\n\\nItem #2: Generic textbook paragraph about OS concepts number 2.\\n\\nItem #3: Generic tex'"
+    },
+    {
+      "filename": "sample_routing_doc.txt",
+      "size_bytes": 278,
+      "lines_count": 7,
+      "chars_count": 272,
+      "snippet": "'# Chapter 4: CPU Scheduling\\n\\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\\n\\n# Chapter 7: Memo'"
+    },
+    {
+      "filename": "sample_test.txt",
+      "size_bytes": 924,
+      "lines_count": 9,
+      "chars_count": 916,
+      "snippet": "'The Tutor RAG system is a lightweight application built using FastAPI, LangGraph, and Streamlit.\\nIt uses Ollama nomic-embed-text for creating vector e'"
+    },
+    {
+      "filename": "sample_two_stage.txt",
+      "size_bytes": 1468,
+      "lines_count": 41,
+      "chars_count": 1428,
+      "snippet": "'Item #1: This is informational chunk number 1 covering topic 1.\\n\\nItem #2: This is informational chunk number 2 covering topic 2.\\n\\nItem #3: This is inf'"
+    }
+  ],
+  "vector_store": {
+    "store_path": "data/vector_store",
+    "total_chunks": 1,
+    "chunks_per_file": {
+      "OS_Notes.txt": 1
+    }
+  },
+  "dataset_total_queries": 35,
+  "sample_queries": [
+    {
+      "id": "factual_001",
+      "category": "factual",
+      "query": "What is virtual memory?",
+      "expected_behavior": "answer_from_context",
+      "document_scope": null,
+      "notes": "Simple factual question about virtual memory."
+    },
+    {
+      "id": "factual_002",
+      "category": "factual",
+      "query": "What is a page fault?",
+      "expected_behavior": "answer_from_context",
+      "document_scope": null,
+      "notes": "Simple factual question about page fault definition."
+    },
+    {
+      "id": "factual_003",
+      "category": "factual",
+      "query": "What is the function of the Memory Management Unit (MMU)?",
+      "expected_behavior": "answer_from_context",
+      "document_scope": null,
+      "notes": "Simple factual hardware component question."
+    },
+    {
+      "id": "concept_001",
+      "category": "conceptual",
+      "query": "Explain how paging works in operating systems.",
+      "expected_behavior": "answer_from_context",
+      "document_scope": null,
+      "notes": "Conceptual explanation of paging."
+    },
+    {
+      "id": "concept_002",
+      "category": "conceptual",
+      "query": "Explain how address translation is performed in virtual memory systems.",
+      "expected_behavior": "answer_from_context",
+      "document_scope": null,
+      "notes": "Conceptual explanation of address translation."
+    }
+  ]
+}

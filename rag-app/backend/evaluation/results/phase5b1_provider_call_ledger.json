@@ -1,0 +1,1416 @@
+[
+  {
+    "request_id": "ollama-1ac3d047",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.3258,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 241,
+      "output_tokens": 28,
+      "total_tokens": 269
+    }
+  },
+  {
+    "request_id": "ollama-7923f763",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.0963,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 266,
+      "output_tokens": 100,
+      "total_tokens": 366
+    }
+  },
+  {
+    "request_id": "ollama-77d4edfa",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5314,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 246,
+      "output_tokens": 25,
+      "total_tokens": 271
+    }
+  },
+  {
+    "request_id": "ollama-09c95712",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.3525,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 121,
+      "output_tokens": 11,
+      "total_tokens": 132
+    }
+  },
+  {
+    "request_id": "ollama-e5133b8a",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.3693,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 248,
+      "output_tokens": 35,
+      "total_tokens": 283
+    }
+  },
+  {
+    "request_id": "ollama-33cfee9d",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 0.2608,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 123,
+      "output_tokens": 19,
+      "total_tokens": 142
+    }
+  },
+  {
+    "request_id": "ollama-58b5dfb9",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 0.3052,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 246,
+      "output_tokens": 25,
+      "total_tokens": 271
+    }
+  },
+  {
+    "request_id": "ollama-7a235ce6",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 0.232,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 144,
+      "output_tokens": 19,
+      "total_tokens": 163
+    }
+  },
+  {
+    "request_id": "ollama-91ce4ddc",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 0.3808,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 252,
+      "output_tokens": 43,
+      "total_tokens": 295
+    }
+  },
+  {
+    "request_id": "gen-1786613884-TdVAWk2xtPeFUNht8Gfz",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "gen-1786613884-TdVAWk2xtPeFUNht8Gfz",
+    "latency_sec": 17.7209,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 206,
+      "completion_tokens": 572,
+      "total_tokens": 778,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 562,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-6ecf663e",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6768,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 240,
+      "output_tokens": 30,
+      "total_tokens": 270
+    }
+  },
+  {
+    "request_id": "ollama-ca497782",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.452,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 300,
+      "output_tokens": 14,
+      "total_tokens": 314
+    }
+  },
+  {
+    "request_id": "ollama-79bf5369",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5674,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 241,
+      "output_tokens": 28,
+      "total_tokens": 269
+    }
+  },
+  {
+    "request_id": "ollama-3807b751",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.7174,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 266,
+      "output_tokens": 53,
+      "total_tokens": 319
+    }
+  },
+  {
+    "request_id": "ollama-1e4c3764",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5563,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 242,
+      "output_tokens": 21,
+      "total_tokens": 263
+    }
+  },
+  {
+    "request_id": "ollama-181636c5",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5546,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 409,
+      "output_tokens": 22,
+      "total_tokens": 431
+    }
+  },
+  {
+    "request_id": "ollama-319812d4",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6575,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 250,
+      "output_tokens": 28,
+      "total_tokens": 278
+    }
+  },
+  {
+    "request_id": "ollama-dad25872",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5665,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 385,
+      "output_tokens": 28,
+      "total_tokens": 413
+    }
+  },
+  {
+    "request_id": "ollama-92d85dc4",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5818,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 245,
+      "output_tokens": 23,
+      "total_tokens": 268
+    }
+  },
+  {
+    "request_id": "ollama-6f73798b",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 4.5449,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 363,
+      "output_tokens": 322,
+      "total_tokens": 685
+    }
+  },
+  {
+    "request_id": "ollama-315592d2",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.334,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 248,
+      "output_tokens": 25,
+      "total_tokens": 273
+    }
+  },
+  {
+    "request_id": "ollama-977b88f4",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.0424,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 357,
+      "output_tokens": 82,
+      "total_tokens": 439
+    }
+  },
+  {
+    "request_id": "ollama-c440bd30",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.1108,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 247,
+      "output_tokens": 22,
+      "total_tokens": 269
+    }
+  },
+  {
+    "request_id": "ollama-8e58f7fd",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5164,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 494,
+      "output_tokens": 11,
+      "total_tokens": 505
+    }
+  },
+  {
+    "request_id": "ollama-9eb903b0",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6979,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 242,
+      "output_tokens": 21,
+      "total_tokens": 263
+    }
+  },
+  {
+    "request_id": "ollama-729ded8d",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.4782,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 367,
+      "output_tokens": 146,
+      "total_tokens": 513
+    }
+  },
+  {
+    "request_id": "ollama-90851a47",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.8019,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 248,
+      "output_tokens": 61,
+      "total_tokens": 309
+    }
+  },
+  {
+    "request_id": "ollama-a2c8422f",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.3409,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 367,
+      "output_tokens": 138,
+      "total_tokens": 505
+    }
+  },
+  {
+    "request_id": "ollama-e3bc91b7",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.7351,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 253,
+      "output_tokens": 33,
+      "total_tokens": 286
+    }
+  },
+  {
+    "request_id": "gen-1786614232-OGMnkvxa9oMqmDXi1K2J",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "google/gemma-4-26b-a4b-it:free",
+    "openrouter_request_id": "gen-1786614232-OGMnkvxa9oMqmDXi1K2J",
+    "latency_sec": 7.1137,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 581,
+      "completion_tokens": 46,
+      "total_tokens": 627,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 2.502e-05,
+        "upstream_inference_prompt_cost": 1.743e-05,
+        "upstream_inference_completions_cost": 7.59e-06
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-1f6aad8b",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.3781,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 254,
+      "output_tokens": 34,
+      "total_tokens": 288
+    }
+  },
+  {
+    "request_id": "gen-1786614277-EJWu4uZGruWL9Nc1saww",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "liquid/lfm-2.5-2.6b:free",
+    "openrouter_request_id": "gen-1786614277-EJWu4uZGruWL9Nc1saww",
+    "latency_sec": 93.6379,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 501,
+      "completion_tokens": 1252,
+      "total_tokens": 1753,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 1313,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-72b8af78",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.639,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 250,
+      "output_tokens": 44,
+      "total_tokens": 294
+    }
+  },
+  {
+    "request_id": "gen-1786614433-ejPIZSEQATIMIziTCWZx",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-3.5-content-safety:free",
+    "openrouter_request_id": "gen-1786614433-ejPIZSEQATIMIziTCWZx",
+    "latency_sec": 4.9786,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 832,
+      "completion_tokens": 301,
+      "total_tokens": 1133,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 336,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-cc2cd4b9",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5666,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 249,
+      "output_tokens": 37,
+      "total_tokens": 286
+    }
+  },
+  {
+    "request_id": "ollama-6772a6e7",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.8108,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 124,
+      "output_tokens": 69,
+      "total_tokens": 193
+    }
+  },
+  {
+    "request_id": "ollama-654f810a",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5613,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 250,
+      "output_tokens": 28,
+      "total_tokens": 278
+    }
+  },
+  {
+    "request_id": "ollama-f6bae51a",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.459,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 173,
+      "output_tokens": 14,
+      "total_tokens": 187
+    }
+  },
+  {
+    "request_id": "ollama-68418756",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5402,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 250,
+      "output_tokens": 29,
+      "total_tokens": 279
+    }
+  },
+  {
+    "request_id": "ollama-4fb2036e",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.4277,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 125,
+      "output_tokens": 11,
+      "total_tokens": 136
+    }
+  },
+  {
+    "request_id": "ollama-7cebba8e",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5561,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 248,
+      "output_tokens": 27,
+      "total_tokens": 275
+    }
+  },
+  {
+    "request_id": "ollama-be4f76fd",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6969,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 123,
+      "output_tokens": 51,
+      "total_tokens": 174
+    }
+  },
+  {
+    "request_id": "ollama-ea3fd774",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6472,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 243,
+      "output_tokens": 35,
+      "total_tokens": 278
+    }
+  },
+  {
+    "request_id": "gen-1786614559-oWLmSBTrSgXfNGfuhQ4Q",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-3-super-120b-a12b:free",
+    "openrouter_request_id": "gen-1786614559-oWLmSBTrSgXfNGfuhQ4Q",
+    "latency_sec": 20.1365,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 330,
+      "completion_tokens": 301,
+      "total_tokens": 631,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 245,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-977567bc",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6551,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 244,
+      "output_tokens": 42,
+      "total_tokens": 286
+    }
+  },
+  {
+    "request_id": "gen-1786614624-KDWTpENc3R3V6qRbtWB0",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-3-nano-30b-a3b:free",
+    "openrouter_request_id": "gen-1786614624-KDWTpENc3R3V6qRbtWB0",
+    "latency_sec": 4.1021,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 451,
+      "completion_tokens": 96,
+      "total_tokens": 547,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 112,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-0354d164",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6958,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 243,
+      "output_tokens": 40,
+      "total_tokens": 283
+    }
+  },
+  {
+    "request_id": "gen-1786614680-UB1aMzmismSlPRZhhWMR",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-3.5-content-safety:free",
+    "openrouter_request_id": "gen-1786614680-UB1aMzmismSlPRZhhWMR",
+    "latency_sec": 4.4257,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 1063,
+      "completion_tokens": 259,
+      "total_tokens": 1322,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 303,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-2b523ea5",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.592,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 248,
+      "output_tokens": 27,
+      "total_tokens": 275
+    }
+  },
+  {
+    "request_id": "gen-1786614729-9hqerAKCvrtuz1tgFpq7",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "google/gemma-4-26b-a4b-it:free",
+    "openrouter_request_id": "gen-1786614729-9hqerAKCvrtuz1tgFpq7",
+    "latency_sec": 15.715,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 694,
+      "completion_tokens": 11,
+      "total_tokens": 705,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 2.2635e-05,
+        "upstream_inference_prompt_cost": 2.082e-05,
+        "upstream_inference_completions_cost": 1.815e-06
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-77d3e931",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5483,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 246,
+      "output_tokens": 25,
+      "total_tokens": 271
+    }
+  },
+  {
+    "request_id": "ollama-dca902ff",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.8097,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 473,
+      "output_tokens": 11,
+      "total_tokens": 484
+    }
+  },
+  {
+    "request_id": "ollama-a20845fd",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6908,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 250,
+      "output_tokens": 24,
+      "total_tokens": 274
+    }
+  },
+  {
+    "request_id": "ollama-f9d242f6",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5565,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 615,
+      "output_tokens": 11,
+      "total_tokens": 626
+    }
+  },
+  {
+    "request_id": "ollama-afeba975",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6021,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 244,
+      "output_tokens": 23,
+      "total_tokens": 267
+    }
+  },
+  {
+    "request_id": "ollama-008e62fb",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.4414,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 521,
+      "output_tokens": 11,
+      "total_tokens": 532
+    }
+  },
+  {
+    "request_id": "ollama-c8d551a7",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5667,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 254,
+      "output_tokens": 33,
+      "total_tokens": 287
+    }
+  },
+  {
+    "request_id": "gen-1786614901-iQuhAQF3KodgZAwdVm3C",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "google/gemma-4-31b-it:free",
+    "openrouter_request_id": "gen-1786614901-iQuhAQF3KodgZAwdVm3C",
+    "latency_sec": 3.4947,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 575,
+      "completion_tokens": 35,
+      "total_tokens": 610,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-316b3f0f",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.7318,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 256,
+      "output_tokens": 35,
+      "total_tokens": 291
+    }
+  },
+  {
+    "request_id": "gen-1786614949-jt2jwO0lEMa81fwH5Sby",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "cohere/north-mini-code:free",
+    "openrouter_request_id": "gen-1786614949-jt2jwO0lEMa81fwH5Sby",
+    "latency_sec": 8.9473,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 498,
+      "completion_tokens": 333,
+      "total_tokens": 831,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 388,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-dd13505f",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.7152,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 254,
+      "output_tokens": 34,
+      "total_tokens": 288
+    }
+  },
+  {
+    "request_id": "ollama-b4ff0bab",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5543,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 460,
+      "output_tokens": 11,
+      "total_tokens": 471
+    }
+  },
+  {
+    "request_id": "ollama-04a89f71",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.648,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 252,
+      "output_tokens": 43,
+      "total_tokens": 295
+    }
+  },
+  {
+    "request_id": "gen-1786615019-mL1lbVoEgpsCPqjWnpaE",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "openai/gpt-oss-20b:free",
+    "openrouter_request_id": "gen-1786615019-mL1lbVoEgpsCPqjWnpaE",
+    "latency_sec": 39.253,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 257,
+      "completion_tokens": 543,
+      "total_tokens": 800,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 4.17365e-05,
+        "upstream_inference_prompt_cost": 3.7265e-06,
+        "upstream_inference_completions_cost": 3.801e-05
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 207,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-f3bc0ad9",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.1806,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 251,
+      "output_tokens": 35,
+      "total_tokens": 286
+    }
+  },
+  {
+    "request_id": "gen-1786615079-58lYZYI5d0MWpeS259L3",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-3-nano-30b-a3b:free",
+    "openrouter_request_id": "gen-1786615079-58lYZYI5d0MWpeS259L3",
+    "latency_sec": 5.6634,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 209,
+      "completion_tokens": 257,
+      "total_tokens": 466,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 242,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-f67672bb",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.6005,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 248,
+      "output_tokens": 54,
+      "total_tokens": 302
+    }
+  },
+  {
+    "request_id": "ollama-51a95f18",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.0981,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 358,
+      "output_tokens": 81,
+      "total_tokens": 439
+    }
+  },
+  {
+    "request_id": "ollama-c53e315b",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6669,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 265,
+      "output_tokens": 20,
+      "total_tokens": 285
+    }
+  },
+  {
+    "request_id": "ollama-e012f2bc",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5406,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 308,
+      "output_tokens": 7,
+      "total_tokens": 315
+    }
+  },
+  {
+    "request_id": "ollama-29b440c7",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6664,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 260,
+      "output_tokens": 42,
+      "total_tokens": 302
+    }
+  },
+  {
+    "request_id": "gen-1786615212-RBlzXC6CchEwHRfnD6ZY",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "gen-1786615212-RBlzXC6CchEwHRfnD6ZY",
+    "latency_sec": 32.6719,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 394,
+      "completion_tokens": 433,
+      "total_tokens": 827,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 457,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-8fd45445",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5816,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 272,
+      "output_tokens": 36,
+      "total_tokens": 308
+    }
+  },
+  {
+    "request_id": "ollama-d378a210",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5402,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 414,
+      "output_tokens": 11,
+      "total_tokens": 425
+    }
+  },
+  {
+    "request_id": "ollama-4b220418",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.831,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 249,
+      "output_tokens": 51,
+      "total_tokens": 300
+    }
+  },
+  {
+    "request_id": "gen-1786615339-27VVEq5ahlrUZE8wVDGS",
+    "provider": "openrouter",
+    "configured_model": "openrouter/free",
+    "actual_model": "nvidia/nemotron-3.5-content-safety:free",
+    "openrouter_request_id": "gen-1786615339-27VVEq5ahlrUZE8wVDGS",
+    "latency_sec": 14.3515,
+    "success": true,
+    "error": null,
+    "usage": {
+      "prompt_tokens": 1092,
+      "completion_tokens": 231,
+      "total_tokens": 1323,
+      "cost": 0,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0,
+        "upstream_inference_prompt_cost": 0,
+        "upstream_inference_completions_cost": 0
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 275,
+        "image_tokens": 0,
+        "audio_tokens": 0
+      }
+    }
+  },
+  {
+    "request_id": "ollama-7123a614",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.4879,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 246,
+      "output_tokens": 25,
+      "total_tokens": 271
+    }
+  },
+  {
+    "request_id": "ollama-d1165bc9",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.6263,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 522,
+      "output_tokens": 14,
+      "total_tokens": 536
+    }
+  },
+  {
+    "request_id": "ollama-0d1afcba",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.4969,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 242,
+      "output_tokens": 21,
+      "total_tokens": 263
+    }
+  },
+  {
+    "request_id": "ollama-066ee58e",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.4312,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 425,
+      "output_tokens": 11,
+      "total_tokens": 436
+    }
+  },
+  {
+    "request_id": "ollama-ecf9105a",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.735,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 241,
+      "output_tokens": 31,
+      "total_tokens": 272
+    }
+  },
+  {
+    "request_id": "ollama-0ec7d9bd",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.8278,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 347,
+      "output_tokens": 60,
+      "total_tokens": 407
+    }
+  }
+]

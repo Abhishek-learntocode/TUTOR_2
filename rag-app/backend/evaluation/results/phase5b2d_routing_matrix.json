@@ -1,0 +1,82 @@
+{
+  "category_recommendations": {
+    "comparison": {
+      "category": "comparison",
+      "query_count": 1,
+      "category_winner": "OLLAMA_BASELINE",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "INSUFFICIENT_EVIDENCE",
+      "reasoning": "Insufficient sample size in dataset to justify routing away from local Ollama default."
+    },
+    "conceptual": {
+      "category": "conceptual",
+      "query_count": 3,
+      "category_winner": "TIE",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "NO_CLEAR_WINNER",
+      "reasoning": "Ollama matches or outperforms OpenRouter models in quality while maintaining sub-3s latency."
+    },
+    "document_specific": {
+      "category": "document_specific",
+      "query_count": 2,
+      "category_winner": "OPENROUTER_MODEL_B",
+      "recommended_model": "OPENROUTER_MODEL_B",
+      "confidence": "MEDIUM",
+      "reasoning": "OPENROUTER_MODEL_B demonstrates superior quality (+0.70) with acceptable latency multiplier (2.4x)."
+    },
+    "exam_style": {
+      "category": "exam_style",
+      "query_count": 1,
+      "category_winner": "OPENROUTER_MODEL_B",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "INSUFFICIENT_EVIDENCE",
+      "reasoning": "Insufficient sample size in dataset to justify routing away from local Ollama default."
+    },
+    "factual": {
+      "category": "factual",
+      "query_count": 3,
+      "category_winner": "OPENROUTER_MODEL_A",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "MEDIUM",
+      "reasoning": "OPENROUTER_MODEL_A shows slight quality gain (+0.33) but latency penalty (11.4x) fails tradeoff threshold."
+    },
+    "missing_information": {
+      "category": "missing_information",
+      "query_count": 1,
+      "category_winner": "OLLAMA_BASELINE",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "INSUFFICIENT_EVIDENCE",
+      "reasoning": "Insufficient sample size in dataset to justify routing away from local Ollama default."
+    },
+    "multi_document": {
+      "category": "multi_document",
+      "query_count": 1,
+      "category_winner": "TIE",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "INSUFFICIENT_EVIDENCE",
+      "reasoning": "Insufficient sample size in dataset to justify routing away from local Ollama default."
+    },
+    "multi_hop": {
+      "category": "multi_hop",
+      "query_count": 3,
+      "category_winner": "OLLAMA_BASELINE",
+      "recommended_model": "OLLAMA_BASELINE",
+      "confidence": "MEDIUM",
+      "reasoning": "Ollama matches or outperforms OpenRouter models in quality while maintaining sub-3s latency."
+    }
+  },
+  "global_policy": {
+    "policy_option": "OPTION_A",
+    "policy_name": "ALL -> OLLAMA_BASELINE",
+    "description": "Route 100% of user queries to local Ollama (qwen2.5:1.5b).",
+    "evidence_summary": [
+      "Local Ollama achieves highest overall quality score (4.07/5.0) across all 15 queries.",
+      "Local Ollama achieves lowest average latency (3.00s vs 12.64s for Model B and 39.73s for Model A).",
+      "Local Ollama achieves highest instruction following (4.73/5.0) and grounding (4.20/5.0).",
+      "OpenRouter free models suffer from severe latency penalties (4x to 13x slower) and intermittent refusal hallucinations on conceptual queries.",
+      "Local Ollama incurs zero API dependency and zero OpenRouter rate limit risk."
+    ],
+    "routing_decision": "ALL_OLLAMA",
+    "production_routing_changed": false
+  }
+}

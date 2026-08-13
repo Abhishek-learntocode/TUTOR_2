@@ -1,0 +1,28 @@
+{
+  "collection_timestamp": "2026-08-13 17:05:34",
+  "candidates": [
+    {
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "configured_model": "qwen2.5:1.5b",
+      "description": "Local Baseline (Qwen2.5 1.5B)"
+    },
+    {
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "configured_model": "nvidia/nemotron-3.5-lightning:free",
+      "description": "OpenRouter Model A (Nemotron 3.5 Lightning 1M)"
+    },
+    {
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+      "description": "OpenRouter Model B (Nemotron Nano 9B v2)"
+    }
+  ],
+  "ollama_baseline": "qwen2.5:1.5b",
+  "openrouter_models": [
+    "nvidia/nemotron-3.5-lightning:free",
+    "nvidia/nemotron-nano-9b-v2:free"
+  ]
+}

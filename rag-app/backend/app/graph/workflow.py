@@ -35,8 +35,12 @@ class RAGGraph:
         self.compiled_graph = self.build().compile()
         return self.compiled_graph
 
-    def invoke(self, state: RAGState) -> RAGState:
+    def invoke(self, state: RAGState, config: dict = None) -> RAGState:
         if self.compiled_graph is None:
             self.compile()
-        res = self.compiled_graph.invoke(state.model_dump())
+        run_config = {"run_name": "rag_graph", "tags": ["tutor_rag"]}
+        if config:
+            run_config.update(config)
+        res = self.compiled_graph.invoke(state.model_dump(), config=run_config)
         return RAGState(**res)
+

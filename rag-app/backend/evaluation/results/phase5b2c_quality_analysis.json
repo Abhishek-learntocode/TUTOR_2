@@ -1,0 +1,1017 @@
+{
+  "phase": "5B.2C",
+  "status": "COMPLETE",
+  "api_calls_made": {
+    "openrouter": 0,
+    "ollama_generation": 0
+  },
+  "dataset": {
+    "raw_generation_records": 45,
+    "judge_records": 45,
+    "unique_queries": 15,
+    "models": [
+      "OLLAMA_BASELINE",
+      "OPENROUTER_MODEL_A",
+      "OPENROUTER_MODEL_B"
+    ]
+  },
+  "experimental_controls": {
+    "prompt_control": "PASS",
+    "context_control": "PASS",
+    "prompt_failures": [],
+    "context_failures": []
+  },
+  "model_metrics": {
+    "OLLAMA_BASELINE": {
+      "generation_records": 15,
+      "judge_records": 15,
+      "correctness_mean": 3.933333333333333,
+      "correctness_median": 4.0,
+      "grounding_mean": 4.2,
+      "grounding_median": 5.0,
+      "completeness_mean": 3.8,
+      "completeness_median": 4.0,
+      "relevance_mean": 3.6666666666666665,
+      "relevance_median": 4.0,
+      "instruction_following_mean": 4.733333333333333,
+      "instruction_following_median": 5.0,
+      "overall_quality_mean": 4.066666666666666,
+      "overall_quality_median": 4.4,
+      "refusal_correctness_rate": 0.8,
+      "scope_correctness_rate": 1.0,
+      "latency_mean_sec": 2.99962,
+      "latency_median_sec": 2.843,
+      "latency_p95_sec": 4.059379999999999,
+      "total_tokens_mean": 381.2,
+      "total_tokens_median": 399.0,
+      "answer_length_mean_chars": 292.6,
+      "answer_length_median_chars": 127
+    },
+    "OPENROUTER_MODEL_A": {
+      "generation_records": 15,
+      "judge_records": 15,
+      "correctness_mean": 3.2666666666666666,
+      "correctness_median": 4.0,
+      "grounding_mean": 2.7333333333333334,
+      "grounding_median": 2.0,
+      "completeness_mean": 3.933333333333333,
+      "completeness_median": 5.0,
+      "relevance_mean": 3.7333333333333334,
+      "relevance_median": 4.0,
+      "instruction_following_mean": 4.266666666666667,
+      "instruction_following_median": 5.0,
+      "overall_quality_mean": 3.586666666666667,
+      "overall_quality_median": 4.0,
+      "refusal_correctness_rate": 0.26666666666666666,
+      "scope_correctness_rate": 1.0,
+      "latency_mean_sec": 39.726726666666664,
+      "latency_median_sec": 29.3565,
+      "latency_p95_sec": 95.15744999999998,
+      "total_tokens_mean": 2011.6666666666667,
+      "total_tokens_median": 1607.0,
+      "answer_length_mean_chars": 115.6,
+      "answer_length_median_chars": 49
+    },
+    "OPENROUTER_MODEL_B": {
+      "generation_records": 15,
+      "judge_records": 15,
+      "correctness_mean": 3.466666666666667,
+      "correctness_median": 4.0,
+      "grounding_mean": 3.2666666666666666,
+      "grounding_median": 2.0,
+      "completeness_mean": 3.8666666666666667,
+      "completeness_median": 4.0,
+      "relevance_mean": 3.7333333333333334,
+      "relevance_median": 4.0,
+      "instruction_following_mean": 4.466666666666667,
+      "instruction_following_median": 5.0,
+      "overall_quality_mean": 3.7600000000000002,
+      "overall_quality_median": 4.0,
+      "refusal_correctness_rate": 0.5333333333333333,
+      "scope_correctness_rate": 1.0,
+      "latency_mean_sec": 12.639073333333332,
+      "latency_median_sec": 7.6686,
+      "latency_p95_sec": 41.536429999999996,
+      "total_tokens_mean": 689.8666666666667,
+      "total_tokens_median": 657.0,
+      "answer_length_mean_chars": 227,
+      "answer_length_median_chars": 89
+    }
+  },
+  "category_metrics": {
+    "comparison": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 3.8
+      }
+    },
+    "conceptual": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 4.0,
+        "completeness": 3.6666666666666665,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.133333333333334
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 3.0,
+        "grounding": 2.0,
+        "completeness": 3.6666666666666665,
+        "relevance": 3.6666666666666665,
+        "instruction_following": 3.6666666666666665,
+        "overall_quality": 3.2
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 4.0,
+        "grounding": 3.0,
+        "completeness": 4.666666666666667,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.133333333333334
+      }
+    },
+    "document_specific": {
+      "OLLAMA_BASELINE": {
+        "correctness": 3.5,
+        "grounding": 3.0,
+        "completeness": 3.5,
+        "relevance": 2.5,
+        "instruction_following": 4.0,
+        "overall_quality": 3.3
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 2.5,
+        "grounding": 2.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 3.5
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0
+      }
+    },
+    "exam_style": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 2.0,
+        "grounding": 3.0,
+        "completeness": 2.0,
+        "relevance": 3.0,
+        "instruction_following": 2.0,
+        "overall_quality": 2.4
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4
+      }
+    },
+    "factual": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 4.333333333333333,
+        "completeness": 3.6666666666666665,
+        "relevance": 3.3333333333333335,
+        "instruction_following": 4.333333333333333,
+        "overall_quality": 3.9333333333333336
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 4.0,
+        "grounding": 4.0,
+        "completeness": 4.333333333333333,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.266666666666667
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 3.3333333333333335,
+        "grounding": 3.3333333333333335,
+        "completeness": 3.3333333333333335,
+        "relevance": 3.3333333333333335,
+        "instruction_following": 3.6666666666666665,
+        "overall_quality": 3.4000000000000004
+      }
+    },
+    "missing_information": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.6
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 1.0,
+        "grounding": 3.0,
+        "completeness": 1.0,
+        "relevance": 2.0,
+        "instruction_following": 1.0,
+        "overall_quality": 1.6
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 1.0,
+        "grounding": 2.0,
+        "completeness": 3.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 3.0
+      }
+    },
+    "multi_document": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4
+      }
+    },
+    "multi_hop": {
+      "OLLAMA_BASELINE": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4
+      },
+      "OPENROUTER_MODEL_A": {
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0
+      },
+      "OPENROUTER_MODEL_B": {
+        "correctness": 3.0,
+        "grounding": 4.0,
+        "completeness": 3.0,
+        "relevance": 3.3333333333333335,
+        "instruction_following": 3.6666666666666665,
+        "overall_quality": 3.4000000000000004
+      }
+    }
+  },
+  "pairwise_comparisons": {
+    "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+      "model_a": "OLLAMA_BASELINE",
+      "model_b": "OPENROUTER_MODEL_A",
+      "comparisons": 15,
+      "model_a_wins": 9,
+      "model_b_wins": 3,
+      "ties": 3,
+      "model_a_win_rate": 0.6,
+      "model_b_win_rate": 0.2,
+      "mean_score_delta_a_minus_b": 0.4800000000000001,
+      "per_query": [
+        {
+          "query_id": "compare_001",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "concept_001",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "concept_002",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "concept_003",
+          "model_a_score": 4.0,
+          "model_b_score": 1.6,
+          "delta_a_minus_b": 2.4,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "doc_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "doc_003",
+          "model_a_score": 2.6,
+          "model_b_score": 3.0,
+          "delta_a_minus_b": -0.3999999999999999,
+          "winner": "OPENROUTER_MODEL_A"
+        },
+        {
+          "query_id": "exam_001",
+          "model_a_score": 4.0,
+          "model_b_score": 2.4,
+          "delta_a_minus_b": 1.6,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "factual_001",
+          "model_a_score": 3.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -1.4000000000000004,
+          "winner": "OPENROUTER_MODEL_A"
+        },
+        {
+          "query_id": "factual_002",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "factual_003",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "missing_002",
+          "model_a_score": 4.6,
+          "model_b_score": 1.6,
+          "delta_a_minus_b": 2.9999999999999996,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "multidoc_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -0.40000000000000036,
+          "winner": "OPENROUTER_MODEL_A"
+        },
+        {
+          "query_id": "multihop_001",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "multihop_002",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "multihop_004",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        }
+      ]
+    },
+    "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+      "model_a": "OLLAMA_BASELINE",
+      "model_b": "OPENROUTER_MODEL_B",
+      "comparisons": 15,
+      "model_a_wins": 5,
+      "model_b_wins": 3,
+      "ties": 7,
+      "model_a_win_rate": 0.3333333333333333,
+      "model_b_win_rate": 0.2,
+      "mean_score_delta_a_minus_b": 0.3066666666666667,
+      "per_query": [
+        {
+          "query_id": "compare_001",
+          "model_a_score": 4.4,
+          "model_b_score": 3.8,
+          "delta_a_minus_b": 0.6000000000000005,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "concept_001",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "concept_002",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "concept_003",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "doc_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "doc_003",
+          "model_a_score": 2.6,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": -1.4,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "exam_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -0.40000000000000036,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "factual_001",
+          "model_a_score": 3.0,
+          "model_b_score": 1.8,
+          "delta_a_minus_b": 1.2,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "factual_002",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "factual_003",
+          "model_a_score": 4.4,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.40000000000000036,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "missing_002",
+          "model_a_score": 4.6,
+          "model_b_score": 3.0,
+          "delta_a_minus_b": 1.5999999999999996,
+          "winner": "OLLAMA_BASELINE"
+        },
+        {
+          "query_id": "multidoc_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -0.40000000000000036,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "multihop_001",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "multihop_002",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "multihop_004",
+          "model_a_score": 4.4,
+          "model_b_score": 1.4,
+          "delta_a_minus_b": 3.0000000000000004,
+          "winner": "OLLAMA_BASELINE"
+        }
+      ]
+    },
+    "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+      "model_a": "OPENROUTER_MODEL_A",
+      "model_b": "OPENROUTER_MODEL_B",
+      "comparisons": 15,
+      "model_a_wins": 3,
+      "model_b_wins": 7,
+      "ties": 5,
+      "model_a_win_rate": 0.2,
+      "model_b_win_rate": 0.4666666666666667,
+      "mean_score_delta_a_minus_b": -0.17333333333333337,
+      "per_query": [
+        {
+          "query_id": "compare_001",
+          "model_a_score": 4.0,
+          "model_b_score": 3.8,
+          "delta_a_minus_b": 0.20000000000000018,
+          "winner": "OPENROUTER_MODEL_A"
+        },
+        {
+          "query_id": "concept_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -0.40000000000000036,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "concept_002",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "concept_003",
+          "model_a_score": 1.6,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": -2.4,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "doc_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "doc_003",
+          "model_a_score": 3.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": -1.0,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "exam_001",
+          "model_a_score": 2.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -2.0000000000000004,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "factual_001",
+          "model_a_score": 4.4,
+          "model_b_score": 1.8,
+          "delta_a_minus_b": 2.6000000000000005,
+          "winner": "OPENROUTER_MODEL_A"
+        },
+        {
+          "query_id": "factual_002",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "factual_003",
+          "model_a_score": 4.0,
+          "model_b_score": 4.0,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "missing_002",
+          "model_a_score": 1.6,
+          "model_b_score": 3.0,
+          "delta_a_minus_b": -1.4,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "multidoc_001",
+          "model_a_score": 4.4,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": 0.0,
+          "winner": "TIE"
+        },
+        {
+          "query_id": "multihop_001",
+          "model_a_score": 4.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -0.40000000000000036,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "multihop_002",
+          "model_a_score": 4.0,
+          "model_b_score": 4.4,
+          "delta_a_minus_b": -0.40000000000000036,
+          "winner": "OPENROUTER_MODEL_B"
+        },
+        {
+          "query_id": "multihop_004",
+          "model_a_score": 4.0,
+          "model_b_score": 1.4,
+          "delta_a_minus_b": 2.6,
+          "winner": "OPENROUTER_MODEL_A"
+        }
+      ]
+    }
+  },
+  "query_winners": {
+    "compare_001": {
+      "query": "Compare virtual memory and physical memory.",
+      "category": "comparison",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 3.8
+      },
+      "winner": "OLLAMA_BASELINE"
+    },
+    "concept_001": {
+      "query": "Explain how paging works in operating systems.",
+      "category": "conceptual",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 4.4
+      },
+      "winner": "TIE"
+    },
+    "concept_002": {
+      "query": "Explain how address translation is performed in virtual memory systems.",
+      "category": "conceptual",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.0,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 4.0
+      },
+      "winner": "TIE"
+    },
+    "concept_003": {
+      "query": "Explain the concept of thrashing in operating systems.",
+      "category": "conceptual",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.0,
+        "OPENROUTER_MODEL_A": 1.6,
+        "OPENROUTER_MODEL_B": 4.0
+      },
+      "winner": "TIE"
+    },
+    "doc_001": {
+      "query": "According to OS_Notes.txt, explain paging and page faults.",
+      "category": "document_specific",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.0,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 4.0
+      },
+      "winner": "TIE"
+    },
+    "doc_003": {
+      "query": "According to OS_Notes.txt, what is a virtual address space?",
+      "category": "document_specific",
+      "model_scores": {
+        "OLLAMA_BASELINE": 2.6,
+        "OPENROUTER_MODEL_A": 3.0,
+        "OPENROUTER_MODEL_B": 4.0
+      },
+      "winner": "OPENROUTER_MODEL_B"
+    },
+    "exam_001": {
+      "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+      "category": "exam_style",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.0,
+        "OPENROUTER_MODEL_A": 2.4,
+        "OPENROUTER_MODEL_B": 4.4
+      },
+      "winner": "OPENROUTER_MODEL_B"
+    },
+    "factual_001": {
+      "query": "What is virtual memory?",
+      "category": "factual",
+      "model_scores": {
+        "OLLAMA_BASELINE": 3.0,
+        "OPENROUTER_MODEL_A": 4.4,
+        "OPENROUTER_MODEL_B": 1.8
+      },
+      "winner": "OPENROUTER_MODEL_A"
+    },
+    "factual_002": {
+      "query": "What is a page fault?",
+      "category": "factual",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.4,
+        "OPENROUTER_MODEL_B": 4.4
+      },
+      "winner": "TIE"
+    },
+    "factual_003": {
+      "query": "What is the function of the Memory Management Unit (MMU)?",
+      "category": "factual",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 4.0
+      },
+      "winner": "OLLAMA_BASELINE"
+    },
+    "missing_002": {
+      "query": "What is the stock price of Apple in 2026?",
+      "category": "missing_information",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.6,
+        "OPENROUTER_MODEL_A": 1.6,
+        "OPENROUTER_MODEL_B": 3.0
+      },
+      "winner": "OLLAMA_BASELINE"
+    },
+    "multidoc_001": {
+      "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+      "category": "multi_document",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.0,
+        "OPENROUTER_MODEL_A": 4.4,
+        "OPENROUTER_MODEL_B": 4.4
+      },
+      "winner": "TIE"
+    },
+    "multihop_001": {
+      "query": "How does paging work, and what problem does it solve?",
+      "category": "multi_hop",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 4.4
+      },
+      "winner": "TIE"
+    },
+    "multihop_002": {
+      "query": "What is virtual memory, how does paging work, and why are page faults needed?",
+      "category": "multi_hop",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 4.4
+      },
+      "winner": "TIE"
+    },
+    "multihop_004": {
+      "query": "How do page tables and TLBs interact to accelerate memory reference translation?",
+      "category": "multi_hop",
+      "model_scores": {
+        "OLLAMA_BASELINE": 4.4,
+        "OPENROUTER_MODEL_A": 4.0,
+        "OPENROUTER_MODEL_B": 1.4
+      },
+      "winner": "OLLAMA_BASELINE"
+    }
+  },
+  "routing_analysis": {
+    "quality_ranking": [
+      {
+        "model": "OLLAMA_BASELINE",
+        "overall_quality": 4.066666666666666
+      },
+      {
+        "model": "OPENROUTER_MODEL_B",
+        "overall_quality": 3.7600000000000002
+      },
+      {
+        "model": "OPENROUTER_MODEL_A",
+        "overall_quality": 3.586666666666667
+      }
+    ],
+    "latency_ranking": [
+      {
+        "model": "OLLAMA_BASELINE",
+        "latency_sec": 2.99962
+      },
+      {
+        "model": "OPENROUTER_MODEL_B",
+        "latency_sec": 12.639073333333332
+      },
+      {
+        "model": "OPENROUTER_MODEL_A",
+        "latency_sec": 39.726726666666664
+      }
+    ],
+    "token_ranking": [
+      {
+        "model": "OLLAMA_BASELINE",
+        "avg_total_tokens": 381.2
+      },
+      {
+        "model": "OPENROUTER_MODEL_B",
+        "avg_total_tokens": 689.8666666666667
+      },
+      {
+        "model": "OPENROUTER_MODEL_A",
+        "avg_total_tokens": 2011.6666666666667
+      }
+    ],
+    "production_routing_changed": false,
+    "decision_status": "DEFERRED"
+  },
+  "parser_validation": {
+    "source_file": "evaluation/results/phase5b2_raw_judge_results.jsonl",
+    "detected_schema": "TOP_LEVEL_SCORE_FIELDS",
+    "extraction_method": "direct_key_lookup",
+    "judge_records": 45,
+    "successfully_parsed": 45,
+    "failed": 0,
+    "failed_record_ids": [],
+    "fields_extracted": {
+      "correctness": 45,
+      "grounding": 45,
+      "completeness": 45,
+      "relevance": 45,
+      "instruction_following": 45
+    },
+    "score_ranges": {
+      "correctness": {
+        "parsed": 45,
+        "missing": 0,
+        "min": 1.0,
+        "max": 4.0
+      },
+      "grounding": {
+        "parsed": 45,
+        "missing": 0,
+        "min": 2.0,
+        "max": 5.0
+      },
+      "completeness": {
+        "parsed": 45,
+        "missing": 0,
+        "min": 1.0,
+        "max": 5.0
+      },
+      "relevance": {
+        "parsed": 45,
+        "missing": 0,
+        "min": 1.0,
+        "max": 4.0
+      },
+      "instruction_following": {
+        "parsed": 45,
+        "missing": 0,
+        "min": 1.0,
+        "max": 5.0
+      }
+    },
+    "missing_field_counts": {
+      "correctness": 0,
+      "grounding": 0,
+      "completeness": 0,
+      "relevance": 0,
+      "instruction_following": 0
+    },
+    "sample_extracted_records": [
+      {
+        "query_id": "factual_001",
+        "model_key": "OLLAMA_BASELINE",
+        "raw_record_keys": [
+          "query_id",
+          "category",
+          "model_key",
+          "provider",
+          "actual_model",
+          "judge_provider",
+          "judge_model",
+          "judge_latency_sec",
+          "judge_raw_output",
+          "correctness_score",
+          "grounding_score",
+          "completeness_score",
+          "relevance_score",
+          "instruction_following_score",
+          "refusal_correctness",
+          "document_scope_correctness"
+        ],
+        "extracted_fields": {
+          "correctness": 4.0,
+          "grounding": 3.0,
+          "completeness": 3.0,
+          "relevance": 2.0,
+          "instruction_following": 3.0,
+          "refusal_correctness": true,
+          "document_scope_correctness": true
+        }
+      },
+      {
+        "query_id": "factual_001",
+        "model_key": "OPENROUTER_MODEL_A",
+        "raw_record_keys": [
+          "query_id",
+          "category",
+          "model_key",
+          "provider",
+          "actual_model",
+          "judge_provider",
+          "judge_model",
+          "judge_latency_sec",
+          "judge_raw_output",
+          "correctness_score",
+          "grounding_score",
+          "completeness_score",
+          "relevance_score",
+          "instruction_following_score",
+          "refusal_correctness",
+          "document_scope_correctness"
+        ],
+        "extracted_fields": {
+          "correctness": 4.0,
+          "grounding": 5.0,
+          "completeness": 4.0,
+          "relevance": 4.0,
+          "instruction_following": 5.0,
+          "refusal_correctness": true,
+          "document_scope_correctness": true
+        }
+      },
+      {
+        "query_id": "factual_001",
+        "model_key": "OPENROUTER_MODEL_B",
+        "raw_record_keys": [
+          "query_id",
+          "category",
+          "model_key",
+          "provider",
+          "actual_model",
+          "judge_provider",
+          "judge_model",
+          "judge_latency_sec",
+          "judge_raw_output",
+          "correctness_score",
+          "grounding_score",
+          "completeness_score",
+          "relevance_score",
+          "instruction_following_score",
+          "refusal_correctness",
+          "document_scope_correctness"
+        ],
+        "extracted_fields": {
+          "correctness": 2.0,
+          "grounding": 3.0,
+          "completeness": 1.0,
+          "relevance": 2.0,
+          "instruction_following": 1.0,
+          "refusal_correctness": true,
+          "document_scope_correctness": true
+        }
+      }
+    ]
+  },
+  "production_routing_changed": false,
+  "model_selection_decision": "DEFERRED"
+}

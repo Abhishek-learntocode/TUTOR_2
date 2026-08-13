@@ -1,0 +1,175 @@
+{
+  "phase": "5A.11",
+  "status": "PASS",
+  "total_tests": 6,
+  "passed_tests": 6,
+  "failed_tests": 0,
+  "tests": [
+    {
+      "test_id": "test_1_general_retrieval",
+      "query": "What is virtual memory?",
+      "document_reference": [],
+      "allowed_documents": [
+        "*"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt",
+        "sample_exam_inspect.txt",
+        "sample_exam.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "context_count": 4,
+      "answer": "Virtual Memory is an illusion of a large main memory created by the operating system, allowing programs to use secondary storage as if it were primary memory.",
+      "http_status": 200,
+      "http_latency": 8.9653,
+      "langsmith": {
+        "run_id": "019ffa4e-d618-7011-b80b-cfabb29f59b0",
+        "completed": true,
+        "latency_sec": 15.0515,
+        "has_inputs": true,
+        "has_outputs": true
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "test_2_explicit_doc_missing_info",
+      "query": "According to OS_Notes.txt, explain paging.",
+      "document_reference": [
+        "OS_Notes.txt"
+      ],
+      "allowed_documents": [
+        "OS_Notes.txt"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "context_count": 1,
+      "answer": "I cannot find the answer in the provided context.",
+      "http_status": 200,
+      "http_latency": 2.4774,
+      "langsmith": {
+        "run_id": "019ffa0a-b1f8-7f31-8070-7ce2df4ad520",
+        "completed": true,
+        "latency_sec": 4.8906,
+        "has_inputs": true,
+        "has_outputs": true
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "test_3_explicit_doc_available_info",
+      "query": "According to OS_Notes.txt, what is virtual memory?",
+      "document_reference": [
+        "OS_Notes.txt"
+      ],
+      "allowed_documents": [
+        "OS_Notes.txt"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "context_count": 1,
+      "answer": "According to OS_Notes.txt, virtual memory creates an illusion of a large main memory.",
+      "http_status": 200,
+      "http_latency": 0.5914,
+      "langsmith": {
+        "run_id": "019ffa0a-cd43-7332-9f42-616be71d376f",
+        "completed": true,
+        "latency_sec": 0.7415,
+        "has_inputs": true,
+        "has_outputs": true
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "test_4_explicit_paging_doc",
+      "query": "According to sample_routing_doc.txt, explain paging.",
+      "document_reference": [
+        "sample_routing_doc.txt"
+      ],
+      "allowed_documents": [
+        "sample_routing_doc.txt"
+      ],
+      "retrieved_documents": [
+        "sample_routing_doc.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "context_count": 1,
+      "answer": "According to the provided context, paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.",
+      "http_status": 200,
+      "http_latency": 1.1001,
+      "langsmith": {
+        "run_id": "019ffa0a-e0fe-75f0-b7a0-0e2ed3d8940a",
+        "completed": true,
+        "latency_sec": 1.1421,
+        "has_inputs": true,
+        "has_outputs": true
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "test_5_multi_doc_comparison",
+      "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+      "document_reference": [
+        "OS_Notes.txt",
+        "sample_exam.txt"
+      ],
+      "allowed_documents": [
+        "OS_Notes.txt",
+        "sample_exam.txt"
+      ],
+      "retrieved_documents": [
+        "OS_Notes.txt",
+        "sample_exam.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "context_count": 3,
+      "answer": "I cannot find the answer in the provided context.",
+      "http_status": 200,
+      "http_latency": 0.8325,
+      "langsmith": {
+        "run_id": "019ffa56-46a3-7382-bf4c-eeb637ac21c5",
+        "completed": true,
+        "latency_sec": 0.8192,
+        "has_inputs": true,
+        "has_outputs": true
+      },
+      "result": "PASS"
+    },
+    {
+      "test_id": "test_6_no_doc_ref_paging",
+      "query": "Explain paging.",
+      "document_reference": [],
+      "allowed_documents": [
+        "*"
+      ],
+      "retrieved_documents": [
+        "sample_exam_inspect.txt",
+        "sample_routing_doc.txt",
+        "sample_exam_rag.txt",
+        "sample_exam.txt"
+      ],
+      "forbidden_documents": [],
+      "scope_respected": true,
+      "context_count": 4,
+      "answer": "Paging is a memory management scheme that allows virtual memory to be addressed as if it were main memory, thereby eliminating the need for contiguous allocation of physical memory. This technique involves dividing the virtual address space into fixed-size segments called pages and mapping them onto the corresponding blocks in secondary storage (such as disk). When a program attempts to access a page that is not currently present in RAM, this results in a \"page fault,\" which triggers the system to read the required data from the disk into memory. This process ensures efficient use of both main and secondary memory resources by allowing programs to run without being constrained by physical limitations on contiguous memory allocation.",
+      "http_status": 200,
+      "http_latency": 6.0551,
+      "langsmith": {
+        "run_id": "019ffa0b-2678-7512-bff8-16e77cd2c21c",
+        "completed": true,
+        "latency_sec": 5.9489,
+        "has_inputs": true,
+        "has_outputs": true
+      },
+      "result": "PASS"
+    }
+  ]
+}

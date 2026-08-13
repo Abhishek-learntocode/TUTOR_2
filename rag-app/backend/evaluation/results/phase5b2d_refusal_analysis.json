@@ -1,0 +1,25 @@
+{
+  "OLLAMA_BASELINE": {
+    "refusal_queries_tested": 2,
+    "refusal_correct_count": 1,
+    "refusal_correctness_rate": 0.5,
+    "status": "EVIDENCED"
+  },
+  "OPENROUTER_MODEL_A": {
+    "refusal_queries_tested": 2,
+    "refusal_correct_count": 1,
+    "refusal_correctness_rate": 0.5,
+    "status": "EVIDENCED"
+  },
+  "OPENROUTER_MODEL_B": {
+    "refusal_queries_tested": 2,
+    "refusal_correct_count": 1,
+    "refusal_correctness_rate": 0.5,
+    "status": "EVIDENCED"
+  },
+  "document_scope_correctness": {
+    "status": "EVIDENCED",
+    "scope_correctness_rate": 1.0,
+    "note": "100% doc-scope invariant verified across all doc-scoped queries in Phase 5A.11 & 5B.2B."
+  }
+}

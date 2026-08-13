@@ -1,0 +1,433 @@
+{
+  "comparison": {
+    "query_count": 1,
+    "queries": [
+      "compare_001"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 2.6673,
+        "total_tokens_mean": 325,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 28.8551,
+        "total_tokens_mean": 2826,
+        "quality_delta_vs_ollama": -0.40000000000000036,
+        "latency_delta_vs_ollama": 26.1878,
+        "token_delta_vs_ollama": 2501
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 3.8,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 7.381,
+        "total_tokens_mean": 562,
+        "quality_delta_vs_ollama": -0.6000000000000005,
+        "latency_delta_vs_ollama": 4.7137,
+        "token_delta_vs_ollama": 237
+      }
+    }
+  },
+  "conceptual": {
+    "query_count": 3,
+    "queries": [
+      "concept_001",
+      "concept_002",
+      "concept_003"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 3,
+        "correctness": 4.0,
+        "grounding": 4.0,
+        "completeness": 3.6666666666666665,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.133333333333334,
+        "refusal_correctness_rate": 0.6666666666666666,
+        "latency_mean_sec": 2.7616,
+        "total_tokens_mean": 465,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 3,
+        "correctness": 3.0,
+        "grounding": 2.0,
+        "completeness": 3.6666666666666665,
+        "relevance": 3.6666666666666665,
+        "instruction_following": 3.6666666666666665,
+        "overall_quality": 3.2,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 24.197300000000002,
+        "total_tokens_mean": 1820,
+        "quality_delta_vs_ollama": -0.9333333333333336,
+        "latency_delta_vs_ollama": 21.4357,
+        "token_delta_vs_ollama": 1355
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 3,
+        "correctness": 4.0,
+        "grounding": 3.0,
+        "completeness": 4.666666666666667,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.133333333333334,
+        "refusal_correctness_rate": 0.3333333333333333,
+        "latency_mean_sec": 7.132333333333333,
+        "total_tokens_mean": 716.6666666666666,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 4.370733333333334,
+        "token_delta_vs_ollama": 251.66666666666663
+      }
+    }
+  },
+  "document_specific": {
+    "query_count": 2,
+    "queries": [
+      "doc_001",
+      "doc_003"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 2,
+        "correctness": 3.5,
+        "grounding": 3.0,
+        "completeness": 3.5,
+        "relevance": 2.5,
+        "instruction_following": 4.0,
+        "overall_quality": 3.3,
+        "refusal_correctness_rate": 0.5,
+        "latency_mean_sec": 3.14775,
+        "total_tokens_mean": 160,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 2,
+        "correctness": 2.5,
+        "grounding": 2.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 3.5,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 7.087350000000001,
+        "total_tokens_mean": 584,
+        "quality_delta_vs_ollama": 0.20000000000000018,
+        "latency_delta_vs_ollama": 3.939600000000001,
+        "token_delta_vs_ollama": 424
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 2,
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 7.5845,
+        "total_tokens_mean": 308,
+        "quality_delta_vs_ollama": 0.7000000000000002,
+        "latency_delta_vs_ollama": 4.43675,
+        "token_delta_vs_ollama": 148
+      }
+    }
+  },
+  "exam_style": {
+    "query_count": 1,
+    "queries": [
+      "exam_001"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 2.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 2.872,
+        "total_tokens_mean": 315,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 1,
+        "correctness": 2.0,
+        "grounding": 3.0,
+        "completeness": 2.0,
+        "relevance": 3.0,
+        "instruction_following": 2.0,
+        "overall_quality": 2.4,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 113.2941,
+        "total_tokens_mean": 4206,
+        "quality_delta_vs_ollama": -1.6,
+        "latency_delta_vs_ollama": 110.4221,
+        "token_delta_vs_ollama": 3891
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 40.7084,
+        "total_tokens_mean": 1736,
+        "quality_delta_vs_ollama": 0.40000000000000036,
+        "latency_delta_vs_ollama": 37.8364,
+        "token_delta_vs_ollama": 1421
+      }
+    }
+  },
+  "factual": {
+    "query_count": 3,
+    "queries": [
+      "factual_001",
+      "factual_002",
+      "factual_003"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 3,
+        "correctness": 4.0,
+        "grounding": 4.333333333333333,
+        "completeness": 3.6666666666666665,
+        "relevance": 3.3333333333333335,
+        "instruction_following": 4.333333333333333,
+        "overall_quality": 3.9333333333333336,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 3.2748,
+        "total_tokens_mean": 388,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 3,
+        "correctness": 4.0,
+        "grounding": 4.0,
+        "completeness": 4.333333333333333,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.266666666666667,
+        "refusal_correctness_rate": 0.6666666666666666,
+        "latency_mean_sec": 37.176433333333335,
+        "total_tokens_mean": 1663,
+        "quality_delta_vs_ollama": 0.33333333333333304,
+        "latency_delta_vs_ollama": 33.901633333333336,
+        "token_delta_vs_ollama": 1275
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 3,
+        "correctness": 3.3333333333333335,
+        "grounding": 3.3333333333333335,
+        "completeness": 3.3333333333333335,
+        "relevance": 3.3333333333333335,
+        "instruction_following": 3.6666666666666665,
+        "overall_quality": 3.4000000000000004,
+        "refusal_correctness_rate": 0.6666666666666666,
+        "latency_mean_sec": 7.368733333333333,
+        "total_tokens_mean": 611,
+        "quality_delta_vs_ollama": -0.5333333333333332,
+        "latency_delta_vs_ollama": 4.093933333333333,
+        "token_delta_vs_ollama": 223
+      }
+    }
+  },
+  "missing_information": {
+    "query_count": 1,
+    "queries": [
+      "missing_002"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.6,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 2.5155,
+        "total_tokens_mean": 626,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 1,
+        "correctness": 1.0,
+        "grounding": 3.0,
+        "completeness": 1.0,
+        "relevance": 2.0,
+        "instruction_following": 1.0,
+        "overall_quality": 1.6,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 4.7866,
+        "total_tokens_mean": 942,
+        "quality_delta_vs_ollama": -2.9999999999999996,
+        "latency_delta_vs_ollama": 2.2711,
+        "token_delta_vs_ollama": 316
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 1,
+        "correctness": 1.0,
+        "grounding": 2.0,
+        "completeness": 3.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 3.0,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 6.0677,
+        "total_tokens_mean": 910,
+        "quality_delta_vs_ollama": -1.5999999999999996,
+        "latency_delta_vs_ollama": 3.5522000000000005,
+        "token_delta_vs_ollama": 284
+      }
+    }
+  },
+  "multi_document": {
+    "query_count": 1,
+    "queries": [
+      "multidoc_001"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 2.843,
+        "total_tokens_mean": 229,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 65.2129,
+        "total_tokens_mean": 2249,
+        "quality_delta_vs_ollama": 0.40000000000000036,
+        "latency_delta_vs_ollama": 62.3699,
+        "token_delta_vs_ollama": 2020
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 1,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 13.8533,
+        "total_tokens_mean": 616,
+        "quality_delta_vs_ollama": 0.40000000000000036,
+        "latency_delta_vs_ollama": 11.0103,
+        "token_delta_vs_ollama": 387
+      }
+    }
+  },
+  "multi_hop": {
+    "query_count": 3,
+    "queries": [
+      "multihop_001",
+      "multihop_002",
+      "multihop_004"
+    ],
+    "models": {
+      "OLLAMA_BASELINE": {
+        "observations": 3,
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.4,
+        "refusal_correctness_rate": 1,
+        "latency_mean_sec": 3.2306,
+        "total_tokens_mean": 448,
+        "quality_delta_vs_ollama": 0.0,
+        "latency_delta_vs_ollama": 0.0,
+        "token_delta_vs_ollama": 0
+      },
+      "OPENROUTER_MODEL_A": {
+        "observations": 3,
+        "correctness": 4.0,
+        "grounding": 2.0,
+        "completeness": 5.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "overall_quality": 4.0,
+        "refusal_correctness_rate": 0,
+        "latency_mean_sec": 61.81876666666667,
+        "total_tokens_mean": 2778.3333333333335,
+        "quality_delta_vs_ollama": -0.40000000000000036,
+        "latency_delta_vs_ollama": 58.588166666666666,
+        "token_delta_vs_ollama": 2330.3333333333335
+      },
+      "OPENROUTER_MODEL_B": {
+        "observations": 3,
+        "correctness": 3.0,
+        "grounding": 4.0,
+        "completeness": 3.0,
+        "relevance": 3.3333333333333335,
+        "instruction_following": 3.6666666666666665,
+        "overall_quality": 3.4000000000000004,
+        "refusal_correctness_rate": 0.6666666666666666,
+        "latency_mean_sec": 20.96783333333333,
+        "total_tokens_mean": 641.6666666666666,
+        "quality_delta_vs_ollama": -1.0,
+        "latency_delta_vs_ollama": 17.737233333333332,
+        "token_delta_vs_ollama": 193.66666666666663
+      }
+    }
+  }
+}

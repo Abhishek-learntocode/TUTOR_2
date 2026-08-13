@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "gen_records_count": 45,
+  "judge_records_count": 45,
+  "unique_queries_count": 15,
+  "unique_models_count": 3,
+  "unique_queries": [
+    "compare_001",
+    "concept_001",
+    "concept_002",
+    "concept_003",
+    "doc_001",
+    "doc_003",
+    "exam_001",
+    "factual_001",
+    "factual_002",
+    "factual_003",
+    "missing_002",
+    "multidoc_001",
+    "multihop_001",
+    "multihop_002",
+    "multihop_004"
+  ],
+  "unique_models": [
+    "OLLAMA_BASELINE",
+    "OPENROUTER_MODEL_A",
+    "OPENROUTER_MODEL_B"
+  ],
+  "missing_combos": [],
+  "duplicate_combos_count": 0,
+  "prompt_control": "PASS",
+  "context_control": "PASS",
+  "model_identity_control": "PASS",
+  "retrieval_frozen": true
+}

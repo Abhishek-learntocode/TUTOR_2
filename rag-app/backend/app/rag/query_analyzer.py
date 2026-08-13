@@ -1,14 +1,29 @@
 import json
 import re
+from langsmith import traceable, get_current_run_tree
 from app.models.state import QueryAnalysis
 
 
 class QueryAnalyzer:
     """Analyzes queries using LLM + rule heuristics to classify as single_hop or multi_hop with sub-queries."""
 
-    def __init__(self, llm):
-        self.llm = llm
+    def __init__(self, provider=None, llm=None):
+        self.provider = provider or llm
+        self.llm = llm or provider
 
+    def _call_llm(self, prompt: str) -> str:
+        if hasattr(self.provider, "generate"):
+            res = self.provider.generate(prompt)
+            if isinstance(res, dict):
+                return res.get("text") or res.get("content") or ""
+            elif isinstance(res, str):
+                return res
+        if hasattr(self.llm, "invoke"):
+            res = self.llm.invoke(prompt)
+            return res.content.strip() if hasattr(res, "content") else str(res).strip()
+        return str(self.provider)
+
+    @traceable(name="query_analysis", run_type="chain")
     def analyze(self, query: str) -> QueryAnalysis:
         query_lower = query.lower()
         has_multi_hop_cue = (
@@ -36,8 +51,9 @@ class QueryAnalyzer:
             "Respond ONLY with a valid JSON object:"
         )
 
+        result = None
         try:
-            raw_response = self.llm.generate(prompt, context=[])
+            raw_response = self._call_llm(prompt)
             cleaned = re.sub(r"```(?:json)?", "", raw_response).strip("` \n")
             json_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
             if json_match:
@@ -56,17 +72,33 @@ class QueryAnalyzer:
                 elif q_type == "single_hop":
                     sub_q = [query]
 
-                return QueryAnalysis(query_type=q_type, sub_queries=sub_q)
+                result = QueryAnalysis(query_type=q_type, sub_queries=sub_q)
         except Exception as e:
             print(f"[QueryAnalyzer Warning] Analysis failed, defaulting to single_hop: {e}")
 
-        if has_multi_hop_cue:
-            return QueryAnalysis(
-                query_type="multi_hop",
-                sub_queries=[
-                    f"Information regarding first topic in: {query}",
-                    f"Information regarding second topic in: {query}",
-                ],
-            )
+        if result is None:
+            if has_multi_hop_cue:
+                result = QueryAnalysis(
+                    query_type="multi_hop",
+                    sub_queries=[
+                        f"Information regarding first topic in: {query}",
+                        f"Information regarding second topic in: {query}",
+                    ],
+                )
+            else:
+                result = QueryAnalysis(query_type="single_hop", sub_queries=[query])
 
-        return QueryAnalysis(query_type="single_hop", sub_queries=[query])
+        try:
+            rt = get_current_run_tree()
+            if rt:
+                provider_name = getattr(self.provider, "provider_name", "unknown")
+                model_name = getattr(self.provider, "model_name", "unknown")
+                rt.metadata["query_analyzer_provider"] = provider_name
+                rt.metadata["query_analyzer_model"] = model_name
+                rt.metadata["query_type"] = result.query_type
+                rt.metadata["sub_query_count"] = len(result.sub_queries)
+        except Exception:
+            pass
+
+        return result
+

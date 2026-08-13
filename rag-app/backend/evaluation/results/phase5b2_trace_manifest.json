@@ -1,0 +1,410 @@
+{
+  "total_traces": 45,
+  "traces": [
+    {
+      "query_id": "factual_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 4.6744
+    },
+    {
+      "query_id": "factual_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786620952-J6C061o8lILq4f99sFZh",
+      "status_code": 200,
+      "latency_sec": 59.1675
+    },
+    {
+      "query_id": "factual_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621014-UJywvFl8enFWSZis6H7u",
+      "status_code": 200,
+      "latency_sec": 7.1455
+    },
+    {
+      "query_id": "factual_002",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.5545
+    },
+    {
+      "query_id": "factual_002",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621028-gFYkLsrB6IET3dkxJSMT",
+      "status_code": 200,
+      "latency_sec": 13.6022
+    },
+    {
+      "query_id": "factual_002",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621043-qk1Hd7pIevNYu4w2qFvZ",
+      "status_code": 200,
+      "latency_sec": 8.405
+    },
+    {
+      "query_id": "factual_003",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.5955
+    },
+    {
+      "query_id": "factual_003",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621060-pzGmQ1pYGO4Sb8A1y8yF",
+      "status_code": 200,
+      "latency_sec": 38.7596
+    },
+    {
+      "query_id": "factual_003",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621100-vRPzF8eJMxeC1hVuYkpU",
+      "status_code": 200,
+      "latency_sec": 6.5557
+    },
+    {
+      "query_id": "concept_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 3.3976
+    },
+    {
+      "query_id": "concept_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621116-0jolohWeJqVYmiaya0IH",
+      "status_code": 200,
+      "latency_sec": 14.3206
+    },
+    {
+      "query_id": "concept_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621132-sooKQHEi2UZJQZfrjwLh",
+      "status_code": 200,
+      "latency_sec": 7.471
+    },
+    {
+      "query_id": "concept_002",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.4533
+    },
+    {
+      "query_id": "concept_002",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621147-pwVRMvPRoIWZGTL2NFkJ",
+      "status_code": 200,
+      "latency_sec": 19.0392
+    },
+    {
+      "query_id": "concept_002",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621168-1DidfDeEIFDDPhhenJmy",
+      "status_code": 200,
+      "latency_sec": 7.6686
+    },
+    {
+      "query_id": "concept_003",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.4339
+    },
+    {
+      "query_id": "concept_003",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621183-KF4pPriwaAMCqWujpCSl",
+      "status_code": 200,
+      "latency_sec": 39.2321
+    },
+    {
+      "query_id": "concept_003",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621224-xuZKOUiMl5QS91FJSHwa",
+      "status_code": 200,
+      "latency_sec": 6.2574
+    },
+    {
+      "query_id": "multihop_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 3.3692
+    },
+    {
+      "query_id": "multihop_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621239-174S8FlLZc07ud8wptUl",
+      "status_code": 200,
+      "latency_sec": 68.7152
+    },
+    {
+      "query_id": "multihop_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621311-W0fojV5RQe0mU3w9zJ5F",
+      "status_code": 200,
+      "latency_sec": 43.4685
+    },
+    {
+      "query_id": "multihop_002",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 3.1229
+    },
+    {
+      "query_id": "multihop_002",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621362-z6cAWx3xZ775EXHQqoRR",
+      "status_code": 200,
+      "latency_sec": 29.3565
+    },
+    {
+      "query_id": "multihop_002",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621393-PQBa2w73zH8qmw32VNi9",
+      "status_code": 200,
+      "latency_sec": 11.2015
+    },
+    {
+      "query_id": "multihop_004",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 3.1997
+    },
+    {
+      "query_id": "multihop_004",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621413-bIucH9tqE2bNZZ1fH2Fn",
+      "status_code": 200,
+      "latency_sec": 87.3846
+    },
+    {
+      "query_id": "multihop_004",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621503-TSa5TSatdiIQLsrm1aOF",
+      "status_code": 200,
+      "latency_sec": 8.2335
+    },
+    {
+      "query_id": "doc_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.4997
+    },
+    {
+      "query_id": "doc_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621518-3v0dIieDwxsamNNHhmro",
+      "status_code": 200,
+      "latency_sec": 7.8319
+    },
+    {
+      "query_id": "doc_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621528-w7uv8cANR8lMJqVu3PZL",
+      "status_code": 200,
+      "latency_sec": 10.6004
+    },
+    {
+      "query_id": "doc_003",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 3.7958
+    },
+    {
+      "query_id": "doc_003",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621547-4wMc0ADADGS65WFr9ixI",
+      "status_code": 200,
+      "latency_sec": 6.3428
+    },
+    {
+      "query_id": "doc_003",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621555-d32OSER9O665jMGXodMK",
+      "status_code": 200,
+      "latency_sec": 4.5686
+    },
+    {
+      "query_id": "compare_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.6673
+    },
+    {
+      "query_id": "compare_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621567-5RZK70tSe6XBsZSJ9zFW",
+      "status_code": 200,
+      "latency_sec": 28.8551
+    },
+    {
+      "query_id": "compare_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621598-vlJmwQoTETK1ZptXiz99",
+      "status_code": 200,
+      "latency_sec": 7.381
+    },
+    {
+      "query_id": "missing_002",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.5155
+    },
+    {
+      "query_id": "missing_002",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621613-ekQLsVHVgCF40s5EBtq2",
+      "status_code": 200,
+      "latency_sec": 4.7866
+    },
+    {
+      "query_id": "missing_002",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621620-M9K4HjB94y5Sl7SCBWN6",
+      "status_code": 200,
+      "latency_sec": 6.0677
+    },
+    {
+      "query_id": "multidoc_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.843
+    },
+    {
+      "query_id": "multidoc_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621634-NW1ZUEQgFAIrVnZ5OUzp",
+      "status_code": 200,
+      "latency_sec": 65.2129
+    },
+    {
+      "query_id": "multidoc_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621702-pw2qdK3zb2BOObedkvd3",
+      "status_code": 200,
+      "latency_sec": 13.8533
+    },
+    {
+      "query_id": "exam_001",
+      "model_key": "OLLAMA_BASELINE",
+      "provider": "ollama",
+      "actual_model": "qwen2.5:1.5b",
+      "request_id": "N/A",
+      "status_code": 200,
+      "latency_sec": 2.872
+    },
+    {
+      "query_id": "exam_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "request_id": "gen-1786621724-p4cjytii4FmRD3M5FQSQ",
+      "status_code": 200,
+      "latency_sec": 113.2941
+    },
+    {
+      "query_id": "exam_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "provider": "openrouter",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "request_id": "gen-1786621840-69hrH52dC6phvm0CwxCv",
+      "status_code": 200,
+      "latency_sec": 40.7084
+    }
+  ]
+}

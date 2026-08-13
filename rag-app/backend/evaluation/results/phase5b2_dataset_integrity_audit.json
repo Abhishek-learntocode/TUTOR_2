@@ -1,0 +1,53 @@
+{
+  "verdict": "DATASET_INTEGRITY: PASS",
+  "timestamp": "2026-08-13 17:25:32",
+  "raw_record_count": 45,
+  "unique_query_count": 15,
+  "expected_query_count": 15,
+  "model_count": 3,
+  "ollama_generation_records": 15,
+  "openrouter_generation_records": 30,
+  "openrouter_requests_true": 30,
+  "openrouter_requests_ledger": 30,
+  "openrouter_request_ids_unique": 30,
+  "openrouter_budget": 40,
+  "openrouter_remaining": 10,
+  "judge_record_count": 45,
+  "prompt_control": "PASS",
+  "context_control": "PASS",
+  "model_identity_control": "PASS",
+  "ledger_reconciliation": "PASS",
+  "judge_reconciliation": "PASS",
+  "score_sanity": "PASS",
+  "duplicates_count": 0,
+  "missing_model_query_combinations": 0,
+  "missing_combinations_detail": [],
+  "discrepancies": [],
+  "descriptive_metrics": {
+    "category_distribution": {
+      "factual": 3,
+      "conceptual": 3,
+      "multi_hop": 3,
+      "document_specific": 2,
+      "comparison": 1,
+      "missing_information": 1,
+      "multi_document": 1,
+      "exam_style": 1
+    },
+    "avg_latency_sec": {
+      "OLLAMA_BASELINE": 2.9996,
+      "OPENROUTER_MODEL_A": 39.7267,
+      "OPENROUTER_MODEL_B": 12.6391
+    },
+    "median_latency_sec": {
+      "OLLAMA_BASELINE": 2.843,
+      "OPENROUTER_MODEL_A": 29.3565,
+      "OPENROUTER_MODEL_B": 7.6686
+    },
+    "avg_total_tokens": {
+      "OLLAMA_BASELINE": 381.2,
+      "OPENROUTER_MODEL_A": 2011.67,
+      "OPENROUTER_MODEL_B": 689.87
+    }
+  }
+}

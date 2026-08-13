@@ -1,0 +1,322 @@
+{
+  "comparison": {
+    "query_count": 1,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 1,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.40000000000000036
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.6000000000000005
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.20000000000000018
+      }
+    },
+    "category_winner": "OLLAMA_BASELINE",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "conceptual": {
+    "query_count": 3,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 3,
+        "model_a_wins": 2,
+        "model_b_wins": 0,
+        "ties": 1,
+        "win_rate_a": 0.6666666666666666,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.9333333333333335
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 3,
+        "model_a_wins": 0,
+        "model_b_wins": 0,
+        "ties": 3,
+        "win_rate_a": 0.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.0
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 3,
+        "model_a_wins": 0,
+        "model_b_wins": 2,
+        "ties": 1,
+        "win_rate_a": 0.0,
+        "win_rate_b": 0.6666666666666666,
+        "mean_delta_a_minus_b": -0.9333333333333335
+      }
+    },
+    "category_winner": "TIE",
+    "confidence": "NO_CLEAR_WINNER"
+  },
+  "document_specific": {
+    "query_count": 2,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 2,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 1,
+        "win_rate_a": 0.0,
+        "win_rate_b": 0.5,
+        "mean_delta_a_minus_b": -0.19999999999999996
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 2,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 1,
+        "win_rate_a": 0.0,
+        "win_rate_b": 0.5,
+        "mean_delta_a_minus_b": -0.7
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 2,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 1,
+        "win_rate_a": 0.0,
+        "win_rate_b": 0.5,
+        "mean_delta_a_minus_b": -0.5
+      }
+    },
+    "category_winner": "OPENROUTER_MODEL_B",
+    "confidence": "MEDIUM"
+  },
+  "exam_style": {
+    "query_count": 1,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 1,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 1.6
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 0,
+        "win_rate_a": 0.0,
+        "win_rate_b": 1.0,
+        "mean_delta_a_minus_b": -0.40000000000000036
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 0,
+        "win_rate_a": 0.0,
+        "win_rate_b": 1.0,
+        "mean_delta_a_minus_b": -2.0000000000000004
+      }
+    },
+    "category_winner": "OPENROUTER_MODEL_B",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "factual": {
+    "query_count": 3,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 3,
+        "model_a_wins": 1,
+        "model_b_wins": 1,
+        "ties": 1,
+        "win_rate_a": 0.3333333333333333,
+        "win_rate_b": 0.3333333333333333,
+        "mean_delta_a_minus_b": -0.3333333333333333
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 3,
+        "model_a_wins": 2,
+        "model_b_wins": 0,
+        "ties": 1,
+        "win_rate_a": 0.6666666666666666,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.5333333333333334
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 3,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 2,
+        "win_rate_a": 0.3333333333333333,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.8666666666666668
+      }
+    },
+    "category_winner": "OPENROUTER_MODEL_A",
+    "confidence": "MEDIUM"
+  },
+  "missing_information": {
+    "query_count": 1,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 1,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 2.9999999999999996
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 1.5999999999999996
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 0,
+        "win_rate_a": 0.0,
+        "win_rate_b": 1.0,
+        "mean_delta_a_minus_b": -1.4
+      }
+    },
+    "category_winner": "OLLAMA_BASELINE",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "multi_document": {
+    "query_count": 1,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 1,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 0,
+        "win_rate_a": 0.0,
+        "win_rate_b": 1.0,
+        "mean_delta_a_minus_b": -0.40000000000000036
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 0,
+        "model_b_wins": 1,
+        "ties": 0,
+        "win_rate_a": 0.0,
+        "win_rate_b": 1.0,
+        "mean_delta_a_minus_b": -0.40000000000000036
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 1,
+        "model_a_wins": 0,
+        "model_b_wins": 0,
+        "ties": 1,
+        "win_rate_a": 0.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.0
+      }
+    },
+    "category_winner": "TIE",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "multi_hop": {
+    "query_count": 3,
+    "pairwise_comparisons": {
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_A": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_A",
+        "queries_compared": 3,
+        "model_a_wins": 3,
+        "model_b_wins": 0,
+        "ties": 0,
+        "win_rate_a": 1.0,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 0.40000000000000036
+      },
+      "OLLAMA_BASELINE_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OLLAMA_BASELINE",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 3,
+        "model_a_wins": 1,
+        "model_b_wins": 0,
+        "ties": 2,
+        "win_rate_a": 0.3333333333333333,
+        "win_rate_b": 0.0,
+        "mean_delta_a_minus_b": 1.0000000000000002
+      },
+      "OPENROUTER_MODEL_A_VS_OPENROUTER_MODEL_B": {
+        "model_a": "OPENROUTER_MODEL_A",
+        "model_b": "OPENROUTER_MODEL_B",
+        "queries_compared": 3,
+        "model_a_wins": 1,
+        "model_b_wins": 2,
+        "ties": 0,
+        "win_rate_a": 0.3333333333333333,
+        "win_rate_b": 0.6666666666666666,
+        "mean_delta_a_minus_b": 0.5999999999999998
+      }
+    },
+    "category_winner": "OLLAMA_BASELINE",
+    "confidence": "MEDIUM"
+  }
+}

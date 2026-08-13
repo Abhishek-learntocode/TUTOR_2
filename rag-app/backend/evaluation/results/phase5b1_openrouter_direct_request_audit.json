@@ -1,0 +1,118 @@
+{
+  "audit_phase": "5B.1A_DIRECT_OPENROUTER_REQUESTS",
+  "expected_requests": 3,
+  "actual_requests_sent": 3,
+  "successful_requests": 3,
+  "failed_requests": 0,
+  "all_successful": true,
+  "records": [
+    {
+      "request_number": 1,
+      "timestamp": "2026-08-13 14:52:47",
+      "prompt": "Explain virtual memory in one sentence.",
+      "configured_model": "openrouter/free",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "status_code": 200,
+      "openrouter_request_id": "gen-1786612969-SZp5sig4WCIesWcUO3PK",
+      "latency_sec": 4.4765,
+      "usage": {
+        "prompt_tokens": 24,
+        "completion_tokens": 416,
+        "total_tokens": 440,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 436,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "response_text": "Virtual memory is an operating system feature that creates the illusion of a large, contiguous, and isolated address space for each process by dynamically mapping virtual addresses to physical memory, using disk storage to compensate for limited RAM.",
+      "success": true,
+      "error": null
+    },
+    {
+      "request_number": 2,
+      "timestamp": "2026-08-13 14:52:52",
+      "prompt": "Explain paging in one sentence.",
+      "configured_model": "openrouter/free",
+      "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+      "status_code": 200,
+      "openrouter_request_id": "gen-1786612972-HS5YhSZhSn185te9zHIf",
+      "latency_sec": 34.1933,
+      "usage": {
+        "prompt_tokens": 19,
+        "completion_tokens": 343,
+        "total_tokens": 362,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 401,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "response_text": "Paging is a memory management technique that divides physical memory into fixed-size blocks called pages, allowing the operating system to efficiently allocate and manage memory by mapping virtual addresses to physical addresses.",
+      "success": true,
+      "error": null
+    },
+    {
+      "request_number": 3,
+      "timestamp": "2026-08-13 14:53:26",
+      "prompt": "Compare paging and virtual memory in three sentences.",
+      "configured_model": "openrouter/free",
+      "actual_model": "nvidia/nemotron-3.5-lightning:free",
+      "status_code": 200,
+      "openrouter_request_id": "gen-1786613007-lrkIyLzyFAiNEtNcNHIN",
+      "latency_sec": 17.8757,
+      "usage": {
+        "prompt_tokens": 25,
+        "completion_tokens": 748,
+        "total_tokens": 773,
+        "cost": 0,
+        "is_byok": false,
+        "prompt_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "audio_tokens": 0,
+          "video_tokens": 0
+        },
+        "cost_details": {
+          "upstream_inference_cost": 0,
+          "upstream_inference_prompt_cost": 0,
+          "upstream_inference_completions_cost": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 807,
+          "image_tokens": 0,
+          "audio_tokens": 0
+        }
+      },
+      "response_text": "Paging is a hardware- and operating system-level technique that splits memory into fixed-size blocks called frames and pages to map virtual addresses to physical locations. Virtual memory is a broader memory management strategy that uses paging, and sometimes segmentation, to give programs the impression of a large, contiguous address space by leveraging secondary storage when RAM is full. Thus, paging serves as the primary mechanism through which virtual memory is realized, enabling efficient multitasking and memory isolation.",
+      "success": true,
+      "error": null
+    }
+  ]
+}

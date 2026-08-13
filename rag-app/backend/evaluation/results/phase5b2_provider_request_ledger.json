@@ -1,0 +1,642 @@
+[
+  {
+    "request_id": "ollama-7c5de9ab",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 4.4009,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 266,
+      "output_tokens": 55,
+      "total_tokens": 321
+    }
+  },
+  {
+    "request_id": "a2a75ac1b9d97fd7-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75ac1b9d97fd7-MAA",
+    "latency_sec": 1.1715,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75acf6dafd5ee-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75acf6dafd5ee-MAA",
+    "latency_sec": 0.3316,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75ae13bc97ffe-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75ae13bc97ffe-MAA",
+    "latency_sec": 0.3271,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75ae96a917f60-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75ae96a917f60-MAA",
+    "latency_sec": 0.2978,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75afb3eb7213a-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75afb3eb7213a-MAA",
+    "latency_sec": 0.3332,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75b032b49460f-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75b032b49460f-MAA",
+    "latency_sec": 0.2578,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-b0fadbbc",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.2317,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 363,
+      "output_tokens": 131,
+      "total_tokens": 494
+    }
+  },
+  {
+    "request_id": "a2a75b3d0e649146-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75b3d0e649146-MAA",
+    "latency_sec": 0.3162,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75b456850a90e-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75b456850a90e-MAA",
+    "latency_sec": 0.5524,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75b589b557fe8-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75b589b557fe8-MAA",
+    "latency_sec": 0.3505,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75b611a2e7f87-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75b611a2e7f87-MAA",
+    "latency_sec": 0.3485,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75b72d8e77fa3-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75b72d8e77fa3-MAA",
+    "latency_sec": 0.3138,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75b7b5c182d42-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75b7b5c182d42-MAA",
+    "latency_sec": 0.3661,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-7b656bd1",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 3.3439,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 367,
+      "output_tokens": 146,
+      "total_tokens": 513
+    }
+  },
+  {
+    "request_id": "a2a75bb5e8d924f5-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75bb5e8d924f5-MAA",
+    "latency_sec": 1.6084,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75bc5d85ba902-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75bc5d85ba902-MAA",
+    "latency_sec": 0.4926,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75bd8b904968e-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75bd8b904968e-MAA",
+    "latency_sec": 0.2938,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75be0c8472175-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75be0c8472175-MAA",
+    "latency_sec": 0.2933,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75bf23c888016-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75bf23c888016-MAA",
+    "latency_sec": 0.2961,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75bfacf40a8fc-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75bfacf40a8fc-MAA",
+    "latency_sec": 0.3557,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-77f30b68",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.4707,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 125,
+      "output_tokens": 11,
+      "total_tokens": 136
+    }
+  },
+  {
+    "request_id": "a2a75c2e4aec7d86-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75c2e4aec7d86-MAA",
+    "latency_sec": 0.3495,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75c3668fc9147-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75c3668fc9147-MAA",
+    "latency_sec": 0.2805,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75c483bb193d3-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75c483bb193d3-MAA",
+    "latency_sec": 0.3502,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75c50daf47637-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75c50daf47637-MAA",
+    "latency_sec": 0.3749,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75c626b4d9139-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75c626b4d9139-MAA",
+    "latency_sec": 0.2955,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75c6a8b1d7eea-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75c6a8b1d7eea-MAA",
+    "latency_sec": 0.2947,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-715b6f7e",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.9176,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 286,
+      "output_tokens": 79,
+      "total_tokens": 365
+    }
+  },
+  {
+    "request_id": "a2a75ca1afb87f45-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75ca1afb87f45-MAA",
+    "latency_sec": 0.3075,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75ca9dc019a16-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75ca9dc019a16-MAA",
+    "latency_sec": 0.2907,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75cbb6b02be0a-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75cbb6b02be0a-MAA",
+    "latency_sec": 0.3015,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75cc3ce05b540-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75cc3ce05b540-MAA",
+    "latency_sec": 0.3397,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75cd52ef88826-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75cd52ef88826-MAA",
+    "latency_sec": 0.2809,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75cddac857ef2-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75cddac857ef2-MAA",
+    "latency_sec": 0.5398,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-ef3ffa09",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.4987,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 615,
+      "output_tokens": 11,
+      "total_tokens": 626
+    }
+  },
+  {
+    "request_id": "a2a75d13dd6d7fe8-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75d13dd6d7fe8-MAA",
+    "latency_sec": 0.3382,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d1c282f380b-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75d1c282f380b-MAA",
+    "latency_sec": 0.3065,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d2e0abcca8c-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75d2e0abcca8c-MAA",
+    "latency_sec": 0.3627,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d363beff3eb-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75d363beff3eb-MAA",
+    "latency_sec": 0.3101,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d480bd7182b-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75d480bd7182b-MAA",
+    "latency_sec": 0.3337,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d506ea91ae3-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75d506ea91ae3-MAA",
+    "latency_sec": 0.339,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-e8c9f6be",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.5261,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 218,
+      "output_tokens": 11,
+      "total_tokens": 229
+    }
+  },
+  {
+    "request_id": "a2a75d82fba60bbe-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75d82fba60bbe-MAA",
+    "latency_sec": 0.321,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d8b68ad6115-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75d8b68ad6115-MAA",
+    "latency_sec": 0.3279,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75d9d3d247fd1-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75d9d3d247fd1-MAA",
+    "latency_sec": 0.3703,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75da5ef107f9f-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75da5ef107f9f-MAA",
+    "latency_sec": 0.3589,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75db7c9349d73-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75db7c9349d73-MAA",
+    "latency_sec": 0.3444,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75dc06f82c87a-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75dc06f82c87a-MAA",
+    "latency_sec": 0.3643,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "ollama-3e741fc5",
+    "provider": "ollama",
+    "configured_model": "qwen2.5:1.5b",
+    "actual_model": "qwen2.5:1.5b",
+    "latency_sec": 2.3357,
+    "success": true,
+    "error": null,
+    "usage": {
+      "input_tokens": 308,
+      "output_tokens": 7,
+      "total_tokens": 315
+    }
+  },
+  {
+    "request_id": "a2a75df4db034981-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75df4db034981-MAA",
+    "latency_sec": 0.3487,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75dfcfaaba919-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-3.5-lightning:free",
+    "actual_model": "nvidia/nemotron-3.5-lightning:free",
+    "openrouter_request_id": "a2a75dfcfaaba919-MAA",
+    "latency_sec": 0.2893,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75e0ece2ee14a-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75e0ece2ee14a-MAA",
+    "latency_sec": 0.3336,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75e170f2a93d3-MAA",
+    "provider": "openrouter",
+    "configured_model": "poolside/laguna-s-2.1:free",
+    "actual_model": "poolside/laguna-s-2.1:free",
+    "openrouter_request_id": "a2a75e170f2a93d3-MAA",
+    "latency_sec": 0.3197,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75e2888dd5b98-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75e2888dd5b98-MAA",
+    "latency_sec": 0.2853,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  },
+  {
+    "request_id": "a2a75e308a6b7fa9-MAA",
+    "provider": "openrouter",
+    "configured_model": "nvidia/nemotron-nano-9b-v2:free",
+    "actual_model": "nvidia/nemotron-nano-9b-v2:free",
+    "openrouter_request_id": "a2a75e308a6b7fa9-MAA",
+    "latency_sec": 0.3056,
+    "success": false,
+    "error": "OpenRouter HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLimit-Remain",
+    "usage": {}
+  }
+]

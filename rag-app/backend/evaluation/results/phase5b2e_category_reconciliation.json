@@ -1,0 +1,113 @@
+{
+  "comparison": {
+    "query_count": 1,
+    "queries": [
+      "compare_001"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 4.4,
+      "OPENROUTER_MODEL_A": 4.0,
+      "OPENROUTER_MODEL_B": 3.8
+    },
+    "winner": "OLLAMA_BASELINE",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "conceptual": {
+    "query_count": 3,
+    "queries": [
+      "concept_001",
+      "concept_002",
+      "concept_003"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 4.133333333333334,
+      "OPENROUTER_MODEL_A": 3.2,
+      "OPENROUTER_MODEL_B": 4.133333333333334
+    },
+    "winner": "TIE",
+    "confidence": "NO_CLEAR_WINNER"
+  },
+  "document_specific": {
+    "query_count": 2,
+    "queries": [
+      "doc_001",
+      "doc_003"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 3.3,
+      "OPENROUTER_MODEL_A": 3.5,
+      "OPENROUTER_MODEL_B": 4.0
+    },
+    "winner": "OPENROUTER_MODEL_B",
+    "confidence": "MEDIUM"
+  },
+  "exam_style": {
+    "query_count": 1,
+    "queries": [
+      "exam_001"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 4.0,
+      "OPENROUTER_MODEL_A": 2.4,
+      "OPENROUTER_MODEL_B": 4.4
+    },
+    "winner": "OPENROUTER_MODEL_B",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "factual": {
+    "query_count": 3,
+    "queries": [
+      "factual_001",
+      "factual_002",
+      "factual_003"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 3.9333333333333336,
+      "OPENROUTER_MODEL_A": 4.266666666666667,
+      "OPENROUTER_MODEL_B": 3.4000000000000004
+    },
+    "winner": "OPENROUTER_MODEL_A",
+    "confidence": "MEDIUM"
+  },
+  "missing_information": {
+    "query_count": 1,
+    "queries": [
+      "missing_002"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 4.6,
+      "OPENROUTER_MODEL_A": 1.6,
+      "OPENROUTER_MODEL_B": 3.0
+    },
+    "winner": "OLLAMA_BASELINE",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "multi_document": {
+    "query_count": 1,
+    "queries": [
+      "multidoc_001"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 4.0,
+      "OPENROUTER_MODEL_A": 4.4,
+      "OPENROUTER_MODEL_B": 4.4
+    },
+    "winner": "TIE",
+    "confidence": "INSUFFICIENT_EVIDENCE"
+  },
+  "multi_hop": {
+    "query_count": 3,
+    "queries": [
+      "multihop_001",
+      "multihop_002",
+      "multihop_004"
+    ],
+    "model_scores": {
+      "OLLAMA_BASELINE": 4.4,
+      "OPENROUTER_MODEL_A": 4.0,
+      "OPENROUTER_MODEL_B": 3.4000000000000004
+    },
+    "winner": "OLLAMA_BASELINE",
+    "confidence": "MEDIUM"
+  }
+}

@@ -51,13 +51,29 @@ def upload_document(
         raise HTTPException(status_code=500, detail=str(e))
 
 
+import time
+import logging
+
+logger = logging.getLogger("rag_tracer")
+
+
 @router.post("/query", response_model=QueryResponse)
 def query(request: Request, body: QueryRequest):
+    t0 = time.time()
     try:
         state = RAGState(question=body.question)
         final_state = request.app.state.rag_graph.invoke(state)
+        elapsed = time.time() - t0
+        logger.info(
+            f"TRACE SUMMARY | QUERY: '{body.question}' | TYPE: {final_state.query_type} | "
+            f"SUB_QUERIES: {final_state.sub_queries} | CONTEXT_CHUNKS: {len(final_state.context)} | "
+            f"ANSWER_LEN: {len(final_state.answer)} | TOTAL_LATENCY: {elapsed:.4f}s"
+        )
         return QueryResponse(answer=final_state.answer, context=final_state.context)
     except Exception as e:
+        elapsed = time.time() - t0
+        logger.error(f"TRACE ERROR | QUERY: '{body.question}' | ERROR: {e} | TOTAL_LATENCY: {elapsed:.4f}s")
         print("[Query Error Traceback]:")
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+

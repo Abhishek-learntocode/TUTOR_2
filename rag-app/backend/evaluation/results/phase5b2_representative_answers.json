@@ -1,0 +1,138 @@
+[
+  {
+    "query_id": "factual_001",
+    "category": "factual",
+    "query": "What is virtual memory?",
+    "context_documents": [
+      "sample_exam.txt",
+      "OS_Notes.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "frozen_context_snippet": "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n...",
+    "answers": {
+      "OLLAMA_BASELINE": "Virtual Memory is created as an illusion of a large main memory, which allows programs to use secondary storage (like hard drives) as if it were part of the primary memory. This technique helps manage limited physical memory by swapping out less frequently used data to disk when needed.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "concept_001",
+    "category": "conceptual",
+    "query": "Explain how paging works in operating systems.",
+    "context_documents": [
+      "sample_exam.txt",
+      "sample_hybrid_test.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "frozen_context_snippet": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algor...",
+    "answers": {
+      "OLLAMA_BASELINE": "Paging in operating systems allows virtual memory to be accessed as if it were main memory. It involves mapping a portion of the virtual address space into physical memory, where each page (a fixed-size block) is mapped to a contiguous region of physical memory. This technique helps manage large amounts of data by breaking it down into manageable pages that can fit within available physical memory. When a program attempts to access a page not currently in RAM, a page fault occurs, indicating the need for an I/O operation or swapping process to retrieve the required information from secondary storage. Paging optimizes resource utilization and improves system efficiency by efficiently managing memory allocation and deallocation.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "multihop_001",
+    "category": "multi_hop",
+    "query": "How does paging work, and what problem does it solve?",
+    "context_documents": [
+      "sample_exam.txt",
+      "sample_hybrid_test.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "frozen_context_snippet": "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocatio...",
+    "answers": {
+      "OLLAMA_BASELINE": "Paging works by dividing the physical memory into fixed-size pages. When a program attempts to access a page that is not currently stored in RAM (RAM), a \"page fault\" occurs, indicating that the requested data is not available. To resolve this issue, the operating system maps the virtual address space of the process onto the physical memory using these pages.\n\nPaging solves the problem of efficient use of secondary storage by allowing programs to access any part of their code or data without having to worry about where it physically resides in RAM. This eliminates the need for contiguous allocation of physical memory, which can be inefficient and wasteful. By mapping virtual addresses directly onto physical pages, paging optimizes resource utilization and improves overall system performance.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "doc_003",
+    "category": "document_specific",
+    "query": "According to OS_Notes.txt, what is a virtual address space?",
+    "context_documents": [
+      "OS_Notes.txt"
+    ],
+    "frozen_context_snippet": "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory....",
+    "answers": {
+      "OLLAMA_BASELINE": "I cannot find the answer in the provided context.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "compare_001",
+    "category": "comparison",
+    "query": "Compare virtual memory and physical memory.",
+    "context_documents": [
+      "sample_exam.txt",
+      "OS_Notes.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "frozen_context_snippet": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a proc...",
+    "answers": {
+      "OLLAMA_BASELINE": "Virtual memory allows secondary storage (like disk) to be accessed as if it were main memory, whereas physical memory refers to the actual RAM or other types of primary storage used by a computer. In essence, virtual memory provides an illusion of larger available memory than is physically present on the system, while physical memory consists of the hardware that directly interacts with the CPU and stores data in real-time.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "missing_002",
+    "category": "missing_information",
+    "query": "What is the stock price of Apple in 2026?",
+    "context_documents": [
+      "sample_two_stage.txt",
+      "sample_hybrid_test.txt"
+    ],
+    "frozen_context_snippet": "[Document: sample_two_stage.txt | Type: book]\n\nItem #8: This is informational chunk number 8 covering topic 8.\n\nItem #9: This is informational chunk number 9 covering topic 9.\n\nItem #10: This is informational chunk number 10 covering topic 10.\n\nItem #11: This is informational chunk number 11 coverin...",
+    "answers": {
+      "OLLAMA_BASELINE": "I cannot find the answer in the provided context.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "multidoc_001",
+    "category": "multi_document",
+    "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+    "context_documents": [
+      "sample_exam.txt",
+      "OS_Notes.txt"
+    ],
+    "frozen_context_snippet": "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory.\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQ1. What is process synchronization...",
+    "answers": {
+      "OLLAMA_BASELINE": "I cannot find the answer in the provided context.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  },
+  {
+    "query_id": "exam_001",
+    "category": "exam_style",
+    "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+    "context_documents": [
+      "sample_exam.txt",
+      "OS_Notes.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "frozen_context_snippet": "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n...",
+    "answers": {
+      "OLLAMA_BASELINE": "B) Memory management capability.",
+      "OPENROUTER_MODEL_A": "",
+      "OPENROUTER_MODEL_B": "",
+      "OPENROUTER_MODEL_C": ""
+    }
+  }
+]

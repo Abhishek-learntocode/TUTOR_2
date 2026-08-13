@@ -1,0 +1,112 @@
+[
+  {
+    "metric": "correctness",
+    "status": "EVIDENCED",
+    "source_field": "correctness_score",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "grounding",
+    "status": "EVIDENCED",
+    "source_field": "grounding_score",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "completeness",
+    "status": "EVIDENCED",
+    "source_field": "completeness_score",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "relevance",
+    "status": "EVIDENCED",
+    "source_field": "relevance_score",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "instruction_following",
+    "status": "EVIDENCED",
+    "source_field": "instruction_following_score",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "overall_quality",
+    "status": "DERIVED",
+    "source_field": "mean(5_score_fields)",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "refusal_correctness",
+    "status": "EVIDENCED",
+    "source_field": "refusal_correctness",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "document_scope_correctness",
+    "status": "EVIDENCED",
+    "source_field": "document_scope_correctness",
+    "source_type": "judge_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "latency",
+    "status": "EVIDENCED",
+    "source_field": "generation_latency_sec",
+    "source_type": "generation_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "total_tokens",
+    "status": "EVIDENCED",
+    "source_field": "total_tokens",
+    "source_type": "generation_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  },
+  {
+    "metric": "answer_length",
+    "status": "DERIVED",
+    "source_field": "len(full_answer)",
+    "source_type": "generation_records",
+    "valid_records": 45,
+    "missing_records": 0,
+    "model_coverage": "100%",
+    "category_coverage": "100%"
+  }
+]

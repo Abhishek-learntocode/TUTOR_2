@@ -1,0 +1,438 @@
+[
+  {
+    "id": "factual_001",
+    "category": "factual",
+    "query": "What is virtual memory?",
+    "required_terms": [
+      "virtual memory"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "factual_002",
+    "category": "factual",
+    "query": "What is a page fault?",
+    "required_terms": [
+      "page fault"
+    ],
+    "found_in_disk_files": [
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "factual_003",
+    "category": "factual",
+    "query": "What is the function of the Memory Management Unit (MMU)?",
+    "required_terms": [
+      "mmu"
+    ],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "concept_001",
+    "category": "conceptual",
+    "query": "Explain how paging works in operating systems.",
+    "required_terms": [
+      "paging"
+    ],
+    "found_in_disk_files": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "concept_002",
+    "category": "conceptual",
+    "query": "Explain how address translation is performed in virtual memory systems.",
+    "required_terms": [
+      "virtual memory"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "concept_003",
+    "category": "conceptual",
+    "query": "Explain the concept of thrashing in operating systems.",
+    "required_terms": [
+      "thrashing"
+    ],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "concept_004",
+    "category": "conceptual",
+    "query": "Explain page replacement algorithms.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "multihop_001",
+    "category": "multi_hop",
+    "query": "How does paging work, and what problem does it solve?",
+    "required_terms": [
+      "paging"
+    ],
+    "found_in_disk_files": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "multihop_002",
+    "category": "multi_hop",
+    "query": "What is virtual memory, how does paging work, and why are page faults needed?",
+    "required_terms": [
+      "virtual memory",
+      "paging",
+      "page fault"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "multihop_003",
+    "category": "multi_hop",
+    "query": "What is demand paging and how does the operating system handle a page fault during process execution?",
+    "required_terms": [
+      "paging",
+      "page fault"
+    ],
+    "found_in_disk_files": [
+      "sample_exam.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "multihop_004",
+    "category": "multi_hop",
+    "query": "How do page tables and TLBs interact to accelerate memory reference translation?",
+    "required_terms": [
+      "tlb"
+    ],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "doc_001",
+    "category": "document_specific",
+    "query": "According to OS_Notes.txt, explain paging and page faults.",
+    "required_terms": [
+      "paging",
+      "page fault"
+    ],
+    "found_in_disk_files": [
+      "sample_exam.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "doc_002",
+    "category": "document_specific",
+    "query": "According to sample_exam.txt, what is the role of virtual memory?",
+    "required_terms": [
+      "virtual memory"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "doc_003",
+    "category": "document_specific",
+    "query": "According to OS_Notes.txt, what is a virtual address space?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "doc_004",
+    "category": "document_specific",
+    "query": "Summarize the key contents of OS_Notes.txt.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "compare_001",
+    "category": "comparison",
+    "query": "Compare virtual memory and physical memory.",
+    "required_terms": [
+      "virtual memory"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "compare_002",
+    "category": "comparison",
+    "query": "Compare paging and segmentation memory management techniques.",
+    "required_terms": [
+      "paging"
+    ],
+    "found_in_disk_files": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "compare_003",
+    "category": "comparison",
+    "query": "Compare internal fragmentation and external fragmentation.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "compare_004",
+    "category": "comparison",
+    "query": "What is the difference between page table and inverted page table?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "missing_001",
+    "category": "missing_information",
+    "query": "What is quantum computing architecture according to the notes?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "missing_002",
+    "category": "missing_information",
+    "query": "What is the stock price of Apple in 2026?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "missing_003",
+    "category": "missing_information",
+    "query": "What is the chemical composition of rust?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "partial_001",
+    "category": "partially_answerable",
+    "query": "Explain virtual memory paging and describe the design of the Linux kernel eBPF subsystem.",
+    "required_terms": [
+      "virtual memory",
+      "paging"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "partial_002",
+    "category": "partially_answerable",
+    "query": "Explain page table translation and list the top 5 programming languages in 2026.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "partial_003",
+    "category": "partially_answerable",
+    "query": "What is a page fault and who won the 2024 FIFA World Cup?",
+    "required_terms": [
+      "page fault"
+    ],
+    "found_in_disk_files": [
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "multidoc_001",
+    "category": "multi_document",
+    "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "multidoc_002",
+    "category": "multi_document",
+    "query": "What concepts are covered in both OS_Notes.txt and sample_exam.txt?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "multidoc_003",
+    "category": "multi_document",
+    "query": "Synthesize the definitions of virtual memory across all available documents.",
+    "required_terms": [
+      "virtual memory"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "exam_001",
+    "category": "exam_style",
+    "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+    "required_terms": [
+      "virtual memory"
+    ],
+    "found_in_disk_files": [
+      "OS_Notes.txt",
+      "sample_exam.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "indexed_files": [
+      "OS_Notes.txt"
+    ],
+    "classification": "ANSWERABLE_CORPUS_PRESENT"
+  },
+  {
+    "id": "exam_002",
+    "category": "exam_style",
+    "query": "Explain the step-by-step sequence of events that occurs when a CPU generates a virtual address causing a TLB miss.",
+    "required_terms": [
+      "tlb"
+    ],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "exam_003",
+    "category": "exam_style",
+    "query": "Calculate effective access time if TLB access time is 10ns, memory access time is 100ns, and TLB hit ratio is 90%.",
+    "required_terms": [
+      "tlb"
+    ],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "exam_004",
+    "category": "exam_style",
+    "query": "Why does paging eliminate external fragmentation while still suffering from internal fragmentation?",
+    "required_terms": [
+      "paging"
+    ],
+    "found_in_disk_files": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt"
+    ],
+    "indexed_files": [],
+    "classification": "INDEX_MISSING_DOCUMENT"
+  },
+  {
+    "id": "ambiguous_001",
+    "category": "ambiguous",
+    "query": "Tell me about that concept from the previous notes.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "ambiguous_002",
+    "category": "ambiguous",
+    "query": "Explain the table structure.",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  },
+  {
+    "id": "ambiguous_003",
+    "category": "ambiguous",
+    "query": "Why is it important?",
+    "required_terms": [],
+    "found_in_disk_files": [],
+    "indexed_files": [],
+    "classification": "CORPUS_MISSING_INFORMATION"
+  }
+]

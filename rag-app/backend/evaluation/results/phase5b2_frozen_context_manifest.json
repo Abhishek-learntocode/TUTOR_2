@@ -1,0 +1,266 @@
+{
+  "factual_001": {
+    "query_id": "factual_001",
+    "query": "What is virtual memory?",
+    "category": "factual",
+    "expected_behavior": "answer_from_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_exam_inspect.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 9.5361,
+    "prompt_sha256": "50c29eeb88af076fd66c6488e4f3b6f344995c8b9bdcca1a89c710d15e4ea0bb",
+    "context_sha256": "83ebffb4081fe7b2948b5f8c69a978ba3fc996aa3162dc2f036fc343c0ad076d",
+    "full_context": "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory.\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fault occurs when a program attempts to access a block of memory that is not stored in RAM."
+  },
+  "factual_002": {
+    "query_id": "factual_002",
+    "query": "What is a page fault?",
+    "category": "factual",
+    "expected_behavior": "answer_from_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_two_stage.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt",
+      "sample_exam_rag.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.856,
+    "prompt_sha256": "da07778a450d99010d05daa4a044625d7aed8082b963939bc5e0863892481e30",
+    "context_sha256": "265d7b80480497dbd5fb672db3e7421ef5fc1255d2a5ef0d6a6b261c8d8579f5",
+    "full_context": "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fault occurs when a program attempts to access a block of memory that is not stored in RAM.\n\n---\n\n[Document: sample_exam_rag.txt | Type: exam_paper]\n\nQ1. What is a Deadlock in operating systems? [5 Marks]\nA. A situation where a set of processes are blocked because each process holds a resource and waits for another.\nB. A fast process execution mode.\nC. A network connection timeout.\nD. A disk storage format.\n\n---\n\n[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.\n\n---\n\n[Document: sample_two_stage.txt | Type: book]\n\nItem #15: This is informational chunk number 15 covering topic 15.\n\nItem #16: This is informational chunk number 16 covering topic 16.\n\nItem #17: This is informational chunk number 17 covering topic 17.\n\nItem #18: This is informational chunk number 18 covering topic 18.\n\nItem #19: This is informational chunk number 19 covering topic 19.\n\nItem #20: This is informational chunk number 20 covering topic 20.\n\nItem #21: Operating System Deadlock is a state where processes wait indefinitely for resources."
+  },
+  "factual_003": {
+    "query_id": "factual_003",
+    "query": "What is the function of the Memory Management Unit (MMU)?",
+    "category": "factual",
+    "expected_behavior": "answer_from_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_hybrid_test.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.8874,
+    "prompt_sha256": "b7e5c03e8ddad53530ce49ebc56820d8ec15a7789e30488fe36fd36fbce39bf8",
+    "context_sha256": "9d09d8e7710650ecbe16a877a65d9b8009bd25039cbd63a71c544060a81ea770",
+    "full_context": "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS concepts number 15.\n\nItem #16: Generic textbook paragraph about OS concepts number 16.\n\nItem #17: Generic textbook paragraph about OS concepts number 17.\n\nItem #18: Generic textbook paragraph about OS concepts number 18.\n\nItem #19: Generic textbook paragraph about OS concepts number 19.\n\nItem #20: Generic textbook paragraph about OS concepts number 20.\n\nItem #21: Special keyword Semaphore_Mutex_Lock_XYZ is used for process synchronization in operating systems.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory."
+  },
+  "concept_001": {
+    "query_id": "concept_001",
+    "query": "Explain how paging works in operating systems.",
+    "category": "conceptual",
+    "expected_behavior": "answer_from_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_hybrid_test.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.9513,
+    "prompt_sha256": "63f268dd356ec7e7deb0e395fd47cbcd8064d3aa04319fd14253050499b2aedc",
+    "context_sha256": "b6c1d09eb3295334396dea31dfd4008de5760945ba8433c473516b7fb14d0cdc",
+    "full_context": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fault occurs when a program attempts to access a block of memory that is not stored in RAM.\n\n---\n\n[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS concepts number 15.\n\nItem #16: Generic textbook paragraph about OS concepts number 16.\n\nItem #17: Generic textbook paragraph about OS concepts number 17.\n\nItem #18: Generic textbook paragraph about OS concepts number 18.\n\nItem #19: Generic textbook paragraph about OS concepts number 19.\n\nItem #20: Generic textbook paragraph about OS concepts number 20.\n\nItem #21: Special keyword Semaphore_Mutex_Lock_XYZ is used for process synchronization in operating systems."
+  },
+  "concept_002": {
+    "query_id": "concept_002",
+    "query": "Explain how address translation is performed in virtual memory systems.",
+    "category": "conceptual",
+    "expected_behavior": "answer_from_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_hybrid_test.txt",
+      "sample_exam_inspect.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.9045,
+    "prompt_sha256": "18c86f4932b9b5069bde584edb723d38d3871097bb47bdf630ff4ffff89fae15",
+    "context_sha256": "1551f04da61600ff5404f9a3b38142d511b603c858176a7f474b8f516793dffe",
+    "full_context": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS concepts number 15.\n\nItem #16: Generic textbook paragraph about OS concepts number 16.\n\nItem #17: Generic textbook paragraph about OS concepts number 17.\n\nItem #18: Generic textbook paragraph about OS concepts number 18.\n\nItem #19: Generic textbook paragraph about OS concepts number 19.\n\nItem #20: Generic textbook paragraph about OS concepts number 20.\n\nItem #21: Special keyword Semaphore_Mutex_Lock_XYZ is used for process synchronization in operating systems."
+  },
+  "concept_003": {
+    "query_id": "concept_003",
+    "query": "Explain the concept of thrashing in operating systems.",
+    "category": "conceptual",
+    "expected_behavior": "answer_from_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_two_stage.txt",
+      "sample_hybrid_test.txt",
+      "sample_exam_inspect.txt",
+      "sample_exam_rag.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.8378,
+    "prompt_sha256": "c5b273216a7f349e96f92fdd3e507acff256ee05fec01023a9b9f7197da78696",
+    "context_sha256": "986d44c080029c6b1dadde6a9f9a57068036ab8ad5482692d12fb9bfbe0c1971",
+    "full_context": "[Document: sample_exam_rag.txt | Type: exam_paper]\n\nQ1. What is a Deadlock in operating systems? [5 Marks]\nA. A situation where a set of processes are blocked because each process holds a resource and waits for another.\nB. A fast process execution mode.\nC. A network connection timeout.\nD. A disk storage format.\n\n---\n\n[Document: sample_two_stage.txt | Type: book]\n\nItem #15: This is informational chunk number 15 covering topic 15.\n\nItem #16: This is informational chunk number 16 covering topic 16.\n\nItem #17: This is informational chunk number 17 covering topic 17.\n\nItem #18: This is informational chunk number 18 covering topic 18.\n\nItem #19: This is informational chunk number 19 covering topic 19.\n\nItem #20: This is informational chunk number 20 covering topic 20.\n\nItem #21: Operating System Deadlock is a state where processes wait indefinitely for resources.\n\n---\n\n[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS concepts number 15.\n\nItem #16: Generic textbook paragraph about OS concepts number 16.\n\nItem #17: Generic textbook paragraph about OS concepts number 17.\n\nItem #18: Generic textbook paragraph about OS concepts number 18.\n\nItem #19: Generic textbook paragraph about OS concepts number 19.\n\nItem #20: Generic textbook paragraph about OS concepts number 20.\n\nItem #21: Special keyword Semaphore_Mutex_Lock_XYZ is used for process synchronization in operating systems.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache."
+  },
+  "multihop_001": {
+    "query_id": "multihop_001",
+    "query": "How does paging work, and what problem does it solve?",
+    "category": "multi_hop",
+    "expected_behavior": "multi_subquery_synthesis",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_hybrid_test.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.789,
+    "prompt_sha256": "0c9f77cb8e1927141718329ec4387af2da7ef04d14d64ff19f5de827f33febd8",
+    "context_sha256": "5a6a4d53335da1bdf548ab06797f78597f6535022f1afe62569e1c42c8bbed8f",
+    "full_context": "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fault occurs when a program attempts to access a block of memory that is not stored in RAM.\n\n---\n\n[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS concepts number 15.\n\nItem #16: Generic textbook paragraph about OS concepts number 16.\n\nItem #17: Generic textbook paragraph about OS concepts number 17.\n\nItem #18: Generic textbook paragraph about OS concepts number 18.\n\nItem #19: Generic textbook paragraph about OS concepts number 19.\n\nItem #20: Generic textbook paragraph about OS concepts number 20.\n\nItem #21: Special keyword Semaphore_Mutex_Lock_XYZ is used for process synchronization in operating systems."
+  },
+  "multihop_002": {
+    "query_id": "multihop_002",
+    "query": "What is virtual memory, how does paging work, and why are page faults needed?",
+    "category": "multi_hop",
+    "expected_behavior": "multi_subquery_synthesis",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_exam_inspect.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 3.1601,
+    "prompt_sha256": "f14941adc5f49f7ecb4c01c87c609ef61014a89e10927081a1515eb47467031b",
+    "context_sha256": "27b5e246783c2bff87630953586bc35b425a3b8267c13b438b93b489404db578",
+    "full_context": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fault occurs when a program attempts to access a block of memory that is not stored in RAM.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory."
+  },
+  "multihop_004": {
+    "query_id": "multihop_004",
+    "query": "How do page tables and TLBs interact to accelerate memory reference translation?",
+    "category": "multi_hop",
+    "expected_behavior": "multi_subquery_synthesis",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.9689,
+    "prompt_sha256": "0c47be47dbbd6a226531902cd4c5ce990ef40e0448177325e727ab717a3eaa78",
+    "context_sha256": "aa645949367d70da52bce34e3d0a6966490a41520d94fcdc2bf5ae80f84bbd57",
+    "full_context": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fault occurs when a program attempts to access a block of memory that is not stored in RAM.\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQ1. What is process synchronization? [5 Marks]\nA. Method to prevent race conditions\nB. File transfer protocol\nC. Memory allocation strategy\nD. Network layer routing"
+  },
+  "doc_001": {
+    "query_id": "doc_001",
+    "query": "According to OS_Notes.txt, explain paging and page faults.",
+    "category": "document_specific",
+    "expected_behavior": "scoped_retrieval_answer",
+    "document_scope": [
+      "OS_Notes.txt"
+    ],
+    "retrieved_documents": [
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 1,
+    "retrieval_latency_sec": 2.4744,
+    "prompt_sha256": "908dc5461d4357bea76bb0d225c2c34eba4d2536103099a5e25f4fed89b3caa8",
+    "context_sha256": "4f928d77c320a8e3c32178eaf7dafac1f674a9d8c17bd9f0c8bb2b6f5b6ae108",
+    "full_context": "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory."
+  },
+  "doc_003": {
+    "query_id": "doc_003",
+    "query": "According to OS_Notes.txt, what is a virtual address space?",
+    "category": "document_specific",
+    "expected_behavior": "scoped_retrieval_answer",
+    "document_scope": [
+      "OS_Notes.txt"
+    ],
+    "retrieved_documents": [
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 1,
+    "retrieval_latency_sec": 2.2134,
+    "prompt_sha256": "286611ed98f08b55d0839a2a4adc130a562a657b983ebd45bdca67966a9b2827",
+    "context_sha256": "4f928d77c320a8e3c32178eaf7dafac1f674a9d8c17bd9f0c8bb2b6f5b6ae108",
+    "full_context": "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory."
+  },
+  "compare_001": {
+    "query_id": "compare_001",
+    "query": "Compare virtual memory and physical memory.",
+    "category": "comparison",
+    "expected_behavior": "comparative_synthesis",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.7713,
+    "prompt_sha256": "33a948bfc167e6428fb99d9cd71f83bb135a19b4baeea0b069ecd1101d05ed00",
+    "context_sha256": "11b5e890678157242817a2c5b8e51a759813c8c91b236005ada79cb5f424f194",
+    "full_context": "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory.\n\n---\n\n[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory."
+  },
+  "missing_002": {
+    "query_id": "missing_002",
+    "query": "What is the stock price of Apple in 2026?",
+    "category": "missing_information",
+    "expected_behavior": "refuse_or_state_not_in_context",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_two_stage.txt",
+      "sample_hybrid_test.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 2.8263,
+    "prompt_sha256": "9ca05533e7cda57133332fb1d3add176c524a6888e2ce84f3e45f99a55019300",
+    "context_sha256": "c7d243062565d45daf01f8ab6df1ce5f4f69f6e676194728ff0b83a371af5cbb",
+    "full_context": "[Document: sample_two_stage.txt | Type: book]\n\nItem #8: This is informational chunk number 8 covering topic 8.\n\nItem #9: This is informational chunk number 9 covering topic 9.\n\nItem #10: This is informational chunk number 10 covering topic 10.\n\nItem #11: This is informational chunk number 11 covering topic 11.\n\nItem #12: This is informational chunk number 12 covering topic 12.\n\nItem #13: This is informational chunk number 13 covering topic 13.\n\nItem #14: This is informational chunk number 14 covering topic 14.\n\n---\n\n[Document: sample_two_stage.txt | Type: book]\n\nItem #1: This is informational chunk number 1 covering topic 1.\n\nItem #2: This is informational chunk number 2 covering topic 2.\n\nItem #3: This is informational chunk number 3 covering topic 3.\n\nItem #4: This is informational chunk number 4 covering topic 4.\n\nItem #5: This is informational chunk number 5 covering topic 5.\n\nItem #6: This is informational chunk number 6 covering topic 6.\n\nItem #7: This is informational chunk number 7 covering topic 7.\n\n---\n\n[Document: sample_two_stage.txt | Type: book]\n\nItem #15: This is informational chunk number 15 covering topic 15.\n\nItem #16: This is informational chunk number 16 covering topic 16.\n\nItem #17: This is informational chunk number 17 covering topic 17.\n\nItem #18: This is informational chunk number 18 covering topic 18.\n\nItem #19: This is informational chunk number 19 covering topic 19.\n\nItem #20: This is informational chunk number 20 covering topic 20.\n\nItem #21: Operating System Deadlock is a state where processes wait indefinitely for resources.\n\n---\n\n[Document: sample_hybrid_test.txt | Type: book]\n\nItem #8: Generic textbook paragraph about OS concepts number 8.\n\nItem #9: Generic textbook paragraph about OS concepts number 9.\n\nItem #10: Generic textbook paragraph about OS concepts number 10.\n\nItem #11: Generic textbook paragraph about OS concepts number 11.\n\nItem #12: Generic textbook paragraph about OS concepts number 12.\n\nItem #13: Generic textbook paragraph about OS concepts number 13.\n\nItem #14: Generic textbook paragraph about OS concepts number 14."
+  },
+  "multidoc_001": {
+    "query_id": "multidoc_001",
+    "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+    "category": "multi_document",
+    "expected_behavior": "cross_document_comparison",
+    "document_scope": [
+      "OS_Notes.txt",
+      "sample_exam.txt"
+    ],
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 3,
+    "retrieval_latency_sec": 2.4799,
+    "prompt_sha256": "6fb018e83579f7d284cd3097f7a17709b88677d5527743c20c829e066850d683",
+    "context_sha256": "de503a7a646e222799204ea0e66062ab24aa0c3ff659179e036391de665ef7aa",
+    "full_context": "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory.\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQ1. What is process synchronization? [5 Marks]\nA. Method to prevent race conditions\nB. File transfer protocol\nC. Memory allocation strategy\nD. Network layer routing\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory."
+  },
+  "exam_001": {
+    "query_id": "exam_001",
+    "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+    "category": "exam_style",
+    "expected_behavior": "multiple_choice_reasoning",
+    "document_scope": null,
+    "retrieved_documents": [
+      "sample_exam.txt",
+      "sample_routing_doc.txt",
+      "sample_exam_inspect.txt",
+      "OS_Notes.txt"
+    ],
+    "context_chunk_count": 4,
+    "retrieval_latency_sec": 3.2643,
+    "prompt_sha256": "d934e0e9b5b09181858febe7fb70b3cd2789de42f75b547639170f66ca0a599b",
+    "context_sha256": "2aac7465029eddcbe5bfa3c7ac3ddfbfa53e4b9d39cb4cae91f1167af797ce65",
+    "full_context": "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\nA. A memory management technique that creates an illusion of a large main memory.\nB. Hardware storage drive.\nC. Graphics processing unit.\nD. Network cache.\n\n---\n\n[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface between a process and the operating system kernel.\n\nVirtual memory creates an illusion of a large main memory.\n\n---\n\n[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks]\nVirtual memory paging allows secondary memory to be addressed as main memory.\n\n---\n\n[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU scheduling algorithm uses time quanta to allocate CPU time fairly among processes.\n\n# Chapter 7: Memory Management\n\nPaging is a memory management scheme that eliminates the need for contiguous allocation of physical memory."
+  }
+}

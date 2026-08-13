@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "raw_generation_records": 45,
+  "raw_judge_records": 45,
+  "unique_queries": 15,
+  "unique_models": 3,
+  "missing_combinations": [],
+  "prompt_control": "PASS",
+  "context_control": "PASS",
+  "model_identity_control": "PASS",
+  "ledger_reconciliation": "PASS"
+}

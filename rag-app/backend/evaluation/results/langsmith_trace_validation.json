@@ -1,0 +1,83 @@
+{
+  "timestamp": "2026-08-13T03:50:41Z",
+  "langsmith_config": {
+    "tracing_enabled": true,
+    "project_name": "AI tutor",
+    "api_key_configured": true,
+    "endpoint": "https://api.smith.langchain.com"
+  },
+  "test_results": [
+    {
+      "success": true,
+      "status_code": 200,
+      "http_wall_latency_sec": 0.0176,
+      "answer_length": 49,
+      "context_chunks": 0,
+      "answer_snippet": "I cannot find the answer in the provided context.",
+      "test_name": "single_hop_initial",
+      "category": "single_hop",
+      "question": "What is virtual memory?"
+    },
+    {
+      "success": true,
+      "status_code": 200,
+      "http_wall_latency_sec": 0.0209,
+      "answer_length": 49,
+      "context_chunks": 0,
+      "answer_snippet": "I cannot find the answer in the provided context.",
+      "test_name": "single_hop_cache_hit",
+      "category": "cache_trace",
+      "question": "What is virtual memory?"
+    },
+    {
+      "success": true,
+      "status_code": 200,
+      "http_wall_latency_sec": 0.0206,
+      "answer_length": 49,
+      "context_chunks": 0,
+      "answer_snippet": "I cannot find the answer in the provided context.",
+      "test_name": "multi_hop",
+      "category": "multi_hop",
+      "question": "How does paging work, and what problem does it solve?"
+    },
+    {
+      "success": true,
+      "status_code": 200,
+      "http_wall_latency_sec": 0.0211,
+      "answer_length": 49,
+      "context_chunks": 0,
+      "answer_snippet": "I cannot find the answer in the provided context.",
+      "test_name": "document_scoped",
+      "category": "document_scoped",
+      "question": "According to OS_Notes.txt, explain paging."
+    },
+    {
+      "success": true,
+      "status_code": 200,
+      "http_wall_latency_sec": 0.0071,
+      "answer_length": 49,
+      "context_chunks": 0,
+      "answer_snippet": "I cannot find the answer in the provided context.",
+      "test_name": "document_not_found",
+      "category": "document_not_found",
+      "question": "According to NONEXISTENT_DOCUMENT_999.txt, explain paging."
+    },
+    {
+      "test_name": "error_trace",
+      "category": "error_trace",
+      "question": "<invalid payload>",
+      "success": true,
+      "status_code": 422,
+      "http_wall_latency_sec": 0.0167,
+      "error_response": "{\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"question\"],\"msg\":\"Field required\",\"input\":{\"invalid_field\":123}}]}"
+    }
+  ],
+  "overhead_summary": {
+    "tracing_on_avg_latency_sec": 0.0145,
+    "tracing_off_avg_latency_sec": 0.0125,
+    "absolute_overhead_sec": 0.002,
+    "percentage_overhead": "16.0%",
+    "benchmark_queries_count": 6
+  },
+  "status": "COMPLETED"
+}

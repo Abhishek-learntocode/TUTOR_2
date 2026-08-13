@@ -1,4 +1,5 @@
 import os
+from langsmith import traceable, get_current_run_tree
 from app.rag.vector_store import VectorStore
 from app.rag.bm25_retriever import BM25Retriever
 from app.rag.reranker import Reranker
@@ -22,6 +23,7 @@ class Retriever:
         self.top_k_candidates = top_k_candidates
         self.top_k_final = top_k_final
 
+    @traceable(name="retrieval", run_type="retriever")
     def retrieve(self, query: str) -> list[str]:
         all_docs = self.vector_store.get_all_documents()
         self.bm25_retriever.rebuild(all_docs)
@@ -46,17 +48,69 @@ class Retriever:
         print(f"[Hybrid Retriever Log] Semantic candidates          = {len(semantic_candidates)}")
         print(f"[Hybrid Retriever Log] BM25 candidates              = {len(lexical_candidates)}")
 
+        # Document Scoping Enforcement:
+        # If explicit filename candidates exist, restrict semantic and lexical candidates
+        # exclusively to chunks belonging to those explicit documents.
+        allowed_filenames = set(
+            doc.metadata.get("source_filename", "").lower()
+            for doc in explicit_filename_candidates
+            if doc.metadata.get("source_filename")
+        )
+
+        if allowed_filenames:
+            semantic_candidates = [
+                doc for doc in semantic_candidates
+                if doc.metadata.get("source_filename", "").lower() in allowed_filenames
+            ]
+            lexical_candidates = [
+                doc for doc in lexical_candidates
+                if doc.metadata.get("source_filename", "").lower() in allowed_filenames
+            ]
+
         # 4. Merge Candidates & Deduplicate using chunk content
         seen_contents = set()
         merged_candidates: list[Document] = []
 
         for doc in explicit_filename_candidates + semantic_candidates + lexical_candidates:
+
             content_key = doc.page_content.strip()
             if content_key not in seen_contents:
                 seen_contents.add(content_key)
                 merged_candidates.append(doc)
 
         print(f"[Hybrid Retriever Log] Merged candidates            = {len(merged_candidates)} (deduplicated)")
+
+        doc_ref = (
+            explicit_filename_candidates[0].metadata.get("source_filename")
+            if explicit_filename_candidates
+            else None
+        )
+        resolved_doc_ids = list(
+            set(
+                doc.metadata.get("source_filename")
+                for doc in merged_candidates
+                if doc.metadata.get("source_filename")
+            )
+        )
+        cache_hit = getattr(
+            getattr(self.vector_store, "embeddings", None), "last_cache_hit", False
+        )
+        dups_removed = (
+            len(explicit_filename_candidates) + len(semantic_candidates) + len(lexical_candidates)
+        ) - len(merged_candidates)
+
+        try:
+            rt = get_current_run_tree()
+            if rt:
+                rt.metadata["semantic_count"] = len(semantic_candidates)
+                rt.metadata["bm25_count"] = len(lexical_candidates)
+                rt.metadata["merged_count"] = len(merged_candidates)
+                rt.metadata["duplicates_removed"] = dups_removed
+                rt.metadata["document_reference"] = doc_ref
+                rt.metadata["resolved_document_ids"] = resolved_doc_ids
+                rt.metadata["embedding_cache_hit"] = cache_hit
+        except Exception:
+            pass
 
         if not merged_candidates:
             print("[Hybrid Retriever Log] Reranked candidates = 0")
@@ -71,3 +125,4 @@ class Retriever:
         print(f"[Hybrid Retriever Log] Reranked candidates          = {len(final_docs)}")
 
         return [doc.page_content for doc in final_docs]
+

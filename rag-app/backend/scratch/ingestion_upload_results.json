@@ -1,0 +1,62 @@
+[
+  {
+    "filename": "DBMS_Book.txt",
+    "doc_type": "book",
+    "chunks_created": 1,
+    "message": "Uploaded 'DBMS_Book.txt' as [book] (1 chunks)."
+  },
+  {
+    "filename": "OS_Notes.txt",
+    "doc_type": "book",
+    "chunks_created": 1,
+    "message": "Uploaded 'OS_Notes.txt' as [book] (1 chunks)."
+  },
+  {
+    "filename": "sample_book.txt",
+    "doc_type": "book",
+    "chunks_created": 1,
+    "message": "Uploaded 'sample_book.txt' as [book] (1 chunks)."
+  },
+  {
+    "filename": "sample_exam.txt",
+    "doc_type": "exam_paper",
+    "chunks_created": 2,
+    "message": "Uploaded 'sample_exam.txt' as [exam_paper] (2 chunks)."
+  },
+  {
+    "filename": "sample_exam_inspect.txt",
+    "doc_type": "exam_paper",
+    "chunks_created": 2,
+    "message": "Uploaded 'sample_exam_inspect.txt' as [exam_paper] (2 chunks)."
+  },
+  {
+    "filename": "sample_exam_rag.txt",
+    "doc_type": "exam_paper",
+    "chunks_created": 2,
+    "message": "Uploaded 'sample_exam_rag.txt' as [exam_paper] (2 chunks)."
+  },
+  {
+    "filename": "sample_hybrid_test.txt",
+    "doc_type": "book",
+    "chunks_created": 3,
+    "message": "Uploaded 'sample_hybrid_test.txt' as [book] (3 chunks)."
+  },
+  {
+    "filename": "sample_routing_doc.txt",
+    "doc_type": "book",
+    "chunks_created": 1,
+    "message": "Uploaded 'sample_routing_doc.txt' as [book] (1 chunks)."
+  },
+  {
+    "filename": "sample_test.txt",
+    "doc_type": "book",
+    "chunks_created": 1,
+    "message": "Uploaded 'sample_test.txt' as [book] (1 chunks)."
+  },
+  {
+    "filename": "sample_two_stage.txt",
+    "doc_type": "book",
+    "chunks_created": 3,
+    "message": "Uploaded 'sample_two_stage.txt' as [book] (3 chunks)."
+  }
+]

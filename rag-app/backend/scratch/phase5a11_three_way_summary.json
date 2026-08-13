@@ -1,0 +1,74 @@
+[
+  {
+    "id": "test_1_general_retrieval",
+    "query": "What is virtual memory?",
+    "http_status": 200,
+    "http_latency": 7.0651,
+    "http_ctx_count": 4,
+    "log_ctx_count": 4,
+    "log_latency": 7.0608,
+    "ls_run_id": "019ffa0a-8...",
+    "ls_latency": 7.0588,
+    "match": "EXACT MATCH"
+  },
+  {
+    "id": "test_2_explicit_doc_missing_info",
+    "query": "According to OS_Notes.txt, explain paging.",
+    "http_status": 200,
+    "http_latency": 4.9123,
+    "http_ctx_count": 1,
+    "log_ctx_count": 1,
+    "log_latency": 4.8952,
+    "ls_run_id": "019ffa09-f...",
+    "ls_latency": 20.9402,
+    "match": "EXACT MATCH"
+  },
+  {
+    "id": "test_3_explicit_doc_available_info",
+    "query": "According to OS_Notes.txt, what is virtual memory?",
+    "http_status": 200,
+    "http_latency": 0.7438,
+    "http_ctx_count": 1,
+    "log_ctx_count": 1,
+    "log_latency": 0.7423,
+    "ls_run_id": "019ffa0a-c...",
+    "ls_latency": 0.7415,
+    "match": "EXACT MATCH"
+  },
+  {
+    "id": "test_4_explicit_paging_doc",
+    "query": "According to sample_routing_doc.txt, explain paging.",
+    "http_status": 200,
+    "http_latency": 1.1579,
+    "http_ctx_count": 1,
+    "log_ctx_count": 1,
+    "log_latency": 1.1421,
+    "ls_run_id": "019ffa0a-e...",
+    "ls_latency": 1.1421,
+    "match": "EXACT MATCH"
+  },
+  {
+    "id": "test_5_multi_doc_comparison",
+    "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+    "http_status": 200,
+    "http_latency": 5.1122,
+    "http_ctx_count": 3,
+    "log_ctx_count": 3,
+    "log_latency": 5.0968,
+    "ls_run_id": "019ffa0b-0...",
+    "ls_latency": 5.0968,
+    "match": "EXACT MATCH"
+  },
+  {
+    "id": "test_6_no_doc_ref_paging",
+    "query": "Explain paging.",
+    "http_status": 200,
+    "http_latency": 5.9718,
+    "http_ctx_count": 4,
+    "log_ctx_count": 4,
+    "log_latency": 5.9495,
+    "ls_run_id": "019ffa0b-2...",
+    "ls_latency": 5.9489,
+    "match": "EXACT MATCH"
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "explanation_of_discrepancy": "The discrepancy across previous reports arose from applying different definitions and query subsets: 1) All-Query Refusal Accuracy (evaluating whether refusal behavior was correct for both answerable and unanswerable queries across all 15 benchmark queries): Ollama = 12/15 (80.0%), Model A = 4/15 (26.7%), Model B = 8/15 (53.3%). 2) Explicit Refusal Target Queries ('missing_002' & 'doc_001'): Ollama = 1/2 (50.0%), Model A = 1/2 (50.0%), Model B = 1/2 (50.0%) because 'doc_001' had expected_behavior='scoped_retrieval_answer' in the benchmark spec despite being unanswerable from OS_Notes.txt. 3) Single Out-Of-Domain Refusal Query ('missing_002' only): Ollama = 1/1 (100.0%), Model A = 1/1 (100.0%), Model B = 1/1 (100.0%).",
+  "definition_1_all_queries": {
+    "OLLAMA_BASELINE": {
+      "query_count": 15,
+      "correct_count": 12,
+      "refusal_correctness_rate": 0.8,
+      "status": "DERIVED",
+      "formula": "correct_refusal_or_nonrefusal_count / 15"
+    },
+    "OPENROUTER_MODEL_A": {
+      "query_count": 15,
+      "correct_count": 4,
+      "refusal_correctness_rate": 0.26666666666666666,
+      "status": "DERIVED",
+      "formula": "correct_refusal_or_nonrefusal_count / 15"
+    },
+    "OPENROUTER_MODEL_B": {
+      "query_count": 15,
+      "correct_count": 8,
+      "refusal_correctness_rate": 0.5333333333333333,
+      "status": "DERIVED",
+      "formula": "correct_refusal_or_nonrefusal_count / 15"
+    }
+  },
+  "definition_2_explicit_refusal_target_queries": {
+    "OLLAMA_BASELINE": {
+      "query_count": 2,
+      "query_ids": [
+        "missing_002",
+        "doc_001"
+      ],
+      "correct_count": 1,
+      "refusal_correctness_rate": 0.5,
+      "status": "EVIDENCED",
+      "formula": "correct_refusal_count / 2"
+    },
+    "OPENROUTER_MODEL_A": {
+      "query_count": 2,
+      "query_ids": [
+        "missing_002",
+        "doc_001"
+      ],
+      "correct_count": 1,
+      "refusal_correctness_rate": 0.5,
+      "status": "EVIDENCED",
+      "formula": "correct_refusal_count / 2"
+    },
+    "OPENROUTER_MODEL_B": {
+      "query_count": 2,
+      "query_ids": [
+        "missing_002",
+        "doc_001"
+      ],
+      "correct_count": 1,
+      "refusal_correctness_rate": 0.5,
+      "status": "EVIDENCED",
+      "formula": "correct_refusal_count / 2"
+    }
+  },
+  "definition_3_missing_info_query_only": {
+    "OLLAMA_BASELINE": {
+      "query_count": 1,
+      "query_ids": [
+        "missing_002"
+      ],
+      "correct_count": 1,
+      "refusal_correctness_rate": 1.0,
+      "status": "EVIDENCED",
+      "formula": "correct_refusal_count / 1"
+    },
+    "OPENROUTER_MODEL_A": {
+      "query_count": 1,
+      "query_ids": [
+        "missing_002"
+      ],
+      "correct_count": 1,
+      "refusal_correctness_rate": 1.0,
+      "status": "EVIDENCED",
+      "formula": "correct_refusal_count / 1"
+    },
+    "OPENROUTER_MODEL_B": {
+      "query_count": 1,
+      "query_ids": [
+        "missing_002"
+      ],
+      "correct_count": 1,
+      "refusal_correctness_rate": 1.0,
+      "status": "EVIDENCED",
+      "formula": "correct_refusal_count / 1"
+    }
+  }
+}

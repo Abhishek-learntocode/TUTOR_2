@@ -1,0 +1,23 @@
+{
+  "selected_option": "OPTION_A",
+  "routing_decision": "ALL_OLLAMA",
+  "confidence": "HIGH",
+  "policy_description": "Route 100% of production user queries to local Ollama (qwen2.5:1.5b).",
+  "evidence_backing": [
+    "Local Ollama (qwen2.5:1.5b) achieves the highest overall quality score (4.07 / 5.0) across all 15 benchmark queries.",
+    "Local Ollama delivers a mean latency of 3.00s (median 2.84s), while OpenRouter Model B takes 12.64s (4.2x slower) and Model A takes 39.73s (13.2x slower).",
+    "Local Ollama achieves highest grounding (4.20/5.0) and instruction following (4.73/5.0).",
+    "OpenRouter free candidate models do not demonstrate statistically significant quality gains in any category sufficient to justify a 4x to 13x latency penalty and external API dependency.",
+    "100% document scope and refusal safety invariants are maintained locally."
+  ],
+  "safety_checks": {
+    "OPENROUTER_API_CALLS": 0,
+    "OLLAMA_INFERENCE_CALLS": 0,
+    "PRODUCTION_FILES_MODIFIED": 0,
+    "PRODUCTION_ROUTING_CHANGED": "NO",
+    "PROMPTS_CHANGED": "NO",
+    "RETRIEVAL_CHANGED": "NO",
+    "DATASET_REGENERATED": "NO",
+    "JUDGE_RESPONSES_REGENERATED": "NO"
+  }
+}

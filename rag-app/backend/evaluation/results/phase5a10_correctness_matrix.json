@@ -1,0 +1,459 @@
+[
+  {
+    "query_id": "test_001_factual",
+    "task_type": "factual_question",
+    "query": "What is virtual memory?",
+    "document_reference": null,
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_exam_inspect.txt",
+        "OS_Notes.txt",
+        "sample_exam.txt",
+        "sample_exam_inspect.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\n...",
+        "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface ...",
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks...",
+        "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fau..."
+      ]
+    },
+    "answer": "Virtual memory, as explained in the context provided, creates an illusion of a large main memory by using secondary storage (such as hard drives) as if it were part of the primary memory. This allows programs to access data that might not be currently present in RAM but can still be found on disk.",
+    "claims": [
+      {
+        "claim": "Virtual memory, as explained in the context provided, creates an illusion of a large main memory by using secondary storage (such as hard drives) as if it were part of the primary memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "This allows programs to access data that might not be currently present in RAM but can still be found on disk.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #4"
+      }
+    ],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": true,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "unsupported_claims": [],
+      "notes": ""
+    },
+    "langsmith": {
+      "run_id": "019ff9f0-0842-7f60-8e88-9ca0188c4820",
+      "completed": true,
+      "latency_sec": 9.9636,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 5.7154
+    }
+  },
+  {
+    "query_id": "test_002_conceptual",
+    "task_type": "conceptual_explanation",
+    "query": "Explain paging.",
+    "document_reference": null,
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_exam.txt",
+        "sample_routing_doc.txt",
+        "sample_exam_inspect.txt",
+        "sample_exam_rag.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks...",
+        "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU sc...",
+        "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fau...",
+        "[Document: sample_exam_rag.txt | Type: exam_paper]\n\nQ1. What is a Deadlock in operating systems? [5 ..."
+      ]
+    },
+    "answer": "Paging is a memory management scheme that allows secondary memory to be addressed as main memory, effectively eliminating the need for contiguous allocation of physical memory. This technique involves dividing the virtual address space into pages and mapping them to specific locations in the primary (physical) memory. When a program attempts to access a page that is not currently present in RAM, it results in a \"page fault,\" which triggers the system to load the required data from secondary storage into main memory before continuing execution. This mechanism ensures efficient use of both physical and virtual address spaces by allowing programs to run without needing continuous allocation of contiguous blocks of memory.",
+    "claims": [
+      {
+        "claim": "Paging is a memory management scheme that allows secondary memory to be addressed as main memory, effectively eliminating the need for contiguous allocation of physical memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "This technique involves dividing the virtual address space into pages and mapping them to specific locations in the primary (physical) memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #2"
+      },
+      {
+        "claim": "When a program attempts to access a page that is not currently present in RAM, it results in a \"page fault,\" which triggers the system to load the required data from secondary storage into main memory before continuing execution.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "This mechanism ensures efficient use of both physical and virtual address spaces by allowing programs to run without needing continuous allocation of contiguous blocks of memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #2"
+      }
+    ],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": true,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "unsupported_claims": [],
+      "notes": ""
+    },
+    "langsmith": {
+      "run_id": "019ff9e8-920a-76f0-a39b-d79ea9fb813a",
+      "completed": true,
+      "latency_sec": 6.2011,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 3.7229
+    }
+  },
+  {
+    "query_id": "test_003_multihop",
+    "task_type": "multi_hop",
+    "query": "How does paging work, and what problem does it solve?",
+    "document_reference": null,
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_routing_doc.txt",
+        "sample_exam.txt",
+        "sample_exam_inspect.txt",
+        "sample_hybrid_test.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU sc...",
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks...",
+        "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ2. What is Page Fault? [5 Marks]\nA page fau...",
+        "[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS conce..."
+      ]
+    },
+    "answer": "Paging works by dividing the physical memory into fixed-size pages. When a program attempts to access a page that is not currently present in main memory (RAM), a \"page fault\" occurs. This indicates that the requested data is stored on disk or in secondary storage, and the operating system must load it from there before the process can continue executing.\n\nPaging solves the problem of efficient use of physical memory by allowing processes to access pages that are not currently present in RAM. By using paging, the operating system can manage a larger amount of memory than would be possible with contiguous allocation, as long as the total size of all processes' virtual address spaces does not exceed the available physical memory.\n\nThe context provided discusses these concepts without explicitly stating \"Paging solves the problem of efficient use of physical memory by allowing processes to access pages that are not currently present in RAM.\" However, it implicitly explains how paging works and its benefits.",
+    "claims": [
+      {
+        "claim": "Paging works by dividing the physical memory into fixed-size pages.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "When a program attempts to access a page that is not currently present in main memory (RAM), a \"page fault\" occurs.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "This indicates that the requested data is stored on disk or in secondary storage, and the operating system must load it from there before the process can continue executing.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #3"
+      },
+      {
+        "claim": "Paging solves the problem of efficient use of physical memory by allowing processes to access pages that are not currently present in RAM.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "By using paging, the operating system can manage a larger amount of memory than would be possible with contiguous allocation, as long as the total size of all processes' virtual address spaces does not exceed the available physical memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "The context provided discusses these concepts without explicitly stating \"Paging solves the problem of efficient use of physical memory by allowing processes to access pages that are not currently present in RAM.\" However, it implicitly explains how paging works and its benefits.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      }
+    ],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": true,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "unsupported_claims": [],
+      "notes": ""
+    },
+    "langsmith": {
+      "run_id": "019ff9f0-e654-7943-8ce9-38ee7e38c464",
+      "completed": true,
+      "latency_sec": 6.555,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 6.5629
+    }
+  },
+  {
+    "query_id": "test_004_doc_scoped",
+    "task_type": "document_specific",
+    "query": "According to OS_Notes.txt, explain paging.",
+    "document_reference": "OS_Notes.txt",
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_exam.txt",
+        "sample_routing_doc.txt",
+        "OS_Notes.txt",
+        "sample_two_stage.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks...",
+        "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU sc...",
+        "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface ...",
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #15: This is informational chunk number 15 cover..."
+      ]
+    },
+    "answer": "Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.",
+    "claims": [
+      {
+        "claim": "Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #2"
+      }
+    ],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": true,
+      "task_completed": false,
+      "document_scope_respected": false,
+      "answer_correct": false,
+      "refusal_correct": null,
+      "unsupported_claims": [],
+      "notes": "DOCUMENT_SCOPE_VIOLATION: Query requested OS_Notes.txt (which lacks paging), but backend retrieved sample_routing_doc.txt and answered from it."
+    },
+    "langsmith": {
+      "run_id": "019ff9e8-d3af-7c73-bca0-feb3ceb7af3c",
+      "completed": true,
+      "latency_sec": 5.5069,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 5.4271
+    }
+  },
+  {
+    "query_id": "test_005_comparison",
+    "task_type": "comparison",
+    "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+    "document_reference": [
+      "OS_Notes.txt",
+      "sample_exam.txt"
+    ],
+    "retrieval": {
+      "context_count": 5,
+      "retrieved_sources": [
+        "sample_exam_inspect.txt",
+        "sample_exam.txt",
+        "OS_Notes.txt",
+        "sample_hybrid_test.txt",
+        "sample_two_stage.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\n...",
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQ1. What is process synchronization? [5 Marks]\nA. Me...",
+        "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface ...",
+        "[Document: sample_hybrid_test.txt | Type: book]\n\nItem #15: Generic textbook paragraph about OS conce...",
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #15: This is informational chunk number 15 cover..."
+      ]
+    },
+    "answer": "The discussion of memory management in **OS_Notes.txt** focuses on virtual memory, which creates an illusion of a large main memory. In contrast, the discussion in **sample_exam.txt** mentions hardware storage drives as part of Virtual Memory, but does not explicitly define or explain it. Therefore, the correct answer is:\n\nA. A memory management technique that creates an illusion of a large main memory.",
+    "claims": [
+      {
+        "claim": "The discussion of memory management in **OS_Notes.txt** focuses on virtual memory, which creates an illusion of a large main memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "In contrast, the discussion in **sample_exam.txt** mentions hardware storage drives as part of Virtual Memory, but does not explicitly define or explain it.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      },
+      {
+        "claim": "Therefore, the correct answer is:\n\nA.",
+        "status": "UNSUPPORTED_INFORMATION",
+        "matching_chunk": null
+      },
+      {
+        "claim": "A memory management technique that creates an illusion of a large main memory.",
+        "status": "SUPPORTED_BY_CONTEXT",
+        "matching_chunk": "Chunk #1"
+      }
+    ],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": false,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "unsupported_claims": [
+        "Therefore, the correct answer is:\n\nA."
+      ],
+      "notes": "Synthesized comparative information across documents."
+    },
+    "langsmith": {
+      "run_id": "019ff9e8-f295-7be0-b1bd-3ae2a8c03760",
+      "completed": true,
+      "latency_sec": 6.9273,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 6.9179
+    }
+  },
+  {
+    "query_id": "test_006_mcq",
+    "task_type": "exam_mcq",
+    "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+    "document_reference": null,
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_exam_inspect.txt",
+        "OS_Notes.txt",
+        "sample_exam.txt",
+        "sample_routing_doc.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_exam_inspect.txt | Type: exam_paper]\n\nQ1. What is Virtual Memory in OS? [5 Marks]\n...",
+        "[Document: OS_Notes.txt | Type: book]\n\n# Operating Systems Notes\n\nSystem calls provide an interface ...",
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks...",
+        "[Document: sample_routing_doc.txt | Type: book]\n\n# Chapter 4: CPU Scheduling\n\nThe Round Robin CPU sc..."
+      ]
+    },
+    "answer": "B) Memory management capability.",
+    "claims": [
+      {
+        "claim": "B) Memory management capability.",
+        "status": "UNSUPPORTED_INFORMATION",
+        "matching_chunk": null
+      }
+    ],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": false,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": null,
+      "unsupported_claims": [
+        "B) Memory management capability."
+      ],
+      "notes": "Correctly selected Option B based on context."
+    },
+    "langsmith": {
+      "run_id": "019ff9e9-16a5-7343-9347-49f04882083b",
+      "completed": true,
+      "latency_sec": 5.415,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 3.1419
+    }
+  },
+  {
+    "query_id": "test_007_missing_info",
+    "task_type": "missing_information",
+    "query": "What is the stock price of Apple in 2026?",
+    "document_reference": null,
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_two_stage.txt",
+        "sample_two_stage.txt",
+        "sample_two_stage.txt",
+        "sample_hybrid_test.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #8: This is informational chunk number 8 coverin...",
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #1: This is informational chunk number 1 coverin...",
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #15: This is informational chunk number 15 cover...",
+        "[Document: sample_hybrid_test.txt | Type: book]\n\nItem #8: Generic textbook paragraph about OS concep..."
+      ]
+    },
+    "answer": "I cannot find the answer in the provided context.",
+    "claims": [],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": true,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": true,
+      "unsupported_claims": [],
+      "notes": "Intended refusal case."
+    },
+    "langsmith": {
+      "run_id": "019ff9e9-3413-7130-84df-fe86a1638fb2",
+      "completed": true,
+      "latency_sec": 5.6797,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 1.1461
+    }
+  },
+  {
+    "query_id": "test_008_ambiguous",
+    "task_type": "ambiguous",
+    "query": "Explain the table structure.",
+    "document_reference": null,
+    "retrieval": {
+      "context_count": 4,
+      "retrieved_sources": [
+        "sample_exam.txt",
+        "DBMS_Book.txt",
+        "sample_two_stage.txt",
+        "sample_two_stage.txt"
+      ],
+      "final_context_preview": [
+        "[Document: sample_exam.txt | Type: exam_paper]\n\nQuestion 2. Explain virtual memory paging. [10 Marks...",
+        "[Document: DBMS_Book.txt | Type: book]\n\n# Database Systems Book\n\nACID properties stand for Atomicity...",
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #8: This is informational chunk number 8 coverin...",
+        "[Document: sample_two_stage.txt | Type: book]\n\nItem #1: This is informational chunk number 1 coverin..."
+      ]
+    },
+    "answer": "I cannot find the answer in the provided context.",
+    "claims": [],
+    "evaluation": {
+      "retrieval_relevant": true,
+      "grounded": true,
+      "task_completed": true,
+      "document_scope_respected": true,
+      "answer_correct": true,
+      "refusal_correct": true,
+      "unsupported_claims": [],
+      "notes": "Intended refusal case."
+    },
+    "langsmith": {
+      "run_id": "019ff9e9-53d0-7332-85e0-f003a220b735",
+      "completed": true,
+      "latency_sec": 5.4756,
+      "has_inputs": true,
+      "has_outputs": true
+    },
+    "http": {
+      "status_code": 200,
+      "wall_latency_sec": 1.0551
+    }
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "filename": "DBMS_Book.txt",
+    "size_bytes": 166,
+    "sha256": "ae5e090727be2d524969e26b9f233d165117d3d549f53c1e6b9dfef7decc0dfc",
+    "lines_count": 5,
+    "words_count": 22
+  },
+  {
+    "filename": "OS_Notes.txt",
+    "size_bytes": 175,
+    "sha256": "f292fc9f375aefd5ebffc51aaa60ed0d9db9a80f38db0ce7cb9487a3357ac993",
+    "lines_count": 5,
+    "words_count": 27
+  },
+  {
+    "filename": "sample_book.txt",
+    "size_bytes": 249,
+    "sha256": "80a501fcd20732833e789837e8bf68c87d042da45dfc91bcbc972a8444bb8451",
+    "lines_count": 7,
+    "words_count": 38
+  },
+  {
+    "filename": "sample_exam.txt",
+    "size_bytes": 304,
+    "sha256": "d03bd57b5abf7367c92626c20c14e0508bf6bdcc1a1ab07eceac230e1265813f",
+    "lines_count": 8,
+    "words_count": 45
+  },
+  {
+    "filename": "sample_exam_inspect.txt",
+    "size_bytes": 340,
+    "sha256": "d3d5f36c48cd181ea477fa6cbe04e712d74f3837b8efa7780a6eb151df55e691",
+    "lines_count": 8,
+    "words_count": 61
+  },
+  {
+    "filename": "sample_exam_rag.txt",
+    "size_bytes": 376,
+    "sha256": "8b1f38988e6a575c41900455af3867b8520e649b1132807f69e53deaec927ac2",
+    "lines_count": 8,
+    "words_count": 63
+  },
+  {
+    "filename": "sample_hybrid_test.txt",
+    "size_bytes": 1470,
+    "sha256": "0019b75bcfb4fa44fe779b321daf07b9b90ee726bedba0e619277f738296ca5a",
+    "lines_count": 41,
+    "words_count": 213
+  },
+  {
+    "filename": "sample_routing_doc.txt",
+    "size_bytes": 278,
+    "sha256": "8b58d9a1716726c49c289fc2f51f8b18cf23362fbaafd0b1402a4f3829499a9f",
+    "lines_count": 7,
+    "words_count": 42
+  },
+  {
+    "filename": "sample_test.txt",
+    "size_bytes": 924,
+    "sha256": "c25cba9b362c00ad6f164f6705896cce523176e264292fc913b6705d66fd0a80",
+    "lines_count": 9,
+    "words_count": 142
+  },
+  {
+    "filename": "sample_two_stage.txt",
+    "size_bytes": 1468,
+    "sha256": "1c1558bec9bb113b8e7765cef422a0a97803259562b4725b9297bd1468f67248",
+    "lines_count": 41,
+    "words_count": 234
+  }
+]

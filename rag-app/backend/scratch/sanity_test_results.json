@@ -1,0 +1,76 @@
+[
+  {
+    "tag": "SANITY1",
+    "query": "What is virtual memory?",
+    "status_code": 200,
+    "http_wall_latency_sec": 7.4964,
+    "context_count": 4,
+    "sources_sample": [
+      "'[Document: sample_exam.txt | Type: exam_paper]\\n\\nQuestion ",
+      "'[Document: OS_Notes.txt | Type: book]\\n\\n# Operating System",
+      "'[Document: sample_exam_inspect.txt | Type: exam_paper]\\n\\nQ"
+    ],
+    "answer_snippet": "'Virtual memory, as explained in the context provided, creates an illusion of a large main memory by using secondary storage (like hard drives) as if it were part of the primary mem'",
+    "is_refusal": false
+  },
+  {
+    "tag": "SANITY2",
+    "query": "How does paging work?",
+    "status_code": 200,
+    "http_wall_latency_sec": 4.637,
+    "context_count": 4,
+    "sources_sample": [
+      "'[Document: sample_routing_doc.txt | Type: book]\\n\\n# Chapte",
+      "'[Document: sample_test.txt | Type: book]\\n\\nThe Tutor RAG s",
+      "'[Document: sample_exam.txt | Type: exam_paper]\\n\\nQuestion ",
+      "'[Document: sample_exam_inspect.txt | Type: exam_paper]\\n\\nQ"
+    ],
+    "answer_snippet": "'Paging is a memory management scheme that eliminates the need for contiguous allocation of physical memory by allowing secondary storage (such as disk) to be accessed as if it were'",
+    "is_refusal": false
+  },
+  {
+    "tag": "SANITY3",
+    "query": "According to sample_routing_doc.txt, explain paging.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.9742,
+    "context_count": 4,
+    "sources_sample": [
+      "'[Document: sample_exam.txt | Type: exam_paper]\\n\\nQ1. What ",
+      "'[Document: sample_routing_doc.txt | Type: book]\\n\\n# Chapte",
+      "'[Document: sample_exam.txt | Type: exam_paper]\\n\\nQuestion ",
+      "'[Document: sample_exam_inspect.txt | Type: exam_paper]\\n\\nQ"
+    ],
+    "answer_snippet": "'Paging allows secondary memory (such as disk) to be addressed and accessed as if it were main memory. This technique involves mapping virtual addresses to physical addresses by usi'",
+    "is_refusal": false
+  },
+  {
+    "tag": "SANITY4",
+    "query": "What is Round Robin scheduling?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.6817,
+    "context_count": 4,
+    "sources_sample": [
+      "'[Document: sample_exam.txt | Type: exam_paper]\\n\\nQ1. What ",
+      "'[Document: sample_routing_doc.txt | Type: book]\\n\\n# Chapte",
+      "'[Document: sample_exam_rag.txt | Type: exam_paper]\\n\\nQ2. W",
+      "'[Document: sample_two_stage.txt | Type: book]\\n\\nItem #15: "
+    ],
+    "answer_snippet": "'Round Robin scheduling uses time quanta to allocate CPU time fairly among processes.'",
+    "is_refusal": false
+  },
+  {
+    "tag": "SANITY5",
+    "query": "What is ACID?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.5193,
+    "context_count": 4,
+    "sources_sample": [
+      "'[Document: sample_exam_rag.txt | Type: exam_paper]\\n\\nQ1. W",
+      "'[Document: sample_exam_rag.txt | Type: exam_paper]\\n\\nQ2. W",
+      "'[Document: DBMS_Book.txt | Type: book]\\n\\n# Database System",
+      "'[Document: sample_two_stage.txt | Type: book]\\n\\nItem #15: "
+    ],
+    "answer_snippet": "'ACID properties stand for Atomicity, Consistency, Isolation, and Durability.'",
+    "is_refusal": false
+  }
+]

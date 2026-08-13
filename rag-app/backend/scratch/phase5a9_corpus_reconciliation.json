@@ -1,0 +1,102 @@
+[
+  {
+    "source_file": "DBMS_Book.txt",
+    "size_bytes": 166,
+    "words_count": 22,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 1,
+    "topics": "ACID properties, SQL definition",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "OS_Notes.txt",
+    "size_bytes": 175,
+    "words_count": 27,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 2,
+    "topics": "System calls, Virtual memory illusion",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_book.txt",
+    "size_bytes": 249,
+    "words_count": 38,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 1,
+    "topics": "OS introduction",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_exam.txt",
+    "size_bytes": 304,
+    "words_count": 45,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 2,
+    "topics": "Q1: Process synchronization, Q2: Virtual memory paging",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_exam_inspect.txt",
+    "size_bytes": 340,
+    "words_count": 61,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 2,
+    "topics": "Q1: Virtual memory definition",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_exam_rag.txt",
+    "size_bytes": 376,
+    "words_count": 63,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 2,
+    "topics": "Q1: Deadlock definition",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_hybrid_test.txt",
+    "size_bytes": 1470,
+    "words_count": 213,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 3,
+    "topics": "OS concepts Items #1 to #15",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_routing_doc.txt",
+    "size_bytes": 278,
+    "words_count": 42,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 1,
+    "topics": "CPU Scheduling (Round Robin), Memory Management (Paging)",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_test.txt",
+    "size_bytes": 924,
+    "words_count": 142,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 1,
+    "topics": "Tutor RAG architecture description",
+    "status": "FULLY_INDEXED"
+  },
+  {
+    "source_file": "sample_two_stage.txt",
+    "size_bytes": 1468,
+    "words_count": 234,
+    "on_disk": true,
+    "is_indexed": true,
+    "chunk_count": 3,
+    "topics": "Informational chunks Items #1 to #15",
+    "status": "FULLY_INDEXED"
+  }
+]

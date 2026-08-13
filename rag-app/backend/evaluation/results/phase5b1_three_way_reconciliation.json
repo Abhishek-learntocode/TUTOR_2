@@ -1,0 +1,356 @@
+{
+  "total_reconciled": 35,
+  "pass_count": 35,
+  "records": [
+    {
+      "query_id": "factual_001",
+      "query": "What is virtual memory?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "factual_002",
+      "query": "What is a page fault?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "factual_003",
+      "query": "What is the function of the Memory Management Unit (MMU)?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "concept_001",
+      "query": "Explain how paging works in operating systems.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "concept_002",
+      "query": "Explain how address translation is performed in virtual memory systems.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "concept_003",
+      "query": "Explain the concept of thrashing in operating systems.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "concept_004",
+      "query": "Explain page replacement algorithms.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multihop_001",
+      "query": "How does paging work, and what problem does it solve?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multihop_002",
+      "query": "What is virtual memory, how does paging work, and why are page faults needed?",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "google/gemma-4-26b-a4b-it:free",
+      "openrouter_request_id": "gen-1786614232-OGMnkvxa9oMqmDXi1K2J",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multihop_003",
+      "query": "What is demand paging and how does the operating system handle a page fault during process execution?",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "liquid/lfm-2.5-2.6b:free",
+      "openrouter_request_id": "gen-1786614277-EJWu4uZGruWL9Nc1saww",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multihop_004",
+      "query": "How do page tables and TLBs interact to accelerate memory reference translation?",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-3.5-content-safety:free",
+      "openrouter_request_id": "gen-1786614433-ejPIZSEQATIMIziTCWZx",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "doc_001",
+      "query": "According to OS_Notes.txt, explain paging and page faults.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "doc_002",
+      "query": "According to sample_exam.txt, what is the role of virtual memory?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "doc_003",
+      "query": "According to OS_Notes.txt, what is a virtual address space?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "doc_004",
+      "query": "Summarize the key contents of OS_Notes.txt.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "compare_001",
+      "query": "Compare virtual memory and physical memory.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-3-super-120b-a12b:free",
+      "openrouter_request_id": "gen-1786614559-oWLmSBTrSgXfNGfuhQ4Q",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "compare_002",
+      "query": "Compare paging and segmentation memory management techniques.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "openrouter_request_id": "gen-1786614624-KDWTpENc3R3V6qRbtWB0",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "compare_003",
+      "query": "Compare internal fragmentation and external fragmentation.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-3.5-content-safety:free",
+      "openrouter_request_id": "gen-1786614680-UB1aMzmismSlPRZhhWMR",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "compare_004",
+      "query": "What is the difference between page table and inverted page table?",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "google/gemma-4-26b-a4b-it:free",
+      "openrouter_request_id": "gen-1786614729-9hqerAKCvrtuz1tgFpq7",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "missing_001",
+      "query": "What is quantum computing architecture according to the notes?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "missing_002",
+      "query": "What is the stock price of Apple in 2026?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "missing_003",
+      "query": "What is the chemical composition of rust?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "partial_001",
+      "query": "Explain virtual memory paging and describe the design of the Linux kernel eBPF subsystem.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "google/gemma-4-31b-it:free",
+      "openrouter_request_id": "gen-1786614901-iQuhAQF3KodgZAwdVm3C",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "partial_002",
+      "query": "Explain page table translation and list the top 5 programming languages in 2026.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "cohere/north-mini-code:free",
+      "openrouter_request_id": "gen-1786614949-jt2jwO0lEMa81fwH5Sby",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "partial_003",
+      "query": "What is a page fault and who won the 2024 FIFA World Cup?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multidoc_001",
+      "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "openai/gpt-oss-20b:free",
+      "openrouter_request_id": "gen-1786615019-mL1lbVoEgpsCPqjWnpaE",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multidoc_002",
+      "query": "What concepts are covered in both OS_Notes.txt and sample_exam.txt?",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "openrouter_request_id": "gen-1786615079-58lYZYI5d0MWpeS259L3",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "multidoc_003",
+      "query": "Synthesize the definitions of virtual memory across all available documents.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "exam_001",
+      "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "exam_002",
+      "query": "Explain the step-by-step sequence of events that occurs when a CPU generates a virtual address causing a TLB miss.",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-nano-9b-v2:free",
+      "openrouter_request_id": "gen-1786615212-RBlzXC6CchEwHRfnD6ZY",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "exam_003",
+      "query": "Calculate effective access time if TLB access time is 10ns, memory access time is 100ns, and TLB hit ratio is 90%.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "exam_004",
+      "query": "Why does paging eliminate external fragmentation while still suffering from internal fragmentation?",
+      "http_status": 200,
+      "local_log_provider": "openrouter",
+      "local_log_model": "nvidia/nemotron-3.5-content-safety:free",
+      "openrouter_request_id": "gen-1786615339-27VVEq5ahlrUZE8wVDGS",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "ambiguous_001",
+      "query": "Tell me about that concept from the previous notes.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "ambiguous_002",
+      "query": "Explain the table structure.",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    },
+    {
+      "query_id": "ambiguous_003",
+      "query": "Why is it important?",
+      "http_status": 200,
+      "local_log_provider": "ollama",
+      "local_log_model": "qwen2.5:1.5b",
+      "openrouter_request_id": "N/A",
+      "langsmith_completed": true,
+      "reconciliation": "PASS"
+    }
+  ]
+}

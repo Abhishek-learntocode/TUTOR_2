@@ -1,0 +1,90 @@
+[
+  {
+    "metric": "correctness",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "correctness_score",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "grounding",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "grounding_score",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "completeness",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "completeness_score",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "relevance",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "relevance_score",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "instruction_following",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "instruction_following_score",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "overall_quality",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "mean(5_scores)",
+    "records": 45,
+    "status": "DERIVED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "refusal_correctness",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "refusal_correctness",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "document_scope_correctness",
+    "source": "phase5b2_raw_judge_results.jsonl",
+    "field": "document_scope_correctness",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "latency",
+    "source": "phase5b2_raw_model_outputs.jsonl",
+    "field": "generation_latency_sec",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "total_tokens",
+    "source": "phase5b2_raw_model_outputs.jsonl",
+    "field": "total_tokens",
+    "records": 45,
+    "status": "EVIDENCED",
+    "confidence": "HIGH"
+  },
+  {
+    "metric": "answer_length",
+    "source": "phase5b2_raw_model_outputs.jsonl",
+    "field": "len(full_answer)",
+    "records": 45,
+    "status": "DERIVED",
+    "confidence": "HIGH"
+  }
+]

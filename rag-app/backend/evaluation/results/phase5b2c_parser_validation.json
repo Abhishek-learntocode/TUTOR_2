@@ -1,0 +1,150 @@
+{
+  "source_file": "evaluation/results/phase5b2_raw_judge_results.jsonl",
+  "detected_schema": "TOP_LEVEL_SCORE_FIELDS",
+  "extraction_method": "direct_key_lookup",
+  "judge_records": 45,
+  "successfully_parsed": 45,
+  "failed": 0,
+  "failed_record_ids": [],
+  "fields_extracted": {
+    "correctness": 45,
+    "grounding": 45,
+    "completeness": 45,
+    "relevance": 45,
+    "instruction_following": 45
+  },
+  "score_ranges": {
+    "correctness": {
+      "parsed": 45,
+      "missing": 0,
+      "min": 1.0,
+      "max": 4.0
+    },
+    "grounding": {
+      "parsed": 45,
+      "missing": 0,
+      "min": 2.0,
+      "max": 5.0
+    },
+    "completeness": {
+      "parsed": 45,
+      "missing": 0,
+      "min": 1.0,
+      "max": 5.0
+    },
+    "relevance": {
+      "parsed": 45,
+      "missing": 0,
+      "min": 1.0,
+      "max": 4.0
+    },
+    "instruction_following": {
+      "parsed": 45,
+      "missing": 0,
+      "min": 1.0,
+      "max": 5.0
+    }
+  },
+  "missing_field_counts": {
+    "correctness": 0,
+    "grounding": 0,
+    "completeness": 0,
+    "relevance": 0,
+    "instruction_following": 0
+  },
+  "sample_extracted_records": [
+    {
+      "query_id": "factual_001",
+      "model_key": "OLLAMA_BASELINE",
+      "raw_record_keys": [
+        "query_id",
+        "category",
+        "model_key",
+        "provider",
+        "actual_model",
+        "judge_provider",
+        "judge_model",
+        "judge_latency_sec",
+        "judge_raw_output",
+        "correctness_score",
+        "grounding_score",
+        "completeness_score",
+        "relevance_score",
+        "instruction_following_score",
+        "refusal_correctness",
+        "document_scope_correctness"
+      ],
+      "extracted_fields": {
+        "correctness": 4.0,
+        "grounding": 3.0,
+        "completeness": 3.0,
+        "relevance": 2.0,
+        "instruction_following": 3.0,
+        "refusal_correctness": true,
+        "document_scope_correctness": true
+      }
+    },
+    {
+      "query_id": "factual_001",
+      "model_key": "OPENROUTER_MODEL_A",
+      "raw_record_keys": [
+        "query_id",
+        "category",
+        "model_key",
+        "provider",
+        "actual_model",
+        "judge_provider",
+        "judge_model",
+        "judge_latency_sec",
+        "judge_raw_output",
+        "correctness_score",
+        "grounding_score",
+        "completeness_score",
+        "relevance_score",
+        "instruction_following_score",
+        "refusal_correctness",
+        "document_scope_correctness"
+      ],
+      "extracted_fields": {
+        "correctness": 4.0,
+        "grounding": 5.0,
+        "completeness": 4.0,
+        "relevance": 4.0,
+        "instruction_following": 5.0,
+        "refusal_correctness": true,
+        "document_scope_correctness": true
+      }
+    },
+    {
+      "query_id": "factual_001",
+      "model_key": "OPENROUTER_MODEL_B",
+      "raw_record_keys": [
+        "query_id",
+        "category",
+        "model_key",
+        "provider",
+        "actual_model",
+        "judge_provider",
+        "judge_model",
+        "judge_latency_sec",
+        "judge_raw_output",
+        "correctness_score",
+        "grounding_score",
+        "completeness_score",
+        "relevance_score",
+        "instruction_following_score",
+        "refusal_correctness",
+        "document_scope_correctness"
+      ],
+      "extracted_fields": {
+        "correctness": 2.0,
+        "grounding": 3.0,
+        "completeness": 1.0,
+        "relevance": 2.0,
+        "instruction_following": 1.0,
+        "refusal_correctness": true,
+        "document_scope_correctness": true
+      }
+    }
+  ]
+}

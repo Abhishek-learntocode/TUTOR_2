@@ -1,0 +1,10 @@
+{
+  "total_queries_executed": 35,
+  "quality_breakdown": {
+    "GROUNDED_ANSWER": 21,
+    "REFUSAL_DUE_TO_MISSING_CONTEXT": 8,
+    "CORRECT_REFUSAL": 5,
+    "ANSWERED": 1
+  },
+  "average_latency_sec": 2.3412
+}

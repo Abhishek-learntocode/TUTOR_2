@@ -20,8 +20,22 @@ from app.rag.query_analyzer import QueryAnalyzer
 from app.graph.nodes import RAGNodes
 from app.graph.workflow import RAGGraph
 from app.api.routes import router
+import logging
+
+
+os.makedirs("logs", exist_ok=True)
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("logs/rag_traces.log", encoding="utf-8"),
+        logging.StreamHandler(sys.stdout),
+    ],
+)
+logger = logging.getLogger("rag_tracer")
 
 app = FastAPI(title="Simple RAG API")
+
 
 # 1. Embedding Service (bge-m3)
 embedding_service = EmbeddingService(
@@ -36,6 +50,8 @@ vector_store = VectorStore(
     store_path=settings.vector_store_path,
 )
 
+
+
 # 3. Lexical BM25 & Reranker
 bm25_retriever = BM25Retriever()
 reranker = Reranker(model_name=settings.reranker_model)
@@ -49,19 +65,44 @@ retriever = Retriever(
     top_k_final=settings.top_k_final,
 )
 
-# 5. LLM Service (qwen2.5:1.5b)
-llm_service = LLMService(
-    provider=settings.llm_provider,
-    model_name=settings.llm_model,
+from app.rag.providers import get_provider
+
+# 5. Role 1: Query Analyzer LLM Provider
+qa_provider = get_provider(
+    provider_name=settings.query_analyzer_provider,
+    model_name=settings.query_analyzer_model,
     base_url=settings.llm_base_url,
-    api_key=settings.openai_api_key,
+    api_key=settings.openrouter_api_key,
 )
+query_analyzer = QueryAnalyzer(provider=qa_provider)
 
-# 6. Query Analyzer
-query_analyzer = QueryAnalyzer(llm=llm_service)
+# 6. Role 2: Hybrid Answer Generator Providers
+simple_provider = get_provider(
+    provider_name=settings.hybrid_simple_provider,
+    model_name=settings.hybrid_simple_model,
+    base_url=settings.llm_base_url,
+    api_key=settings.openrouter_api_key,
+)
+simple_llm = LLMService(provider=simple_provider)
 
-# 7. LangGraph RAG Workflow
-nodes = RAGNodes(retriever=retriever, llm=llm_service, query_analyzer=query_analyzer)
+complex_provider = get_provider(
+    provider_name=settings.hybrid_complex_provider,
+    model_name=settings.hybrid_complex_model,
+    base_url=settings.llm_base_url,
+    api_key=settings.openrouter_api_key,
+)
+complex_llm = LLMService(provider=complex_provider)
+
+llm_service = simple_llm
+
+# 7. LangGraph RAG Workflow with Dynamic Hybrid Router
+nodes = RAGNodes(
+    retriever=retriever,
+    llm=llm_service,
+    query_analyzer=query_analyzer,
+    simple_llm=simple_llm,
+    complex_llm=complex_llm,
+)
 rag_graph = RAGGraph(nodes=nodes)
 rag_graph.compile()
 

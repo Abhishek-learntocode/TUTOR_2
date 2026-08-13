@@ -1,0 +1,352 @@
+[
+  {
+    "id": "factual_001",
+    "category": "factual",
+    "query": "What is virtual memory?",
+    "status_code": 200,
+    "http_wall_latency_sec": 5.8928,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "factual_002",
+    "category": "factual",
+    "query": "What is a page fault?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.8611,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "factual_003",
+    "category": "factual",
+    "query": "What is the function of the Memory Management Unit (MMU)?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.7082,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "concept_001",
+    "category": "conceptual",
+    "query": "Explain how paging works in operating systems.",
+    "status_code": 200,
+    "http_wall_latency_sec": 3.6748,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "concept_002",
+    "category": "conceptual",
+    "query": "Explain how address translation is performed in virtual memory systems.",
+    "status_code": 200,
+    "http_wall_latency_sec": 4.569,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "concept_003",
+    "category": "conceptual",
+    "query": "Explain the concept of thrashing in operating systems.",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.8667,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "concept_004",
+    "category": "conceptual",
+    "query": "Explain page replacement algorithms.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.0838,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "multihop_001",
+    "category": "multi_hop",
+    "query": "How does paging work, and what problem does it solve?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.0098,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "multihop_002",
+    "category": "multi_hop",
+    "query": "What is virtual memory, how does paging work, and why are page faults needed?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.8154,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "multihop_003",
+    "category": "multi_hop",
+    "query": "What is demand paging and how does the operating system handle a page fault during process execution?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.1847,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "multihop_004",
+    "category": "multi_hop",
+    "query": "How do page tables and TLBs interact to accelerate memory reference translation?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.8724,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "doc_001",
+    "category": "document_specific",
+    "query": "According to OS_Notes.txt, explain paging and page faults.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.51,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "doc_002",
+    "category": "document_specific",
+    "query": "According to sample_exam.txt, what is the role of virtual memory?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.002,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "doc_003",
+    "category": "document_specific",
+    "query": "According to OS_Notes.txt, what is a virtual address space?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.939,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "doc_004",
+    "category": "document_specific",
+    "query": "Summarize the key contents of OS_Notes.txt.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.6658,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "compare_001",
+    "category": "comparison",
+    "query": "Compare virtual memory and physical memory.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.1802,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "compare_002",
+    "category": "comparison",
+    "query": "Compare paging and segmentation memory management techniques.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.4335,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "compare_003",
+    "category": "comparison",
+    "query": "Compare internal fragmentation and external fragmentation.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.4265,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "compare_004",
+    "category": "comparison",
+    "query": "What is the difference between page table and inverted page table?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.6308,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "missing_001",
+    "category": "missing_information",
+    "query": "What is quantum computing architecture according to the notes?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.0568,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "CORRECT_REFUSAL"
+  },
+  {
+    "id": "missing_002",
+    "category": "missing_information",
+    "query": "What is the stock price of Apple in 2026?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.1487,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "CORRECT_REFUSAL"
+  },
+  {
+    "id": "missing_003",
+    "category": "missing_information",
+    "query": "What is the chemical composition of rust?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.9737,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "CORRECT_REFUSAL"
+  },
+  {
+    "id": "partial_001",
+    "category": "partially_answerable",
+    "query": "Explain virtual memory paging and describe the design of the Linux kernel eBPF subsystem.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.1506,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "partial_002",
+    "category": "partially_answerable",
+    "query": "Explain page table translation and list the top 5 programming languages in 2026.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.017,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "partial_003",
+    "category": "partially_answerable",
+    "query": "What is a page fault and who won the 2024 FIFA World Cup?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.9228,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "multidoc_001",
+    "category": "multi_document",
+    "query": "Compare the discussion of memory management in OS_Notes.txt and sample_exam.txt.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.6277,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "multidoc_002",
+    "category": "multi_document",
+    "query": "What concepts are covered in both OS_Notes.txt and sample_exam.txt?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.83,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "multidoc_003",
+    "category": "multi_document",
+    "query": "Synthesize the definitions of virtual memory across all available documents.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.1669,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "exam_001",
+    "category": "exam_style",
+    "query": "Which of the following best describes virtual memory? A) Physical RAM extension B) Memory management capability C) Hard drive cache D) CPU register.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.0079,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "exam_002",
+    "category": "exam_style",
+    "query": "Explain the step-by-step sequence of events that occurs when a CPU generates a virtual address causing a TLB miss.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.1728,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "exam_003",
+    "category": "exam_style",
+    "query": "Calculate effective access time if TLB access time is 10ns, memory access time is 100ns, and TLB hit ratio is 90%.",
+    "status_code": 200,
+    "http_wall_latency_sec": 4.7117,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "GROUNDED_ANSWER"
+  },
+  {
+    "id": "exam_004",
+    "category": "exam_style",
+    "query": "Why does paging eliminate external fragmentation while still suffering from internal fragmentation?",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.0576,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "REFUSAL_DUE_TO_MISSING_CONTEXT"
+  },
+  {
+    "id": "ambiguous_001",
+    "category": "ambiguous",
+    "query": "Tell me about that concept from the previous notes.",
+    "status_code": 200,
+    "http_wall_latency_sec": 1.5215,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "ANSWERED"
+  },
+  {
+    "id": "ambiguous_002",
+    "category": "ambiguous",
+    "query": "Explain the table structure.",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.9184,
+    "context_count": 1,
+    "is_refusal": true,
+    "quality_eval": "CORRECT_REFUSAL"
+  },
+  {
+    "id": "ambiguous_003",
+    "category": "ambiguous",
+    "query": "Why is it important?",
+    "status_code": 200,
+    "http_wall_latency_sec": 0.9129,
+    "context_count": 1,
+    "is_refusal": false,
+    "quality_eval": "ANSWERED"
+  }
+]
